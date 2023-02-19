@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6c48b40d-cb55-495e-b270-15dc564816c6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/ru/nsu/bolotov/application/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/ru/nsu/bolotov/application/info/UtilityInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/ru/nsu/bolotov/exceptions/InvalidFileExtension.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/ru/nsu/bolotov/file/FileChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/ru/nsu/bolotov/file/FileReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/src/main/resources/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/ru/nsu/bolotov/application/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/ru/nsu/bolotov/application/info/UtilityInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/ru/nsu/bolotov/exceptions/InvalidFileExtension.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/ru/nsu/bolotov/file/FileChecker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/ru/nsu/bolotov/file/FileReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/target/classes/test.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2Lxn5U4tYgw9qMC1fuTq78FQwFN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/mac/IntelliJProjects/Java-Projects/lab1",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6c48b40d-cb55-495e-b270-15dc564816c6" name="Changes" comment="" />
+      <created>1676821417408</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676821417408</updated>
+      <workItem from="1676821418738" duration="13000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
