@@ -1,6 +1,6 @@
 package ru.nsu.bolotov.application.info;
 
-public class UtilityInfo {
+abstract public class UtilityInfo {
     public static void printInfo() {
         System.out.println(info);
     }
