@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6c48b40d-cb55-495e-b270-15dc564816c6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/untitled/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/ru/nsu/bolotov/application/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/ru/nsu/bolotov/application/info/UtilityInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/ru/nsu/bolotov/exceptions/InvalidFileExtension.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/ru/nsu/bolotov/file/FileChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/src/main/java/ru/nsu/bolotov/file/FileReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/src/main/resources/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/target/classes/ru/nsu/bolotov/application/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/target/classes/ru/nsu/bolotov/application/info/UtilityInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/target/classes/ru/nsu/bolotov/exceptions/InvalidFileExtension.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/target/classes/ru/nsu/bolotov/file/FileChecker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/target/classes/ru/nsu/bolotov/file/FileReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled/target/classes/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/lab1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lab1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/application/info/UtilityInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/utility/UtilityInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/FileChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/FileChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/MyFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/resources/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/resources/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Lxn5U4tYgw9qMC1fuTq78FQwFN" />
   <component name="ProjectViewState">
@@ -42,9 +42,51 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/Users/mac/IntelliJProjects/Java-Projects/lab1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.General [txt]">
+    <configuration name="General [doc]" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.bolotov.application.Main" />
+      <module name="lab1" />
+      <option name="PROGRAM_PARAMETERS" value="test.doc" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab1/src/main/resources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="General [empty]" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.bolotov.application.Main" />
+      <module name="lab1" />
+      <option name="PROGRAM_PARAMETERS" value="test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab1/src/main/resources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="General [txt]" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.bolotov.application.Main" />
+      <module name="lab1" />
+      <option name="PROGRAM_PARAMETERS" value="test.txt" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab1/src/main/resources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.General [txt]" />
+      <item itemvalue="Application.General [doc]" />
+      <item itemvalue="Application.General [empty]" />
+    </list>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,10 +96,24 @@
       <option name="presentableId" value="Default" />
       <updated>1676821417408</updated>
       <workItem from="1676821418738" duration="13000" />
+      <workItem from="1676896942257" duration="105000" />
+      <workItem from="1676897056191" duration="143000" />
+      <workItem from="1676897209806" duration="7290000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package ru.nsu.bolotov.application.info;
+package ru.nsu.bolotov.utility;
 
 abstract public class UtilityInfo {
     public static void printInfo() {

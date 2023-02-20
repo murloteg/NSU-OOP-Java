@@ -1,9 +1,12 @@
 package ru.nsu.bolotov.application;
 
 import ru.nsu.bolotov.file.FileChecker;
-import ru.nsu.bolotov.file.FileReader;
+import ru.nsu.bolotov.file.*;
 import ru.nsu.bolotov.exceptions.InvalidFileExtension;
-import static ru.nsu.bolotov.application.info.UtilityInfo.printInfo;;
+import ru.nsu.bolotov.container.*;
+import ru.nsu.bolotov.storageunit.*;
+import static ru.nsu.bolotov.utility.UtilityInfo.printInfo;
+import static ru.nsu.bolotov.utility.UtilityStringConsts.EMPTY;
 import java.io.*;
 
 public class Main {
@@ -16,31 +19,58 @@ public class Main {
         try {
             fileChecker.checkExtension();
         }
-        catch (InvalidFileExtension extension) {
-            System.err.println(extension.getMessage());
-            extension.printStackTrace();
+        catch (InvalidFileExtension exception) {
+            System.err.println(exception.getMessage());
+            exception.printStackTrace();
             System.exit(1);
         }
-        FileReader fileReader = null;
+        MyFileReader myFileReader = null;
         try {
-            fileReader = new FileReader(args[0]);
+            myFileReader = new MyFileReader(args[0]);
         }
         catch (FileNotFoundException exception) {
             System.err.println(exception.getMessage());
             exception.printStackTrace();
             System.exit(2);
         }
-        /*
-        String word = "";
+        Container container = new Container();
+        String word;
         try {
-            word = fileReader.getNextWord();
+            while (true) {
+                word = myFileReader.getNextWord();
+                if (word == null) {
+                    break;
+                }
+                if (!word.equals(EMPTY)) {
+                    container.addWordToMap(word);
+                }
+            }
         }
         catch (IOException exception) {
             System.err.println(exception.getMessage());
             exception.printStackTrace();
             System.exit(3);
         }
-        System.out.println(word);
-        */
+        finally {
+            try {
+                myFileReader.close();
+            }
+            catch (IOException exception) {
+                System.out.println(exception.getMessage());
+                exception.printStackTrace();
+                System.exit(4);
+            }
+        }
+        ArrayOfResult arrayOfResult = new ArrayOfResult(container);
+        MyFileWriter myFileWriter;
+        try {
+            myFileWriter = new MyFileWriter();
+            myFileWriter.outputData(arrayOfResult);
+        }
+        catch (IOException exception) {
+            System.out.println(exception.getMessage());
+            exception.printStackTrace();
+            System.exit(5);
+        }
     }
 }

@@ -6,8 +6,8 @@ import ru.nsu.bolotov.exceptions.InvalidFileExtension;
 public class FileChecker {
     public FileChecker(String path) {
         this.path = path;
-        patterns = new Pattern[] {Pattern.compile("^[\\w\\W]*\\.txt$"), Pattern.compile("^[\\w\\W]*\\.doc$"),
-        Pattern.compile("^(\\.)?[\\w\\W&&[^.]]*[^.]")};
+        patterns = new Pattern[] {Pattern.compile("^[\\w&&[^.]]*\\.txt$"), Pattern.compile("^[\\w&&[^.]]*\\.doc$"),
+        Pattern.compile("^(\\.)?[\\w\\W&&[^.]]*$")};
     }
     public void checkExtension() throws InvalidFileExtension {
         boolean status = false;
