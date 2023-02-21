@@ -7,11 +7,11 @@
     <list default="true" id="6c48b40d-cb55-495e-b270-15dc564816c6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/lab1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lab1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/application/info/UtilityInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/utility/UtilityInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/FileChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/FileChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/MyFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/resources/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/resources/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/MyFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/MyFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/production/lab1/output.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/file/MyFileReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/file/MyFileReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/production/lab1/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +21,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -36,24 +37,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/mac/IntelliJProjects/Java-Projects/lab1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mac/IntelliJProjects/Java-Projects/lab1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.General [txt]">
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ru.nsu.bolotov.file" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.FileCheckerTest.checkBadExtensionsTest">
     <configuration name="General [doc]" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ru.nsu.bolotov.application.Main" />
       <module name="lab1" />
@@ -81,11 +97,71 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FileCheckerTest.checkBadExtensionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lab1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.nsu.bolotov.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.nsu.bolotov.file" />
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.bolotov.file.FileCheckerTest" />
+      <option name="METHOD_NAME" value="checkBadExtensionsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyFileReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lab1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.nsu.bolotov.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.nsu.bolotov.file" />
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.bolotov.file.MyFileReaderTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab1/src/test/resources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyFileReaderTest.getNextWordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lab1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.nsu.bolotov.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.nsu.bolotov.file" />
+      <option name="MAIN_CLASS_NAME" value="ru.nsu.bolotov.file.MyFileReaderTest" />
+      <option name="METHOD_NAME" value="getNextWordTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab1/src/test/resources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.General [txt]" />
       <item itemvalue="Application.General [doc]" />
       <item itemvalue="Application.General [empty]" />
+      <item itemvalue="JUnit.FileCheckerTest.checkBadExtensionsTest" />
+      <item itemvalue="JUnit.MyFileReaderTest" />
+      <item itemvalue="JUnit.MyFileReaderTest.getNextWordTest" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FileCheckerTest.checkBadExtensionsTest" />
+        <item itemvalue="JUnit.MyFileReaderTest" />
+        <item itemvalue="JUnit.MyFileReaderTest.getNextWordTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -98,7 +174,11 @@
       <workItem from="1676821418738" duration="13000" />
       <workItem from="1676896942257" duration="105000" />
       <workItem from="1676897056191" duration="143000" />
-      <workItem from="1676897209806" duration="7290000" />
+      <workItem from="1676897209806" duration="7756000" />
+      <workItem from="1676960995791" duration="2217000" />
+      <workItem from="1676982439326" duration="225000" />
+      <workItem from="1676995073940" duration="246000" />
+      <workItem from="1676995333397" duration="2480000" />
     </task>
     <servers />
   </component>

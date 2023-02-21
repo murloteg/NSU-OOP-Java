@@ -1,6 +1,7 @@
 package ru.nsu.bolotov.file;
 
 import java.io.*;
+
 public class MyFileReader {
     public MyFileReader(String path) throws FileNotFoundException {
         this.path = new File(path);
@@ -11,12 +12,12 @@ public class MyFileReader {
     }
     public String getNextWord() throws IOException {
         StringBuilder currentWord = new StringBuilder();
-        int characterCode = 0;
+        int characterCode;
         while ((characterCode = in.read()) != -1) {
             if (Character.isLetterOrDigit((char) characterCode)) {
                 currentWord.append((char) characterCode);
             }
-            else {
+            else if (currentWord.length() > 0) {
                 break;
             }
         }
