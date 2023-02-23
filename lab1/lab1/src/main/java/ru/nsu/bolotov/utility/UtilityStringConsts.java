@@ -1,5 +1,8 @@
 package ru.nsu.bolotov.utility;
 
-abstract public class UtilityStringConsts {
-    public final static String EMPTY = "";
+public abstract class UtilityStringConsts {
+    private UtilityStringConsts() {
+        throw new IllegalStateException("Utility class");
+    }
+    public static final String EMPTY = "";
 }

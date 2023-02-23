@@ -4,12 +4,13 @@ import java.io.*;
 
 public class MyFileReader {
     public MyFileReader(String path) throws FileNotFoundException {
-        this.path = new File(path);
-        if (!this.path.exists()) {
+        File currentPath = new File(path);
+        if (!currentPath.exists()) {
             throw new FileNotFoundException();
         }
         in = new BufferedReader(new FileReader(path));
     }
+
     public String getNextWord() throws IOException {
         StringBuilder currentWord = new StringBuilder();
         int characterCode;
@@ -21,14 +22,14 @@ public class MyFileReader {
                 break;
             }
         }
-        if (characterCode == -1) {
+        if (characterCode == -1 && currentWord.length() == 0) {
             return null;
         }
         return currentWord.toString();
     }
+
     public void close() throws IOException {
         in.close();
     }
     private final BufferedReader in;
-    private final File path;
 }

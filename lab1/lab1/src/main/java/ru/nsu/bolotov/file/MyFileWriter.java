@@ -5,8 +5,10 @@ import ru.nsu.bolotov.storageunit.*;
 
 public class MyFileWriter {
     public MyFileWriter() throws IOException {
+        File output = new File("output.csv");
         out = new BufferedWriter(new FileWriter(output));
     }
+
     public void outputData(ArrayOfResult arrayOfResult) throws IOException {
         for (StorageUnit storageUnit : arrayOfResult.getArray()) {
             out.write(storageUnit.getWord());
@@ -18,7 +20,6 @@ public class MyFileWriter {
         }
         out.close();
     }
-    private final File output = new File("output.csv");
     private final BufferedWriter out;
     private static final String DELIMITER = "\t";
 }

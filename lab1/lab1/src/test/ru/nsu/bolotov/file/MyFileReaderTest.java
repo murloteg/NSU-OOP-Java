@@ -1,6 +1,8 @@
 package ru.nsu.bolotov.file;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.ValueSource;
 import java.io.*;
 import java.util.*;
 
@@ -8,10 +10,18 @@ import static org.junit.jupiter.api.Assertions.*;
 import static ru.nsu.bolotov.utility.UtilityStringConsts.EMPTY;
 
 class MyFileReaderTest {
-    MyFileReaderTest() throws FileNotFoundException {
+    @ParameterizedTest
+    @ValueSource(strings = {"illegal.txt", "unavailable.doc", "a.out"})
+    void constructorThrowsExceptionTest(String path) {
+        assertThrows(FileNotFoundException.class, () -> {
+            new MyFileReader(path);
+        });
     }
-    @Test
-    void getNextWordTest() throws IOException {
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/reader-test-source.csv", numLinesToSkip = 1, delimiter = ':')
+    void getNextWordTest(String input, String expected) throws IOException {
+        fileReader = new MyFileReader(input);
         ArrayList<String> arrayList = new ArrayList<>();
         String currentWord;
         while (true) {
@@ -23,8 +33,8 @@ class MyFileReaderTest {
                 arrayList.add(currentWord);
             }
         }
-        String[] expectedResult = new String[] {"this", "is", "simple", "test", "case", "end"};
+        String[] expectedResult = expected.split(" ");
         assertArrayEquals(expectedResult, arrayList.toArray());
     }
-    private final MyFileReader fileReader = new MyFileReader("test-input");
+    public MyFileReader fileReader;
 }

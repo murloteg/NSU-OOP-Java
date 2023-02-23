@@ -13,6 +13,7 @@ public class ArrayOfResult {
         }
         Arrays.sort(array, Collections.reverseOrder());
     }
+
     public StorageUnit[] getArray() {
         return array;
     }

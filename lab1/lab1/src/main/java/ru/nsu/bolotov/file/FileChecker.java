@@ -7,8 +7,9 @@ public class FileChecker {
     public FileChecker(String path) {
         this.path = path;
         patterns = new Pattern[] {Pattern.compile("^[\\w&&[^.]]*\\.txt$"), Pattern.compile("^[\\w&&[^.]]*\\.doc$"),
-        Pattern.compile("^(\\.)?[\\w\\W&&[^.]]*$")};
+        Pattern.compile("^[\\w&&[^.]]*$")};
     }
+
     public void checkExtension() throws InvalidFileExtension {
         boolean status = false;
         for (Pattern pattern : patterns) {

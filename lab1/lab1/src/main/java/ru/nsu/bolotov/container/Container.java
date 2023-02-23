@@ -3,34 +3,25 @@ package ru.nsu.bolotov.container;
 import java.util.*;
 
 public class Container {
-    public Container() {
-        container = new HashMap<>();
-    }
     public void addWordToMap(String currentWord) {
         int frequency = 1;
-        if (container.containsKey(currentWord)) {
-            frequency = container.get(currentWord);
-            container.replace(currentWord, frequency + 1);
+        if (dataMap.containsKey(currentWord)) {
+            frequency = dataMap.get(currentWord);
+            dataMap.replace(currentWord, frequency + 1);
         }
         else {
-            container.put(currentWord, frequency);
+            dataMap.put(currentWord, frequency);
         }
         ++totalWordCounter;
     }
-    public HashMap<String, Integer> getContainer() {
-        return container;
+
+    public Map<String, Integer> getContainer() {
+        return dataMap;
     }
+
     public int getTotalWordCounter() {
         return totalWordCounter;
     }
-    public String toString() {
-        StringBuilder result = new StringBuilder();
-        for (String key : container.keySet()) {
-            result.append(key).append(" : ").append(container.get(key)).append("\n");
-        }
-        result.append("Total counter: ").append(totalWordCounter);
-        return result.toString();
-    }
-    private final HashMap<String, Integer> container;
+    private final HashMap<String, Integer> dataMap = new HashMap<>();
     private int totalWordCounter = 0;
 }
