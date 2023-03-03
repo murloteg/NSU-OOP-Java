@@ -1,4 +1,10 @@
 package ru.nsu.bolotov.commands;
 
-public class Minus {
+import ru.nsu.bolotov.context.Context;
+
+public class Minus implements Command {
+    @Override
+    public void execute(Object[] args, Context context) {
+
+    }
 }

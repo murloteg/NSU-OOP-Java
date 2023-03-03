@@ -1,4 +1,10 @@
 package ru.nsu.bolotov.commands;
 
-public class Divide {
+import ru.nsu.bolotov.context.Context;
+
+public class Divide implements Command {
+    @Override
+    public void execute(Object[] args, Context context) {
+
+    }
 }
