@@ -4,7 +4,7 @@ import ru.nsu.bolotov.context.Context;
 
 public class Divide implements Command {
     @Override
-    public void execute(Object[] args, Context context) {
+    public void execute(Number[] args, Context context) {
 
     }
 }

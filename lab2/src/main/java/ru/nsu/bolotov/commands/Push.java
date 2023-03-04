@@ -5,13 +5,12 @@ import ru.nsu.bolotov.exceptions.InvalidArgsException;
 
 public class Push implements Command {
     @Override
-    public void execute(Object[] args, Context context) {
+    public void execute(Number[] args, Context context) {
         if (args.length == 0) {
             throw new InvalidArgsException();
         }
-        if (args[0] instanceof Double) {
-            Double value = (Double) args[0];
-            context.addValueToStack(value);
-        }
+
+        Double value = (Double) args[0];
+        context.addValueToStack(value);
     }
 }

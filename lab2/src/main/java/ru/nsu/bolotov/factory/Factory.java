@@ -23,8 +23,7 @@ public class Factory {
             case "POP": {
                 Class<?> currentCommandClass = Class.forName(properties.getProperty(command));
                 Object instancedObject = currentCommandClass.newInstance();
-                boolean resultOfInstanceOf = instancedObject instanceof Pop;
-                if (!resultOfInstanceOf) {
+                if (!(instancedObject instanceof Pop)) {
                     throw new InvalidInstanceOfException();
                 }
                 return (Pop) instancedObject;
@@ -32,8 +31,7 @@ public class Factory {
             case "PUSH": {
                 Class<?> currentCommandClass = Class.forName(properties.getProperty(command));
                 Object instancedObject = currentCommandClass.newInstance();
-                boolean resultOfInstanceOf = instancedObject instanceof Push;
-                if (!resultOfInstanceOf) {
+                if (!(instancedObject instanceof Push)) {
                     throw new InvalidInstanceOfException();
                 }
                 return (Push) instancedObject;
@@ -41,8 +39,7 @@ public class Factory {
             case "DEFINE": {
                 Class<?> currentCommandClass = Class.forName(properties.getProperty(command));
                 Object instancedObject = currentCommandClass.newInstance();
-                boolean resultOfInstanceOf = instancedObject instanceof Define;
-                if (!resultOfInstanceOf) {
+                if (!(instancedObject instanceof Define)) {
                     throw new InvalidInstanceOfException();
                 }
                 return (Define) instancedObject;
@@ -50,8 +47,7 @@ public class Factory {
             case "PRINT": {
                 Class<?> currentCommandClass = Class.forName(properties.getProperty(command));
                 Object instancedObject = currentCommandClass.newInstance();
-                boolean resultOfInstanceOf = instancedObject instanceof Print;
-                if (!resultOfInstanceOf) {
+                if (!(instancedObject instanceof Print)) {
                     throw new InvalidInstanceOfException();
                 }
                 return (Print) instancedObject;
@@ -60,8 +56,7 @@ public class Factory {
             case "PLUS": {
                 Class<?> currentCommandClass = Class.forName(properties.getProperty(command));
                 Object instancedObject = currentCommandClass.newInstance();
-                boolean resultOfInstanceOf = instancedObject instanceof Plus;
-                if (!resultOfInstanceOf) {
+                if (!(instancedObject instanceof Plus)) {
                     throw new InvalidInstanceOfException();
                 }
                 return (Plus) instancedObject;
@@ -69,8 +64,7 @@ public class Factory {
             case "MINUS": {
                 Class<?> currentCommandClass = Class.forName(properties.getProperty(command));
                 Object instancedObject = currentCommandClass.newInstance();
-                boolean resultOfInstanceOf = instancedObject instanceof Minus;
-                if (!resultOfInstanceOf) {
+                if (!(instancedObject instanceof Minus)) {
                     throw new InvalidInstanceOfException();
                 }
                 return (Minus) instancedObject;
@@ -78,8 +72,7 @@ public class Factory {
             case "MULTIPLY": {
                 Class<?> currentCommandClass = Class.forName(properties.getProperty(command));
                 Object instancedObject = currentCommandClass.newInstance();
-                boolean resultOfInstanceOf = instancedObject instanceof Multiply;
-                if (!resultOfInstanceOf) {
+                if (!(instancedObject instanceof Multiply)) {
                     throw new InvalidInstanceOfException();
                 }
                 return (Multiply) instancedObject;
@@ -87,8 +80,7 @@ public class Factory {
             case "DIVIDE": {
                 Class<?> currentCommandClass = Class.forName(properties.getProperty(command));
                 Object instancedObject = currentCommandClass.newInstance();
-                boolean resultOfInstanceOf = instancedObject instanceof Divide;
-                if (!resultOfInstanceOf) {
+                if (!(instancedObject instanceof Divide)) {
                     throw new InvalidInstanceOfException();
                 }
                 return (Divide) instancedObject;
@@ -96,8 +88,7 @@ public class Factory {
             case "SQRT": {
                 Class<?> currentCommandClass = Class.forName(properties.getProperty(command));
                 Object instancedObject = currentCommandClass.newInstance();
-                boolean resultOfInstanceOf = instancedObject instanceof Sqrt;
-                if (!resultOfInstanceOf) {
+                if (!(instancedObject instanceof Sqrt)) {
                     throw new InvalidInstanceOfException();
                 }
                 return (Sqrt) instancedObject;

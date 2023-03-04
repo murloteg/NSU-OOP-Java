@@ -4,8 +4,13 @@ import ru.nsu.bolotov.context.Context;
 
 public class Pop implements Command {
     private Double poppedValue;
+
     @Override
-    public void execute(Object[] args, Context context) {
+    public void execute(Number[] args, Context context) {
         poppedValue = context.popValueFromStack();
+    }
+
+    public Double getPoppedValue() {
+        return poppedValue;
     }
 }
