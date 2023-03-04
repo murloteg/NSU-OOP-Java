@@ -5,46 +5,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c48b40d-cb55-495e-b270-15dc564816c6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/application/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/exceptions/InvalidFileExtension.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/file/MyFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/file/MyFileWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/lab1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lab1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/container/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/container/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/exceptions/InvalidFileExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/exceptions/InvalidFileExtension.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/FileChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/FileChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/MyFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/MyFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/MyFileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/MyFileWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/storageunit/ArrayOfResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/storageunit/ArrayOfResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/storageunit/StorageUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/storageunit/StorageUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/utility/UtilityInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/utility/UtilityInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/utility/UtilityStringConsts.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/utility/UtilityStringConsts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/resources/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/resources/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/test/resources/test-input" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/test/ru/nsu/bolotov/file/FileCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/test/ru/nsu/bolotov/file/FileCheckerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/test/ru/nsu/bolotov/file/MyFileReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/test/ru/nsu/bolotov/file/MyFileReaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/container/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/container/Container.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/exceptions/InvalidFileExtension.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/exceptions/InvalidFileExtension.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/file/FileChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/file/FileChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/file/MyFileReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/file/MyFileReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/file/MyFileWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/file/MyFileWriter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/storageunit/ArrayOfResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/storageunit/ArrayOfResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/storageunit/StorageUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/storageunit/StorageUnit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/utility/UtilityInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/utility/UtilityInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/utility/UtilityStringConsts.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/utility/UtilityStringConsts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/resources/test-input" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/ru/nsu/bolotov/file/FileCheckerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/test/lab1/ru/nsu/bolotov/file/FileCheckerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/ru/nsu/bolotov/file/MyFileReaderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/target/test/lab1/ru/nsu/bolotov/file/MyFileReaderTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/test-input" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/application/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/container/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/container/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/exceptions/InvalidFileExtension.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/FileChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/file/FileChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/MyFileReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/file/MyFileWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/storageunit/ArrayOfResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/storageunit/ArrayOfResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/storageunit/StorageUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/storageunit/StorageUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/utility/UtilityInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/utility/UtilityInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/bolotov/utility/UtilityStringConsts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/utility/UtilityStringConsts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/resources/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/resources/output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/output.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/test/resources/first-set" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/first-set" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/test/resources/reader-test-source.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/reader-test-source.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/test/resources/second-set" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/second-set" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/test/resources/third-set" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/third-set" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/test/ru/nsu/bolotov/container/ContainerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ru/nsu/bolotov/container/ContainerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/test/ru/nsu/bolotov/file/FileCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ru/nsu/bolotov/file/FileCheckerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/test/ru/nsu/bolotov/file/MyFileReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ru/nsu/bolotov/file/MyFileReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/test/ru/nsu/bolotov/storageunit/StorageUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ru/nsu/bolotov/storageunit/StorageUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/classes/ru/nsu/bolotov/application/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/classes/ru/nsu/bolotov/application/info/UtilityInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/classes/ru/nsu/bolotov/exceptions/InvalidFileExtension.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/classes/ru/nsu/bolotov/file/FileChecker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/classes/ru/nsu/bolotov/file/FileReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/classes/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/output.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/application/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/container/Container.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/exceptions/InvalidFileExtension.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/file/FileChecker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/file/MyFileReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/file/MyFileWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/storageunit/ArrayOfResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/storageunit/StorageUnit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/utility/UtilityInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/production/lab1/ru/nsu/bolotov/utility/UtilityStringConsts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/first-set" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/reader-test-source.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/resources/first-set" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/resources/reader-test-source.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/resources/second-set" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/resources/third-set" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/ru/nsu/bolotov/container/ContainerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/ru/nsu/bolotov/file/FileCheckerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/ru/nsu/bolotov/file/MyFileReaderTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/ru/nsu/bolotov/storageunit/StorageUnitTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/second-set" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/target/test/lab1/third-set" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/apiguardian-api-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-5.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-api-5.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-jupiter-params-5.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-platform-commons-1.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/junit-platform-engine-1.9.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/opentest4j-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +80,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -87,7 +113,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "configurable.group.appearance",
@@ -98,18 +124,21 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="ru.nsu.bolotov.container" />
       <recent name="ru.nsu.bolotov.storageunit" />
       <recent name="ru.nsu.bolotov.file" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ContainerTest.generalMethodsTest (1)">
+  <component name="RunManager" selected="Application.General [txt]">
     <configuration name="General [doc]" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ru.nsu.bolotov.application.Main" />
       <module name="lab1" />
       <option name="PROGRAM_PARAMETERS" value="test.doc" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab1/src/main/resources" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/resources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,7 +156,7 @@
       <option name="MAIN_CLASS_NAME" value="ru.nsu.bolotov.application.Main" />
       <module name="lab1" />
       <option name="PROGRAM_PARAMETERS" value="input.txt" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab1/src/main/resources" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/resources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,7 +167,7 @@
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab1/src/test/resources" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/test/resources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,7 +187,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContainerTest.generalMethodsTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContainerTest.generalMethodsTest" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="lab1" />
       <extension name="coverage">
         <pattern>
@@ -169,22 +198,6 @@
       <option name="PACKAGE_NAME" value="ru.nsu.bolotov.container" />
       <option name="MAIN_CLASS_NAME" value="ru.nsu.bolotov.container.ContainerTest" />
       <option name="METHOD_NAME" value="generalMethodsTest(java.lang.String,int,int)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContainerTest.generalMethodsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lab1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.nsu.bolotov.container.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.nsu.bolotov.container" />
-      <option name="MAIN_CLASS_NAME" value="ru.nsu.bolotov.container.ContainerTest" />
-      <option name="METHOD_NAME" value="generalMethodsTest(java.lang.String,int)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -223,16 +236,15 @@
       <item itemvalue="JUnit.StorageUnitTest" />
       <item itemvalue="JUnit.ContainerTest" />
       <item itemvalue="JUnit.ContainerTest.generalMethodsTest" />
-      <item itemvalue="JUnit.ContainerTest.generalMethodsTest (1)" />
       <item itemvalue="JUnit.StorageUnitTest.reflexiveEqualsTest" />
       <item itemvalue="JUnit.All in lab1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ContainerTest.generalMethodsTest (1)" />
+        <item itemvalue="JUnit.All in lab1" />
+        <item itemvalue="JUnit.ContainerTest.generalMethodsTest" />
         <item itemvalue="JUnit.ContainerTest" />
         <item itemvalue="JUnit.ContainerTest.generalMethodsTest" />
-        <item itemvalue="JUnit.All in lab1" />
         <item itemvalue="JUnit.StorageUnitTest.reflexiveEqualsTest" />
       </list>
     </recent_temporary>
@@ -264,7 +276,15 @@
       <workItem from="1677119966003" duration="37000" />
       <workItem from="1677120238712" duration="49000" />
       <workItem from="1677120471097" duration="98000" />
-      <workItem from="1677120622781" duration="6697000" />
+      <workItem from="1677120622781" duration="7143000" />
+      <workItem from="1677128259685" duration="153000" />
+      <workItem from="1677497561338" duration="22000" />
+      <workItem from="1677554579059" duration="1641000" />
+      <workItem from="1677563886266" duration="249000" />
+      <workItem from="1677566037124" duration="13000" />
+      <workItem from="1677779489635" duration="16000" />
+      <workItem from="1677860109583" duration="13000" />
+      <workItem from="1677944773564" duration="4867000" />
     </task>
     <servers />
   </component>
@@ -287,8 +307,11 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/lab1$All_in_lab1.ic" NAME="All in lab1 Coverage Results" MODIFIED="1677125844237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/lab1$All_in_lab1.ic" NAME="All in lab1 Coverage Results" MODIFIED="1677949620577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/lab1$StorageUnitTest.ic" NAME="StorageUnitTest Coverage Results" MODIFIED="1677124534070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/lab1$ContainerTest_generalMethodsTest__1_.ic" NAME="ContainerTest.generalMethodsTest (1) Coverage Results" MODIFIED="1677127920590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ru.nsu.bolotov.container.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/lab1$MyFileReaderTest.ic" NAME="MyFileReaderTest Coverage Results" MODIFIED="1677076997521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ru.nsu.bolotov.file.*</FILTER>
     </SUITE>
@@ -297,6 +320,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/lab1$FileCheckerTest.ic" NAME="FileCheckerTest Coverage Results" MODIFIED="1677076974178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ru.nsu.bolotov.file.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/lab1$ContainerTest.ic" NAME="ContainerTest Coverage Results" MODIFIED="1677127802889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ru.nsu.bolotov.container.*</FILTER>
     </SUITE>
   </component>
 </project>
