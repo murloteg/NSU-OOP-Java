@@ -1,6 +1,7 @@
 package ru.nsu.bolotov.factory;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 import ru.nsu.bolotov.exceptions.IncorrectPropertyFile;
 import ru.nsu.bolotov.exceptions.InvalidInstanceOfException;

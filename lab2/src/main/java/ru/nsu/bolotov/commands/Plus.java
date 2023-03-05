@@ -3,12 +3,11 @@ package ru.nsu.bolotov.commands;
 import ru.nsu.bolotov.context.Context;
 import ru.nsu.bolotov.factory.Factory;
 import ru.nsu.bolotov.exceptions.FailedCreationException;
-
 import java.io.IOException;
 
 public class Plus implements Command {
     @Override
-    public void execute(Number[] args, Context context) {
+    public void execute(Object[] args, Context context) {
         Pop popCommand;
         try {
             popCommand = (Pop) Factory.create("POP");

@@ -6,7 +6,7 @@ public class Pop implements Command {
     private Double poppedValue;
 
     @Override
-    public void execute(Number[] args, Context context) {
+    public void execute(Object[] args, Context context) {
         poppedValue = context.popValueFromStack();
     }
 

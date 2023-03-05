@@ -1,9 +1,11 @@
 package ru.nsu.bolotov.context;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 
 public class Context {
-    private static final Map<String, Double> definitionsMap = new HashMap<>();
+    private static final Map<Character, Double> definitionsMap = new HashMap<>();
     private static final LinkedList<Double> stack = new LinkedList<>();
 
     public void addValueToStack(Double value) {
@@ -14,7 +16,11 @@ public class Context {
         return stack.removeLast();
     }
 
-    public void addDefinitionToMap(String alias, Double value) {
+    public void addDefinitionToMap(Character alias, Double value) {
         definitionsMap.put(alias, value);
+    }
+
+    public Double getDefinitionFromMap(Character alias) {
+        return definitionsMap.get(alias);
     }
 }
