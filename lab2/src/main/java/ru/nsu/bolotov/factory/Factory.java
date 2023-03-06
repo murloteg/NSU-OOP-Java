@@ -3,6 +3,8 @@ package ru.nsu.bolotov.factory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+
+import ru.nsu.bolotov.exceptions.FailedCreationException;
 import ru.nsu.bolotov.exceptions.IncorrectPropertyFile;
 import ru.nsu.bolotov.exceptions.InvalidInstanceOfException;
 
@@ -95,7 +97,7 @@ public class Factory {
                 return (Sqrt) instancedObject;
             }
             default:
-                return null;
+                throw new FailedCreationException();
         }
     }
 }

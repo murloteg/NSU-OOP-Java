@@ -5,11 +5,9 @@ import ru.nsu.bolotov.commands.*;
 import ru.nsu.bolotov.context.Context;
 import ru.nsu.bolotov.exceptions.FailedCreationException;
 import ru.nsu.bolotov.factory.Factory;
-
+import ru.nsu.bolotov.util.CommandUtil;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 import static ru.nsu.bolotov.util.UtilConsts.EMPTY;
 
@@ -35,53 +33,26 @@ public class Main {
         } catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException exception) {
             throw new FailedCreationException(exception.getMessage());
         }
-        assert defineCommand != null;
         defineCommand.execute(new Object[] {'c', 4.0}, context);
-        defineCommand.execute(new Object[] {'b', 10.0}, context);
+        defineCommand.execute(new Object[] {'b', 2.0}, context);
 
-        Command pushCommand;
-        try {
-            pushCommand = (Push) Factory.create("PUSH");
-        } catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException exception) {
-            throw new FailedCreationException(exception.getMessage());
-        }
-        assert pushCommand != null;
+        Command pushCommand = CommandUtil.createPushCommand();
         pushCommand.execute(new Object[] {'c'}, context);
         pushCommand.execute(new Object[] {'b'}, context);
 
-        Command popCommand;
+        Command sqrt;
         try {
-            popCommand = (Pop) Factory.create("POP");
+            sqrt = Factory.create("SQRT");
         } catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException exception) {
             throw new FailedCreationException(exception.getMessage());
         }
-
-        Command plusCommand;
+        sqrt.execute(new Object[] {}, context);
+        Command print;
         try {
-            plusCommand = (Plus) Factory.create("PLUS");
+            print = Factory.create("PRINT");
         } catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException exception) {
             throw new FailedCreationException(exception.getMessage());
         }
-        assert plusCommand != null;
-        plusCommand.execute(new Number[] {}, context);
-
-        assert popCommand != null;
-        popCommand.execute(new Number[] {}, context);
-
-        Method method;
-        try {
-            method = popCommand.getClass().getMethod("getPoppedValue");
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        }
-        Object value;
-        try {
-            value = method.invoke(popCommand);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println(value);
+        print.execute(new Object[]{}, context);
     }
 }
