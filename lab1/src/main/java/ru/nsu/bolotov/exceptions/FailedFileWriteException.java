@@ -11,6 +11,6 @@ public class FailedFileWriteException extends RuntimeException {
 
     @Override
     public String getMessage() {
-        return "Failure writing to file";
+        return "Failed writing to file";
     }
 }

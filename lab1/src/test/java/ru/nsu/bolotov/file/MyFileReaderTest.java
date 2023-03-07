@@ -2,6 +2,7 @@ package ru.nsu.bolotov.file;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import ru.nsu.bolotov.exceptions.InvalidFilePath;
 import java.util.ArrayList;
@@ -10,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static ru.nsu.bolotov.utility.UtilityStringConsts.EMPTY;
 
 class MyFileReaderTest {
+    public MyFileReader fileReader;
+
     @ParameterizedTest
     @ValueSource(strings = {"illegal.txt", "unavailable.doc", "a.out"})
     void constructorThrowsExceptionTest(String path) {
@@ -36,5 +39,17 @@ class MyFileReaderTest {
         String[] expectedResult = expected.split(" ");
         assertArrayEquals(expectedResult, arrayList.toArray());
     }
-    public MyFileReader fileReader;
+
+    @ParameterizedTest
+    @CsvSource(value = {
+            "first-set",
+            "second-set",
+            "third-set"
+    })
+    void closeTest(String path) {
+        fileReader = new MyFileReader(path);
+        assertDoesNotThrow(() -> {
+           fileReader.close();
+        });
+    }
 }

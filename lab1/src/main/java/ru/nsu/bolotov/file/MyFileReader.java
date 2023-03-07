@@ -3,15 +3,16 @@ package ru.nsu.bolotov.file;
 import ru.nsu.bolotov.exceptions.FailedFileCloseException;
 import ru.nsu.bolotov.exceptions.FailedFileReadException;
 import ru.nsu.bolotov.exceptions.InvalidFilePath;
+
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.FileNotFoundException;
 
 public class MyFileReader implements AutoCloseable {
     private final BufferedReader in;
 
-    public MyFileReader(String path) throws InvalidFilePath {
+    public MyFileReader(String path) {
         try {
             in = new BufferedReader(new FileReader(path));
         } catch (FileNotFoundException exception) {
@@ -19,7 +20,7 @@ public class MyFileReader implements AutoCloseable {
         }
     }
 
-    public String getNextWord() throws FailedFileReadException {
+    public String getNextWord() {
         StringBuilder currentWord = new StringBuilder();
         int characterCode;
         try {
@@ -40,9 +41,9 @@ public class MyFileReader implements AutoCloseable {
         return currentWord.toString();
     }
 
-    public void close() throws FailedFileCloseException {
+    public void close() {
         try {
-        in.close();
+            in.close();
         } catch (IOException exception) {
             throw new FailedFileCloseException(exception.getMessage());
         }

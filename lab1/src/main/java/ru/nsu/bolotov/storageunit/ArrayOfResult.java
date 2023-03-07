@@ -1,15 +1,11 @@
 package ru.nsu.bolotov.storageunit;
 
-import ru.nsu.bolotov.container.*;
+import ru.nsu.bolotov.container.Container;
 
 import java.util.Arrays;
 import java.util.Collections;
 
 public class ArrayOfResult {
-    public StorageUnit[] getArray() {
-        return array;
-    }
-
     private final StorageUnit[] array;
 
     public ArrayOfResult(Container container) {
@@ -20,5 +16,9 @@ public class ArrayOfResult {
             ++index;
         }
         Arrays.sort(array, Collections.reverseOrder());
+    }
+
+    public StorageUnit[] getArray() {
+        return array;
     }
 }

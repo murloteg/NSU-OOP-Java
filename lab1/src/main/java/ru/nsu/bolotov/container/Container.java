@@ -1,6 +1,7 @@
 package ru.nsu.bolotov.container;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Container {
     private final Map<String, Integer> dataMap = new HashMap<>();
@@ -11,8 +12,7 @@ public class Container {
         if (dataMap.containsKey(currentWord)) {
             frequency = dataMap.get(currentWord);
             dataMap.replace(currentWord, frequency + 1);
-        }
-        else {
+        } else {
             dataMap.put(currentWord, frequency);
         }
         ++totalWordCounter;

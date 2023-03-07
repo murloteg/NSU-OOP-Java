@@ -1,8 +1,8 @@
 package ru.nsu.bolotov.file;
 
-import java.util.regex.Pattern;
-
 import ru.nsu.bolotov.exceptions.InvalidFileExtension;
+
+import java.util.regex.Pattern;
 
 public class FileChecker {
     private final Pattern[] patterns;
@@ -14,7 +14,7 @@ public class FileChecker {
                 Pattern.compile("^[\\w&&[^.]]*$")};
     }
 
-    public void checkExtension() throws InvalidFileExtension {
+    public void checkExtension() {
         boolean status = false;
         for (Pattern pattern : patterns) {
             status |= path.matches(pattern.pattern());

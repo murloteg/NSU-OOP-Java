@@ -11,6 +11,6 @@ public class FailedFileReadException extends RuntimeException {
 
     @Override
     public String getMessage() {
-        return "Failure reading from file";
+        return "Failed reading from file";
     }
 }

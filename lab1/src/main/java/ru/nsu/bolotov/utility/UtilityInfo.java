@@ -15,5 +15,4 @@ public abstract class UtilityInfo {
     private UtilityInfo() {
         throw new IllegalStateException("Utility class");
     }
-
 }
