@@ -1,19 +1,19 @@
 package ru.nsu.bolotov.factory;
 
+import ru.nsu.bolotov.exceptions.FailedCreationException;
+import ru.nsu.bolotov.exceptions.IncorrectPropertyFile;
+import ru.nsu.bolotov.exceptions.InvalidInstanceOfException;
+import ru.nsu.bolotov.commands.*;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import ru.nsu.bolotov.exceptions.FailedCreationException;
-import ru.nsu.bolotov.exceptions.IncorrectPropertyFile;
-import ru.nsu.bolotov.exceptions.InvalidInstanceOfException;
-
-import ru.nsu.bolotov.commands.*;
-
-public class Factory {
+public abstract class Factory {
     private Factory() {
-
+        throw new IllegalStateException("Instantiation of factory class");
     }
+
     public static Command create(String command) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         Properties properties = new Properties();
         InputStream resourceStream = Command.class.getClassLoader().getResourceAsStream("all.properties");

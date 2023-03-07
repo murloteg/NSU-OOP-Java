@@ -4,9 +4,10 @@ import ru.nsu.bolotov.commands.Pop;
 import ru.nsu.bolotov.commands.Push;
 import ru.nsu.bolotov.exceptions.FailedCreationException;
 import ru.nsu.bolotov.factory.Factory;
+
 import java.io.IOException;
 
-public abstract class CommandUtil {
+public abstract class CommandUtils {
     public static Pop createPopCommand() {
         Pop popCommand;
         try {
@@ -27,7 +28,7 @@ public abstract class CommandUtil {
         return pushCommand;
     }
 
-    private CommandUtil() {
+    private CommandUtils() {
         throw new IllegalStateException("Util class");
     }
 }

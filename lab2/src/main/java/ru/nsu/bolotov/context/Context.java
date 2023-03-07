@@ -3,7 +3,6 @@ package ru.nsu.bolotov.context;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.NoSuchElementException;
 
 public class Context {
     private static final Map<Character, Double> definitionsMap = new HashMap<>();
@@ -13,11 +12,11 @@ public class Context {
         stack.add(value);
     }
 
-    public Double popValueFromStack() throws NoSuchElementException {
+    public Double popValueFromStack() {
         return stack.removeLast();
     }
 
-    public Double peekInStack() throws NoSuchElementException {
+    public Double peekInStack() {
         return stack.peekLast();
     }
 

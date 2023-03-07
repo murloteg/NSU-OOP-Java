@@ -1,8 +1,8 @@
 package ru.nsu.bolotov.exceptions;
 
-public class FileReadingException extends RuntimeException {
+public class FailedFileReadException extends RuntimeException {
     @Override
     public String getMessage() {
-        return "File reading exception";
+        return "Failed reading from file";
     }
 }
