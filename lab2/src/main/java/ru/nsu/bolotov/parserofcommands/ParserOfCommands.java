@@ -1,20 +1,16 @@
 package ru.nsu.bolotov.parserofcommands;
 
-import ru.nsu.bolotov.commands.annotations.SingleArg;
-import ru.nsu.bolotov.commands.annotations.TwoArgs;
-import ru.nsu.bolotov.commands.annotations.ZeroArgs;
 import ru.nsu.bolotov.commands.operations.Command;
 import ru.nsu.bolotov.commands.representation.CommandRepresentation;
 import ru.nsu.bolotov.exceptions.FailedFileReadException;
 import ru.nsu.bolotov.exceptions.IllegalFilePathException;
-import ru.nsu.bolotov.exceptions.InvalidTypeOfArgumentException;
 import ru.nsu.bolotov.factory.Factory;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.annotation.Annotation;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ParserOfCommands {
@@ -54,16 +50,6 @@ public class ParserOfCommands {
         }
 
         Command nextCommand = Factory.create(separatedCommand[0]);
-        Annotation[] annotations = nextCommand.getClass().getAnnotations();
-        for (Annotation annotation : annotations) {
-            if (annotation.annotationType() == ZeroArgs.class) {
-                return new CommandRepresentation(nextCommand, new Object[] {});
-            } else if (annotation.annotationType() == SingleArg.class) {
-                return new CommandRepresentation(nextCommand, new Object[] {separatedCommand[1]});
-            } else if (annotation.annotationType() == TwoArgs.class) {
-                return new CommandRepresentation(nextCommand, new Object[] {separatedCommand[1], separatedCommand[2]});
-            }
-        }
-        throw new InvalidTypeOfArgumentException(separatedCommand);
+        return new CommandRepresentation(nextCommand, Arrays.copyOfRange(separatedCommand, 1, separatedCommand.length));
     }
 }

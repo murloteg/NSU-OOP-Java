@@ -17,7 +17,7 @@ public class Print implements Command {
     @Override
     public void checkArgs(Object[] args) {
         if (args.length != ZeroArgs.NUMBER_OF_ARGS) {
-            throw new InvalidNumberOfArgsException();
+            throw new InvalidNumberOfArgsException(args.length, ZeroArgs.NUMBER_OF_ARGS);
         }
     }
 }

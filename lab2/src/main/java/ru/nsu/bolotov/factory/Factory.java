@@ -4,6 +4,7 @@ import ru.nsu.bolotov.commands.operations.Command;
 import ru.nsu.bolotov.commands.annotations.CommandAnnotation;
 import ru.nsu.bolotov.exceptions.FailedCreationException;
 import ru.nsu.bolotov.exceptions.IncorrectPropertyFile;
+import ru.nsu.bolotov.exceptions.InvalidTypeOfArgumentException;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,7 +24,12 @@ public abstract class Factory {
             throw new IncorrectPropertyFile();
         }
 
-        Class<?> currentCommandClass = Class.forName(properties.getProperty(command));
+        Class<?> currentCommandClass;
+        try {
+            currentCommandClass= Class.forName(properties.getProperty(command));
+        } catch (RuntimeException exception) {
+            throw new InvalidTypeOfArgumentException(new String[] {command});
+        }
         Annotation[] annotations = currentCommandClass.getAnnotations();
         for (Annotation annotation: annotations) {
             if (annotation.annotationType() == CommandAnnotation.class) {

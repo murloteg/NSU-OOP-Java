@@ -2,6 +2,7 @@ package ru.nsu.bolotov.commands.operations;
 
 import ru.nsu.bolotov.commands.annotations.CommandAnnotation;
 import ru.nsu.bolotov.commands.annotations.SingleArg;
+import ru.nsu.bolotov.commands.annotations.ZeroArgs;
 import ru.nsu.bolotov.context.Context;
 import ru.nsu.bolotov.exceptions.InvalidNumberOfArgsException;
 import ru.nsu.bolotov.exceptions.UndefinedAliasInDefinitionMap;
@@ -32,7 +33,7 @@ public class Push implements Command {
     @Override
     public void checkArgs(Object[] args) {
         if (args.length != SingleArg.NUMBER_OF_ARGS) {
-            throw new InvalidNumberOfArgsException();
+            throw new InvalidNumberOfArgsException(args.length, SingleArg.NUMBER_OF_ARGS);
         }
     }
 }

@@ -2,6 +2,7 @@ package ru.nsu.bolotov.commands.operations;
 
 import ru.nsu.bolotov.commands.annotations.CommandAnnotation;
 import ru.nsu.bolotov.commands.annotations.TwoArgs;
+import ru.nsu.bolotov.commands.annotations.ZeroArgs;
 import ru.nsu.bolotov.context.Context;
 import ru.nsu.bolotov.exceptions.InvalidNumberOfArgsException;
 import ru.nsu.bolotov.exceptions.InvalidTypeOfArgumentException;
@@ -22,7 +23,7 @@ public class Define implements Command {
     @Override
     public void checkArgs(Object[] args) {
         if (args.length != TwoArgs.NUMBER_OF_ARGS) {
-            throw new InvalidNumberOfArgsException();
+            throw new InvalidNumberOfArgsException(args.length, TwoArgs.NUMBER_OF_ARGS);
         }
     }
 }

@@ -24,7 +24,9 @@ public class CalculatorController {
             try {
                 commandRepresentation = parser.getNextCommand(nextCommandLine.toUpperCase());
             } catch (Exception exception) {
-                throw new FailedCreationException();
+                System.err.println(exception.getMessage());
+                nextCommandLine = parser.getNextString();
+                continue;
             }
             commandRepresentation.execute(context);
             nextCommandLine = parser.getNextString();
