@@ -2,7 +2,7 @@ package ru.nsu.bolotov.factory;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import ru.nsu.bolotov.commands.Command;
+import ru.nsu.bolotov.commands.operations.Command;
 
 import java.io.IOException;
 

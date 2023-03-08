@@ -1,7 +1,7 @@
 package ru.nsu.bolotov.util;
 
-import ru.nsu.bolotov.commands.Pop;
-import ru.nsu.bolotov.commands.Push;
+import ru.nsu.bolotov.commands.operations.Pop;
+import ru.nsu.bolotov.commands.operations.Push;
 import ru.nsu.bolotov.exceptions.FailedCreationException;
 import ru.nsu.bolotov.factory.Factory;
 

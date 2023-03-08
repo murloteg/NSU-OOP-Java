@@ -1,10 +1,12 @@
 package ru.nsu.bolotov.parserofcommands;
 
-import ru.nsu.bolotov.commands.*;
-import ru.nsu.bolotov.exceptions.FailedCreationException;
+import ru.nsu.bolotov.commands.annotations.SingleArg;
+import ru.nsu.bolotov.commands.annotations.TwoArgs;
+import ru.nsu.bolotov.commands.annotations.ZeroArgs;
+import ru.nsu.bolotov.commands.operations.Command;
+import ru.nsu.bolotov.commands.representation.CommandRepresentation;
 import ru.nsu.bolotov.exceptions.FailedFileReadException;
 import ru.nsu.bolotov.exceptions.IllegalFilePathException;
-import ru.nsu.bolotov.exceptions.InvalidNumberOfArgsException;
 import ru.nsu.bolotov.exceptions.InvalidTypeOfArgumentException;
 import ru.nsu.bolotov.factory.Factory;
 
@@ -12,9 +14,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.annotation.Annotation;
 import java.util.Scanner;
-
-import static ru.nsu.bolotov.util.UtilConsts.*;
 
 public class ParserOfCommands {
     private Scanner scanner = null;
@@ -46,125 +47,23 @@ public class ParserOfCommands {
         return nextString;
     }
 
-    public CommandRepresentation getNextCommand(String nextCommandLine) {
+    public CommandRepresentation getNextCommand(String nextCommandLine) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         String[] separatedCommand = nextCommandLine.split(" ");
-        Command nextCommand;
-//        if (nextCommandLine.contains("#")) {
-//            nextCommandLine = getNextString();
-//        }
-        if (nextCommandLine.contains(PUSH)) {
-            checkNumberOfArgs(PUSH, separatedCommand);
-            try {
-                nextCommand = Factory.create(PUSH);
-            } catch (IOException | InstantiationException | IllegalAccessException | ClassNotFoundException exception) {
-                throw new FailedCreationException();
-            }
-            return new CommandRepresentation(nextCommand, new Object[] {separatedCommand[1]});
-        } else if (nextCommandLine.contains(POP)) {
-            checkNumberOfArgs(POP, separatedCommand);
-            try {
-                nextCommand = Factory.create(POP);
-            } catch (IOException | InstantiationException | IllegalAccessException | ClassNotFoundException exception) {
-                throw new FailedCreationException();
-            }
-            return new CommandRepresentation(nextCommand, new Object[] {});
-        } else if (nextCommandLine.contains(PLUS)) {
-            checkNumberOfArgs(PLUS, separatedCommand);
-            try {
-                nextCommand = Factory.create(PLUS);
-            } catch (IOException | InstantiationException | IllegalAccessException | ClassNotFoundException exception) {
-                throw new FailedCreationException();
-            }
-            return new CommandRepresentation(nextCommand, new Object[] {});
-        } else if (nextCommandLine.contains(MINUS)) {
-            checkNumberOfArgs(MINUS, separatedCommand);
-            try {
-                nextCommand = Factory.create(MINUS);
-            } catch (IOException | InstantiationException | IllegalAccessException | ClassNotFoundException exception) {
-                throw new FailedCreationException();
-            }
-            return new CommandRepresentation(nextCommand, new Object[] {});
-        } else if (nextCommandLine.contains(MULTIPLY)) {
-            checkNumberOfArgs(MULTIPLY, separatedCommand);
-            try {
-                nextCommand = Factory.create(MULTIPLY);
-            } catch (IOException | InstantiationException | IllegalAccessException | ClassNotFoundException exception) {
-                throw new FailedCreationException();
-            }
-            return new CommandRepresentation(nextCommand, new Object[] {});
-        } else if (nextCommandLine.contains(DIVIDE)) {
-            checkNumberOfArgs(DIVIDE, separatedCommand);
-            try {
-                nextCommand = Factory.create(DIVIDE);
-            } catch (IOException | InstantiationException | IllegalAccessException | ClassNotFoundException exception) {
-                throw new FailedCreationException();
-            }
-            return new CommandRepresentation(nextCommand, new Object[] {});
-        } else if (nextCommandLine.contains(SQRT)) {
-            checkNumberOfArgs(SQRT, separatedCommand);
-            try {
-                nextCommand = Factory.create(SQRT);
-            } catch (IOException | InstantiationException | IllegalAccessException | ClassNotFoundException exception) {
-                throw new FailedCreationException();
-            }
-            return new CommandRepresentation(nextCommand, new Object[] {});
-        } else if (nextCommandLine.contains(PRINT)) {
-            checkNumberOfArgs(PRINT, separatedCommand);
-            try {
-                nextCommand = Factory.create(PRINT);
-            } catch (IOException | InstantiationException | IllegalAccessException | ClassNotFoundException exception) {
-                throw new FailedCreationException();
-            }
-            return new CommandRepresentation(nextCommand, new Object[] {});
-        } else if (nextCommandLine.contains(DEFINE)) {
-            checkNumberOfArgs(DEFINE, separatedCommand);
-            try {
-                nextCommand = Factory.create(DEFINE);
-            } catch (IOException | InstantiationException | IllegalAccessException | ClassNotFoundException exception) {
-                throw new FailedCreationException();
-            }
-            return new CommandRepresentation(nextCommand, new Object[] {separatedCommand[1], separatedCommand[2]});
-        } else {
-            throw new InvalidTypeOfArgumentException();
+        if (separatedCommand[0].contains("#")) {
+            separatedCommand[0] = separatedCommand[0].replaceFirst(separatedCommand[0], "COMMENT");
         }
-    }
 
-    /* TODO: to handle below case (input.txt):
-        command ...
-        command ...
-        #comment ...
-     */
-
-
-    private void checkNumberOfArgs(String commandType, String[] separatedCommand) {
-        switch (commandType) {
-            case PUSH: {
-                if (separatedCommand.length != 2) {
-                    throw new InvalidNumberOfArgsException();
-                }
-                break;
-            }
-            case POP:
-            case PLUS:
-            case MINUS:
-            case MULTIPLY:
-            case DIVIDE:
-            case SQRT:
-            case PRINT: {
-                if (separatedCommand.length != 1) {
-                    throw new InvalidNumberOfArgsException();
-                }
-                break;
-            }
-            case DEFINE: {
-                if (separatedCommand.length != 3) {
-                    throw new InvalidNumberOfArgsException();
-                }
-                break;
-            }
-            default: {
-                throw new InvalidTypeOfArgumentException();
+        Command nextCommand = Factory.create(separatedCommand[0]);
+        Annotation[] annotations = nextCommand.getClass().getAnnotations();
+        for (Annotation annotation : annotations) {
+            if (annotation.annotationType() == ZeroArgs.class) {
+                return new CommandRepresentation(nextCommand, new Object[] {});
+            } else if (annotation.annotationType() == SingleArg.class) {
+                return new CommandRepresentation(nextCommand, new Object[] {separatedCommand[1]});
+            } else if (annotation.annotationType() == TwoArgs.class) {
+                return new CommandRepresentation(nextCommand, new Object[] {separatedCommand[1], separatedCommand[2]});
             }
         }
+        throw new InvalidTypeOfArgumentException(separatedCommand);
     }
 }

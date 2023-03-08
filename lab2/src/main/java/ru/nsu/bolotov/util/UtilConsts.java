@@ -11,4 +11,5 @@ public abstract class UtilConsts {
     public static final String SQRT = "SQRT";
     public static final String PRINT = "PRINT";
     public static final String DEFINE = "DEFINE";
+    public static final String COMMENT = "COMMENT";
 }

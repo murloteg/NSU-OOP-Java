@@ -1,5 +1,6 @@
-package ru.nsu.bolotov.commands;
+package ru.nsu.bolotov.commands.representation;
 
+import ru.nsu.bolotov.commands.operations.Command;
 import ru.nsu.bolotov.context.Context;
 
 import java.util.HashMap;
