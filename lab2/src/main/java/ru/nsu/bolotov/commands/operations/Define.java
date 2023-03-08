@@ -12,9 +12,13 @@ public class Define implements Command {
     @Override
     public void execute(Object[] args, Context context) {
         checkArgs(args);
-        if (args[0] instanceof String && args[1] instanceof String) {
-            context.addDefinitionToMap((String) args[0], Double.valueOf((String) args[1]));
-        } else {
+        try {
+            if (args[0] instanceof String && args[1] instanceof String) {
+                context.addDefinitionToMap((String) args[0], Double.valueOf((String) args[1]));
+            } else {
+                throw new InvalidTypeOfArgumentException(new String[] {args[0].toString(), args[1].toString()});
+            }
+        } catch (NumberFormatException exception) {
             throw new InvalidTypeOfArgumentException((String[]) args);
         }
     }

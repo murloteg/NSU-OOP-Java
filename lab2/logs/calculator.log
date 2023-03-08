@@ -1,4 +1,0 @@
-2023-03-08 19:01:56,601 TRACE r.n.b.c.CalculatorController [main] Constructor of CalculateController without args was invoked.
-2023-03-08 19:01:56,607 TRACE r.n.b.c.CalculatorController [main] Constructor of CalculateController without args finished job.
-2023-03-08 19:01:59,629 INFO r.n.b.c.CalculatorController [main] Command line "push 3 4" was parsed from input stream.
-2023-03-08 19:01:59,634 INFO r.n.b.c.r.CommandRepresentation [main] Execution "PUSH" with args: [3, 4]

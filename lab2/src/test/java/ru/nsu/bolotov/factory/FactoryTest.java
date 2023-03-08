@@ -3,6 +3,7 @@ package ru.nsu.bolotov.factory;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import ru.nsu.bolotov.commands.operations.Command;
+import ru.nsu.bolotov.exceptions.InvalidTypeOfArgumentException;
 
 import java.io.IOException;
 
@@ -27,9 +28,12 @@ class FactoryTest {
             "null",
             "undefined",
             "00000",
-            "pop"
+            "pop",
+            "Pop"
     })
-    void invalidCreationGeneratesNull(String commandName) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        assertNull(Factory.create(commandName));
+    void invalidCreationGeneratesNull(String commandName) {
+        assertThrows(InvalidTypeOfArgumentException.class, () -> {
+            Factory.create(commandName);
+        });
     }
 }

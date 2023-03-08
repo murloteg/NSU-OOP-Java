@@ -12,13 +12,15 @@ import java.lang.annotation.Annotation;
 import java.util.Properties;
 
 public abstract class Factory {
+    private static final String PATH = "all.properties";
+
     private Factory() {
         throw new IllegalStateException("Instantiation of abstract class");
     }
 
     public static Command create(String command) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         Properties properties = new Properties();
-        InputStream resourceStream = Command.class.getClassLoader().getResourceAsStream("all.properties");
+        InputStream resourceStream = Command.class.getClassLoader().getResourceAsStream(PATH);
         properties.load(resourceStream);
         if (properties.isEmpty()) {
             throw new IncorrectPropertyFile();
