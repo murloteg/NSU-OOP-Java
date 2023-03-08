@@ -29,4 +29,9 @@ public class Minus implements Command {
             throw new InvalidNumberOfArgsException(args.length, ZeroArgs.NUMBER_OF_ARGS);
         }
     }
+
+    @Override
+    public String toString() {
+        return "MINUS";
+    }
 }

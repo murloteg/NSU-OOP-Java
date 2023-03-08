@@ -20,4 +20,9 @@ public class Print implements Command {
             throw new InvalidNumberOfArgsException(args.length, ZeroArgs.NUMBER_OF_ARGS);
         }
     }
+
+    @Override
+    public String toString() {
+        return "PRINT";
+    }
 }

@@ -36,4 +36,9 @@ public class Push implements Command {
             throw new InvalidNumberOfArgsException(args.length, SingleArg.NUMBER_OF_ARGS);
         }
     }
+
+    @Override
+    public String toString() {
+        return "PUSH";
+    }
 }

@@ -1,6 +1,6 @@
 DEFINE a 4
 PUSH a
-# stack: 4.0
+#some comment
 SQRT
-# stack: 2.0
+# another $$$ comment
 PRINT
