@@ -1,6 +1,9 @@
-DEFINE a 4
-PUSH a
-#some comment
+DEFINE val 16
+PUSH val
 SQRT
-# another COMMENT!!!!
+# just a comm.
+PRINT
+DEFINE zero 0
+PUSH zero
+MULTIPLY
 PRINT

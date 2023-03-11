@@ -20,7 +20,11 @@ public class CommandRepresentation {
     public void execute(Context context) {
         for (Map.Entry<Command, Object[]> entry : representation.entrySet()) {
             LOGGER.info("Execution \"{}\" with args: {}", entry.getKey(), entry.getValue());
-            entry.getKey().execute(entry.getValue(), context);
+            try {
+                entry.getKey().execute(entry.getValue(), context);
+            } catch (Exception exception) {
+                LOGGER.error(exception.getMessage());
+            }
         }
     }
 }

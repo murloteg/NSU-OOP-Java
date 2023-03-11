@@ -13,7 +13,7 @@ public abstract class CommandUtils {
         try {
             popCommand = (Pop) Factory.create("POP");
         } catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException exception) {
-            throw new FailedCreationException(exception.getMessage());
+            throw new FailedCreationException();
         }
         return popCommand;
     }
@@ -23,12 +23,12 @@ public abstract class CommandUtils {
         try {
             pushCommand = (Push) Factory.create("PUSH");
         } catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException exception) {
-            throw new FailedCreationException(exception.getMessage());
+            throw new FailedCreationException();
         }
         return pushCommand;
     }
 
     private CommandUtils() {
-        throw new IllegalStateException("Util class");
+        throw new IllegalStateException("Instantiation of abstract class");
     }
 }

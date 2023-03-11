@@ -2,7 +2,6 @@ package ru.nsu.bolotov.commands.operations;
 
 import ru.nsu.bolotov.commands.annotations.CommandAnnotation;
 import ru.nsu.bolotov.commands.annotations.SingleArg;
-import ru.nsu.bolotov.commands.annotations.ZeroArgs;
 import ru.nsu.bolotov.context.Context;
 import ru.nsu.bolotov.exceptions.InvalidNumberOfArgsException;
 import ru.nsu.bolotov.exceptions.UndefinedAliasInDefinitionMap;

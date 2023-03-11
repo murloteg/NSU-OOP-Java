@@ -32,7 +32,7 @@ public class CalculatorController {
         while (nextCommandLine != null) {
             CommandRepresentation commandRepresentation;
             try {
-                commandRepresentation = parser.getNextCommand(nextCommandLine.toUpperCase());
+                commandRepresentation = parser.getNextCommand(nextCommandLine);
             } catch (Exception exception) {
                 LOGGER.error(exception.getMessage());
                 nextCommandLine = parser.getNextString();

@@ -48,6 +48,7 @@ public class ParserOfCommands {
         if (separatedCommand[0].contains("#")) {
             separatedCommand[0] = separatedCommand[0].replaceFirst(separatedCommand[0], "COMMENT");
         }
+        separatedCommand[0] = separatedCommand[0].toUpperCase();
 
         Command nextCommand = Factory.create(separatedCommand[0]);
         return new CommandRepresentation(nextCommand, Arrays.copyOfRange(separatedCommand, 1, separatedCommand.length));

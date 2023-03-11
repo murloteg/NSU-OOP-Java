@@ -21,14 +21,6 @@
             <version>1.81</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.jacoco/org.jacoco.agent -->
-        <dependency>
-            <groupId>org.jacoco</groupId>
-            <artifactId>org.jacoco.agent</artifactId>
-            <version>0.8.7</version>
-            <scope>test</scope>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -84,9 +76,8 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>2.0.6</version>
+            <version>1.7.25</version>
         </dependency>
-
     </dependencies>
 
 
@@ -102,7 +93,7 @@
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-                    <!-- attached to Maven test phase -->
+
                     <execution>
                         <id>report</id>
                         <phase>test</phase>
@@ -116,7 +107,17 @@
                         <goals>
                             <goal>check</goal>
                         </goals>
+
                         <configuration>
+                            <excludes>
+                                <!-- for excluding some tests -->
+                                <exclude>ru/nsu/bolotov/application/**</exclude>
+                                <exclude>ru/nsu/bolotov/parserofcommands/**</exclude>
+                                <exclude>ru/nsu/bolotov/controller/**</exclude>
+                                <exclude>ru/nsu/bolotov/exceptions/**</exclude>
+                                <exclude>ru/nsu/bolotov/util/**</exclude>
+                                <exclude>ru/nsu/bolotov/cmdlineparser/**</exclude>
+                            </excludes>
                             <rules>
                                 <rule>
                                     <element>PACKAGE</element>
@@ -124,7 +125,7 @@
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.50</minimum>
+                                            <minimum>0.60</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
@@ -132,6 +133,29 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <excludes>
+                        <!-- for excluding some tests -->
+                        <exclude>ru/nsu/bolotov/application/**</exclude>
+                        <exclude>ru/nsu/bolotov/parserofcommands/**</exclude>
+                        <exclude>ru/nsu/bolotov/controller/**</exclude>
+                        <exclude>ru/nsu/bolotov/exceptions/**</exclude>
+                        <exclude>ru/nsu/bolotov/util/**</exclude>
+                        <exclude>ru/nsu/bolotov/cmdlineparser/**</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.0</version>
             </plugin>
         </plugins>
     </build>

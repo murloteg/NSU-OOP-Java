@@ -3,7 +3,7 @@ package ru.nsu.bolotov.application;
 import ru.nsu.bolotov.cmdlineparser.CommandLineParser;
 import ru.nsu.bolotov.controller.CalculatorController;
 
-import static ru.nsu.bolotov.util.UtilConsts.EMPTY;
+import static ru.nsu.bolotov.util.UtilStringConsts.EMPTY;
 
 public class Main {
     private static String path = EMPTY;

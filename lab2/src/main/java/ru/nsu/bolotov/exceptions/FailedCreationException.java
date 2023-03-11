@@ -5,10 +5,6 @@ public class FailedCreationException extends RuntimeException {
         super();
     }
 
-    public FailedCreationException(String message) {
-        super(message);
-    }
-
     @Override
     public String getMessage() {
         return "Failed creation in factory";

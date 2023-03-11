@@ -20,7 +20,7 @@ class DefineTest {
     })
     void defineIncorrectExecuteTestWithStringArgs(String args) {
         assertThrows(InvalidTypeOfArgumentException.class, () -> {
-           define.execute(args.split(" "), null);
+            define.execute(args.split(" "), null);
         });
     }
 
@@ -38,11 +38,6 @@ class DefineTest {
         });
     }
 
-    @Test
-    void toStringTest() {
-        assertEquals("DEFINE", define.toString());
-    }
-
     @ParameterizedTest
     @CsvSource(value = {
             "value 4",
@@ -52,7 +47,7 @@ class DefineTest {
     })
     void checkCorrectArgsTest(String args) {
         assertDoesNotThrow(() -> {
-           define.checkArgs(args.split(" "));
+            define.checkArgs(args.split(" "));
         });
     }
 
@@ -66,5 +61,10 @@ class DefineTest {
         assertThrows(InvalidNumberOfArgsException.class, () -> {
             define.checkArgs(args.split(" "));
         });
+    }
+
+    @Test
+    void toStringTest() {
+        assertEquals("DEFINE", define.toString());
     }
 }
