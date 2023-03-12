@@ -1,10 +1,10 @@
-package ru.nsu.bolotov.utility;
+package ru.nsu.bolotov.util;
 
-public abstract class UtilityStringConsts {
+public final class UtilityStringConsts {
     public static final String EMPTY = "";
     public static final String DELIMITER = "\t";
 
     private UtilityStringConsts() {
-        throw new IllegalStateException("Utility class");
+        throw new IllegalStateException("Instantiation of utility class");
     }
 }

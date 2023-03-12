@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import static ru.nsu.bolotov.utility.UtilityStringConsts.DELIMITER;
+import static ru.nsu.bolotov.util.UtilityStringConsts.DELIMITER;
 
 public class MyFileWriter {
     private final BufferedWriter out;

@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c48b40d-cb55-495e-b270-15dc564816c6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/lab1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lab1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/container/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/container/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/exceptions/FailedFileReadException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/exceptions/FailedFileReadException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/exceptions/FailedFileWriteException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/exceptions/FailedFileWriteException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/file/FileChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/file/FileChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/file/MyFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/file/MyFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/application/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/file/MyFileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/file/MyFileWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/storageunit/ArrayOfResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/storageunit/ArrayOfResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/utility/UtilityInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/utility/UtilityInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/utility/UtilityStringConsts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/utility/UtilityStringConsts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/utility/UtilityInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/util/UtilityInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/utility/UtilityStringConsts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/bolotov/util/UtilityStringConsts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/bolotov/file/MyFileReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/bolotov/file/MyFileReaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2/src/main/java/ru/nsu/bolotov/exceptions/FileReadingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/src/main/java/ru/nsu/bolotov/exceptions/FailedFileReadException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab2/src/main/java/ru/nsu/bolotov/parserofcommands/ParserOfCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/src/main/java/ru/nsu/bolotov/parserofcommands/ParserOfCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/src/logs/calculator.log" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/src/logs/calculator.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,7 +260,9 @@
       <workItem from="1677997700353" duration="451000" />
       <workItem from="1678105495967" duration="11000" />
       <workItem from="1678117859976" duration="75000" />
-      <workItem from="1678189490392" duration="1464000" />
+      <workItem from="1678189490392" duration="1843000" />
+      <workItem from="1678513970762" duration="15000" />
+      <workItem from="1678552792015" duration="151000" />
     </task>
     <servers />
   </component>

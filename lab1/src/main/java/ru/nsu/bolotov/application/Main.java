@@ -6,8 +6,8 @@ import ru.nsu.bolotov.file.MyFileReader;
 import ru.nsu.bolotov.file.MyFileWriter;
 import ru.nsu.bolotov.storageunit.ArrayOfResult;
 
-import static ru.nsu.bolotov.utility.UtilityInfo.printInfo;
-import static ru.nsu.bolotov.utility.UtilityStringConsts.EMPTY;
+import static ru.nsu.bolotov.util.UtilityInfo.printInfo;
+import static ru.nsu.bolotov.util.UtilityStringConsts.EMPTY;
 
 public class Main {
     public static void main(String[] args) {

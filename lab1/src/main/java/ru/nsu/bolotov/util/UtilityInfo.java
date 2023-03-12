@@ -1,6 +1,6 @@
-package ru.nsu.bolotov.utility;
+package ru.nsu.bolotov.util;
 
-public abstract class UtilityInfo {
+public final class UtilityInfo {
     private static final String INFO = "This program has only one argument: " +
             "input file name [String].\n" + "Provided file-extensions:\n" +
             "\t1) .txt\n" +
@@ -13,6 +13,6 @@ public abstract class UtilityInfo {
     }
 
     private UtilityInfo() {
-        throw new IllegalStateException("Utility class");
+        throw new IllegalStateException("Instantiation of utility class");
     }
 }

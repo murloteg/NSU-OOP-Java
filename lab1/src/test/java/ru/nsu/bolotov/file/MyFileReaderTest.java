@@ -8,7 +8,7 @@ import ru.nsu.bolotov.exceptions.InvalidFilePath;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static ru.nsu.bolotov.utility.UtilityStringConsts.EMPTY;
+import static ru.nsu.bolotov.util.UtilityStringConsts.EMPTY;
 
 class MyFileReaderTest {
     public MyFileReader fileReader;
