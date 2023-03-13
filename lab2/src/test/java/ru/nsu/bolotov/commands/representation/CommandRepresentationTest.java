@@ -19,7 +19,7 @@ class CommandRepresentationTest {
     @Test
     void constructorTest() {
         assertDoesNotThrow(() -> {
-            commandRepresentation = new CommandRepresentation(null, null);
+            commandRepresentation = new CommandRepresentation(new Push(), new Object[] {});
         });
     }
 
@@ -36,10 +36,10 @@ class CommandRepresentationTest {
     void executeZeroArgTest(String command) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         Context context = new Context();
         Push push = CommandUtils.createPushCommand();
-        push.execute(new Number[]{2.0}, context);
-        push.execute(new Number[]{1.0}, context);
+        push.execute(new Number[] {2.0}, context);
+        push.execute(new Number[] {1.0}, context);
         Command currentCommand = Factory.create(command);
-        commandRepresentation = new CommandRepresentation(currentCommand, new Object[]{});
+        commandRepresentation = new CommandRepresentation(currentCommand, new Object[] {});
         assertDoesNotThrow(() -> commandRepresentation.execute(context));
     }
 
@@ -48,10 +48,10 @@ class CommandRepresentationTest {
             "PUSH : 10",
             "COMMENT : some info"
     }, delimiter = ':')
-    void executeSingleArgTest(String command, String arg) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    void executeSingleArgTest(String command, String singleArg) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         Context context = new Context();
         Command currentCommand = Factory.create(command);
-        commandRepresentation = new CommandRepresentation(currentCommand, new Object[]{arg});
+        commandRepresentation = new CommandRepresentation(currentCommand, new Object[] {singleArg});
         assertDoesNotThrow(() -> commandRepresentation.execute(context));
     }
 
@@ -62,7 +62,7 @@ class CommandRepresentationTest {
     void executeTwoArgTest(String command, String firstArg, String secondArg) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         Context context = new Context();
         Command currentCommand = Factory.create(command);
-        commandRepresentation = new CommandRepresentation(currentCommand, new Object[]{firstArg, secondArg});
+        commandRepresentation = new CommandRepresentation(currentCommand, new Object[] {firstArg, secondArg});
         assertDoesNotThrow(() -> commandRepresentation.execute(context));
     }
 }

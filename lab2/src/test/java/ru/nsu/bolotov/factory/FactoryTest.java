@@ -31,7 +31,7 @@ class FactoryTest {
             "pop",
             "Pop"
     })
-    void invalidCreationGeneratesNull(String commandName) {
+    void invalidCreationThrowException(String commandName) {
         assertThrows(InvalidTypeOfArgumentException.class, () -> {
             Factory.create(commandName);
         });

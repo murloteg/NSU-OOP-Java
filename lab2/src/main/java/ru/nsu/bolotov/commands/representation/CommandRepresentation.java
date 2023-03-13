@@ -2,6 +2,7 @@ package ru.nsu.bolotov.commands.representation;
 
 import ru.nsu.bolotov.commands.operations.Command;
 import ru.nsu.bolotov.context.Context;
+import javax.annotation.Nonnull;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +14,7 @@ public class CommandRepresentation {
     private static final Logger LOGGER = LoggerFactory.getLogger(CommandRepresentation.class);
     private final Map<Command, Object[]> representation = new HashMap<>();
 
-    public CommandRepresentation(Command command, Object[] args) {
+    public CommandRepresentation(@Nonnull Command command, @Nonnull Object[] args) {
         representation.put(command, args);
     }
 

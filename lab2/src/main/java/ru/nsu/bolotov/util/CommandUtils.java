@@ -7,7 +7,7 @@ import ru.nsu.bolotov.factory.Factory;
 
 import java.io.IOException;
 
-public abstract class CommandUtils {
+public final class CommandUtils {
     public static Pop createPopCommand() {
         Pop popCommand;
         try {
@@ -29,6 +29,6 @@ public abstract class CommandUtils {
     }
 
     private CommandUtils() {
-        throw new IllegalStateException("Instantiation of abstract class");
+        throw new IllegalStateException("Instantiation of utility class");
     }
 }

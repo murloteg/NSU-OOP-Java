@@ -1,21 +1,21 @@
-2023-03-11 15:40:01,293 TRACE r.n.b.c.CalculatorController [main] Constructor of CalculateController with [String] arg=src/main/resources/input.txt was invoked.
-2023-03-11 15:40:01,295 TRACE r.n.b.c.CalculatorController [main] Constructor of CalculateController with [String] arg=src/main/resources/input.txt finished job.
-2023-03-11 15:40:01,296 INFO r.n.b.c.CalculatorController [main] Command line "DEFINE val 16" was parsed from input stream.
-2023-03-11 15:40:01,299 INFO r.n.b.c.r.CommandRepresentation [main] Execution "DEFINE" with args: [val, 16]
-2023-03-11 15:40:01,300 INFO r.n.b.c.CalculatorController [main] Command line "PUSH val" was parsed from input stream.
-2023-03-11 15:40:01,301 INFO r.n.b.c.r.CommandRepresentation [main] Execution "PUSH" with args: [val]
-2023-03-11 15:40:01,302 INFO r.n.b.c.CalculatorController [main] Command line "SQRT" was parsed from input stream.
-2023-03-11 15:40:01,303 INFO r.n.b.c.r.CommandRepresentation [main] Execution "SQRT" with args: []
-2023-03-11 15:40:01,304 INFO r.n.b.c.CalculatorController [main] Command line "# just a comm." was parsed from input stream.
-2023-03-11 15:40:01,305 INFO r.n.b.c.r.CommandRepresentation [main] Execution "COMMENT" with args: [just, a, comm.]
-2023-03-11 15:40:01,305 INFO r.n.b.c.CalculatorController [main] Command line "PRINT" was parsed from input stream.
-2023-03-11 15:40:01,305 INFO r.n.b.c.r.CommandRepresentation [main] Execution "PRINT" with args: []
-2023-03-11 15:40:01,307 INFO r.n.b.c.CalculatorController [main] Command line "DEFINE zero 0" was parsed from input stream.
-2023-03-11 15:40:01,307 INFO r.n.b.c.r.CommandRepresentation [main] Execution "DEFINE" with args: [zero, 0]
-2023-03-11 15:40:01,307 INFO r.n.b.c.CalculatorController [main] Command line "PUSH zero" was parsed from input stream.
-2023-03-11 15:40:01,307 INFO r.n.b.c.r.CommandRepresentation [main] Execution "PUSH" with args: [zero]
-2023-03-11 15:40:01,307 INFO r.n.b.c.CalculatorController [main] Command line "MULTIPLY" was parsed from input stream.
-2023-03-11 15:40:01,308 INFO r.n.b.c.r.CommandRepresentation [main] Execution "MULTIPLY" with args: []
-2023-03-11 15:40:01,308 INFO r.n.b.c.CalculatorController [main] Command line "PRINT" was parsed from input stream.
-2023-03-11 15:40:01,308 INFO r.n.b.c.r.CommandRepresentation [main] Execution "PRINT" with args: []
-2023-03-11 15:40:01,309 INFO r.n.b.c.CalculatorController [main] Command line "null" was parsed from input stream.
+2023-03-13 20:48:15,429 TRACE r.n.b.c.CalculatorController [main] Constructor of CalculateController with [String] arg=src/main/resources/input.txt was invoked.
+2023-03-13 20:48:15,432 TRACE r.n.b.c.CalculatorController [main] Constructor of CalculateController with [String] arg=src/main/resources/input.txt finished job.
+2023-03-13 20:48:15,432 INFO r.n.b.c.CalculatorController [main] Command line "DEFINE val 16" was parsed from input stream.
+2023-03-13 20:48:15,436 INFO r.n.b.c.r.CommandRepresentation [main] Execution "DEFINE" with args: [val, 16]
+2023-03-13 20:48:15,437 INFO r.n.b.c.CalculatorController [main] Command line "PUSH val" was parsed from input stream.
+2023-03-13 20:48:15,439 INFO r.n.b.c.r.CommandRepresentation [main] Execution "PUSH" with args: [val]
+2023-03-13 20:48:15,439 INFO r.n.b.c.CalculatorController [main] Command line "SQRT" was parsed from input stream.
+2023-03-13 20:48:15,440 INFO r.n.b.c.r.CommandRepresentation [main] Execution "SQRT" with args: []
+2023-03-13 20:48:15,441 INFO r.n.b.c.CalculatorController [main] Command line "# just a comm." was parsed from input stream.
+2023-03-13 20:48:15,442 INFO r.n.b.c.r.CommandRepresentation [main] Execution "COMMENT" with args: [just, a, comm.]
+2023-03-13 20:48:15,442 INFO r.n.b.c.CalculatorController [main] Command line "PRINT" was parsed from input stream.
+2023-03-13 20:48:15,442 INFO r.n.b.c.r.CommandRepresentation [main] Execution "PRINT" with args: []
+2023-03-13 20:48:15,444 INFO r.n.b.c.CalculatorController [main] Command line "DEFINE zero 0" was parsed from input stream.
+2023-03-13 20:48:15,444 INFO r.n.b.c.r.CommandRepresentation [main] Execution "DEFINE" with args: [zero, 0]
+2023-03-13 20:48:15,444 INFO r.n.b.c.CalculatorController [main] Command line "PUSH zero" was parsed from input stream.
+2023-03-13 20:48:15,444 INFO r.n.b.c.r.CommandRepresentation [main] Execution "PUSH" with args: [zero]
+2023-03-13 20:48:15,444 INFO r.n.b.c.CalculatorController [main] Command line "MULTIPLY" was parsed from input stream.
+2023-03-13 20:48:15,445 INFO r.n.b.c.r.CommandRepresentation [main] Execution "MULTIPLY" with args: []
+2023-03-13 20:48:15,445 INFO r.n.b.c.CalculatorController [main] Command line "PRINT" was parsed from input stream.
+2023-03-13 20:48:15,446 INFO r.n.b.c.r.CommandRepresentation [main] Execution "PRINT" with args: []
+2023-03-13 20:48:15,446 INFO r.n.b.c.CalculatorController [main] Command line "null" was parsed from input stream.

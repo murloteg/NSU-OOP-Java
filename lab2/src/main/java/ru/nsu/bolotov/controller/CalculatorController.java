@@ -3,9 +3,12 @@ package ru.nsu.bolotov.controller;
 import ru.nsu.bolotov.parserofcommands.ParserOfCommands;
 import ru.nsu.bolotov.commands.representation.CommandRepresentation;
 import ru.nsu.bolotov.context.Context;
+import javax.annotation.Nonnull;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Objects;
 
 import static ru.nsu.bolotov.util.LoggerUtilStringConsts.COMMAND_WAS_PARSED;
 
@@ -20,7 +23,7 @@ public class CalculatorController {
         LOGGER.trace("Constructor of CalculateController without args finished job.");
     }
 
-    public CalculatorController(String path) {
+    public CalculatorController(@Nonnull String path) {
         LOGGER.trace("Constructor of CalculateController with [String] arg={} was invoked.", path);
         parser = new ParserOfCommands(path);
         LOGGER.trace("Constructor of CalculateController with [String] arg={} finished job.", path);
@@ -29,7 +32,7 @@ public class CalculatorController {
     public void calculation() {
         String nextCommandLine = parser.getNextString();
         LOGGER.info(COMMAND_WAS_PARSED, nextCommandLine);
-        while (nextCommandLine != null) {
+        while (Objects.nonNull(nextCommandLine)) {
             CommandRepresentation commandRepresentation;
             try {
                 commandRepresentation = parser.getNextCommand(nextCommandLine);

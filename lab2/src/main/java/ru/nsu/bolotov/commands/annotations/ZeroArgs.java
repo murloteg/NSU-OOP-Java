@@ -10,4 +10,3 @@ import java.lang.annotation.ElementType;
 public @interface ZeroArgs {
     int NUMBER_OF_ARGS = 0;
 }
-
