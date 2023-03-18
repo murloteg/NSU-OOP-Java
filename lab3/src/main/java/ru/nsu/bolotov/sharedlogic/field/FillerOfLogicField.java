@@ -1,18 +1,18 @@
-package ru.nsu.bolotov.sharedclasses.field;
+package ru.nsu.bolotov.sharedlogic.field;
 
 import ru.nsu.bolotov.util.UtilConsts;
 
 import java.util.Random;
 
 // TODO: think about filling of the first turn.
-public final class FillerOfField {
+public final class FillerOfLogicField {
     private static final Random GENERATOR = new Random();
-
-    public static void fillWithNumbers(Field field) {
+    
+    public static void fillTheField(Field field) {
         int fieldSize = field.getFieldSize();
         int[] arrayOfFieldCells = field.getArrayOfFieldCells();
-
         fillWithMines(field);
+
         for (int i = 0; i < fieldSize; ++i) {
             for (int j = 0; j < fieldSize; ++j) {
                 int numberOfMinedNeighbors = 0;
@@ -26,7 +26,7 @@ public final class FillerOfField {
                     numberOfMinedNeighbors = getNumberOfMinedNeighbors(arrayOfFieldCells, currentPosition - 1,
                             currentPosition + fieldSize, currentPosition + fieldSize - 1);
                 /* cell in the lower left corner */
-                } else if (currentPosition == ((fieldSize - 1)  * fieldSize)) {
+                } else if (currentPosition == ((fieldSize - 1) * fieldSize)) {
                     numberOfMinedNeighbors = getNumberOfMinedNeighbors(arrayOfFieldCells, currentPosition + 1,
                             currentPosition - fieldSize, currentPosition - fieldSize + 1);
                 /* cell in the lower right corner */
@@ -39,7 +39,7 @@ public final class FillerOfField {
                             currentPosition + 1, currentPosition + fieldSize - 1,
                             currentPosition + fieldSize, currentPosition + fieldSize + 1);
                 /* cell in the lower line [excluding handled cases] */
-                } else if (currentPosition > ((fieldSize - 1)  * fieldSize) && currentPosition < (fieldSize * fieldSize - 1)) {
+                } else if (currentPosition > ((fieldSize - 1) * fieldSize) && currentPosition < (fieldSize * fieldSize - 1)) {
                     numberOfMinedNeighbors = getNumberOfMinedNeighbors(arrayOfFieldCells, currentPosition - 1,
                             currentPosition + 1, currentPosition - fieldSize - 1,
                             currentPosition - fieldSize, currentPosition - fieldSize + 1);
@@ -70,13 +70,13 @@ public final class FillerOfField {
 
     private static void fillWithMines(Field field) {
         int fieldSize = field.getFieldSize();
-        int numberOfMines = field.getNumberOfMines();
+        int numberOfBombs = field.getNumberOfBombs();
         int[] arrayOfFieldCells = field.getArrayOfFieldCells();
 
         int index = 0;
         int counterOfMines = 0;
         int randomValue = GENERATOR.nextInt(fieldSize);
-        while (counterOfMines < numberOfMines) {
+        while (counterOfMines < numberOfBombs) {
             if (index >= fieldSize * fieldSize) {
                 index %= fieldSize;
             }
@@ -109,7 +109,7 @@ public final class FillerOfField {
         arrayOfFieldCells[currentIndex] = numberOfMinedNeighbors;
     }
 
-    private FillerOfField() {
+    private FillerOfLogicField() {
         throw new IllegalStateException(UtilConsts.StringConsts.UTILITY_CLASS_INSTANTIATION_MESSAGE);
     }
 }

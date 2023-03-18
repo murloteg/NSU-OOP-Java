@@ -21,7 +21,11 @@ public final class UtilConsts {
         public static final int SEVEN_NEIGHBORS = 7;
         public static final int EIGHT_NEIGHBORS = 8;
         public static final int BOMB = 9;
-        public static final int FLAGGED = 10;
+        public static final int EXPLODED_BOMB = 10;
+        public static final int FLAGGED = 11;
+        public static final int VISITED_EMPTY = 12;
+        public static final int HIDDEN = 13;
+        public static final int OPEN = 14;
 
         private StatusesOfCells() {
             throw new IllegalStateException(StringConsts.UTILITY_CLASS_INSTANTIATION_MESSAGE);
@@ -32,6 +36,23 @@ public final class UtilConsts {
         public static final int REMAINDER = 15;
 
         private RandomConsts() {
+            throw new IllegalStateException(StringConsts.UTILITY_CLASS_INSTANTIATION_MESSAGE);
+        }
+    }
+
+    public static final class ViewTypes {
+        public static final int TEXT = 1;
+        public static final int GRAPHIC_INTERFACE = 2;
+
+        private ViewTypes() {
+            throw new IllegalStateException(StringConsts.UTILITY_CLASS_INSTANTIATION_MESSAGE);
+        }
+    }
+
+    public static final class TextViewConsts {
+        public static final int MAX_HEX_FIELD_SIZE = 16;
+
+        private TextViewConsts() {
             throw new IllegalStateException(StringConsts.UTILITY_CLASS_INSTANTIATION_MESSAGE);
         }
     }

@@ -1,11 +1,10 @@
 package ru.nsu.bolotov.application;
 
-import ru.nsu.bolotov.sharedclasses.field.*;
+import ru.nsu.bolotov.controller.ApplicationController;
 
 public class Main {
     public static void main(String[] args) {
-        Field field = new Field();
-        FillerOfField.fillWithNumbers(field);
-        field.printField();
+        ApplicationController controller = new ApplicationController(1, 10, 9);
+        controller.executeGame();
     }
 }
