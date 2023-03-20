@@ -35,16 +35,27 @@ public final class TextView {
             }
             System.out.println();
         }
-        System.out.println("<---> [END OF TURN] <--->");
+        System.out.println("***** [END OF TURN] *****");
+    }
+
+    public static void showCurrentTime(long currentTime) {
+        System.out.println("<=====> TIME <=====>");
+        System.out.println("       " + currentTime + " sec   ");
         System.out.println();
     }
 
-    public static void printAboutDefeat() {
-        System.out.println("!!! DEFEAT !!!");
+    public static void printAboutDefeat(long currentTime) {
+        System.out.println("!!!>>> DEFEAT <<<!!!");
+        System.out.println("<===> TOTAL TIME <===>");
+        System.out.println("        " + currentTime + " sec    ");
+        System.out.println();
     }
 
-    public static void printAboutVictory() {
-        System.out.println("!!! VICTORY !!!");
+    public static void printAboutVictory(long currentTime) {
+        System.out.println("!!!>>> VICTORY <<<!!!");
+        System.out.println("<===> TOTAL TIME <===>");
+        System.out.println("        " + currentTime + " sec    ");
+        System.out.println();
     }
 
     private static void printBorder(int fieldSize) {

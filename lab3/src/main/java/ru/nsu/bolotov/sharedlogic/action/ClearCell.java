@@ -1,13 +1,16 @@
 package ru.nsu.bolotov.sharedlogic.action;
 
-import ru.nsu.bolotov.exceptions.*;
+import ru.nsu.bolotov.exceptions.InvalidFieldPositionException;
+import ru.nsu.bolotov.exceptions.InvalidNumberOfArguments;
+import ru.nsu.bolotov.exceptions.TryingToClearCellWithoutFlagException;
+import ru.nsu.bolotov.exceptions.UnexpectedArgumentType;
 import ru.nsu.bolotov.sharedlogic.field.Field;
 import ru.nsu.bolotov.util.UtilConsts;
 
 import java.util.ArrayList;
 
 @ActionAnnotation
-public class PutTheFlag implements Action {
+public class ClearCell implements Action {
     @Override
     public void doAction(ArrayList<Object> args) {
         checkNumberOfArguments(args);
@@ -33,11 +36,10 @@ public class PutTheFlag implements Action {
         } else {
             throw new UnexpectedArgumentType(Integer.class.toString(), args.get(3).getClass().getSimpleName());
         }
-        checkFlagsLimit((Field) args.get(0));
         checkPosition(x, y, fieldSize);
-        checkOpeningStatusOfCell((Field) args.get(0), x, y);
+        checkFlagOnThisCell((Field) args.get(0), x, y);
         int position = y * fieldSize + x;
-        ((Field) args.get(0)).getArrayOfFieldCells()[position] = UtilConsts.StatusesOfCells.FLAGGED;
+        ((Field) args.get(0)).getArrayOfFieldCells()[position] = UtilConsts.StatusesOfCells.HIDDEN;
     }
 
     @Override
@@ -53,26 +55,10 @@ public class PutTheFlag implements Action {
         }
     }
 
-    private void checkFlagsLimit(Field userField) {
-        int counterOfFlags = 0;
-        int fieldSize = userField.getFieldSize();
-        int[] arrayOfFieldCells = userField.getArrayOfFieldCells();
-        for (int i = 0; i < fieldSize; ++i) {
-            for (int j = 0; j < fieldSize; ++j) {
-                if (arrayOfFieldCells[i * fieldSize + j] == UtilConsts.StatusesOfCells.FLAGGED) {
-                    ++counterOfFlags;
-                }
-            }
-        }
-        if (counterOfFlags == userField.getNumberOfBombs()) {
-            throw new FlagsLimitReached(counterOfFlags);
-        }
-    }
-
-    private void checkOpeningStatusOfCell(Field userField, int x, int y) {
+    private void checkFlagOnThisCell(Field userField, int x, int y) {
         int position = y * userField.getFieldSize() + x;
-        if (userField.getArrayOfFieldCells()[position] == UtilConsts.StatusesOfCells.OPEN) {
-            throw new AttemptToUseOpenCellException(x, y);
+        if (userField.getArrayOfFieldCells()[position] != UtilConsts.StatusesOfCells.FLAGGED) {
+            throw new TryingToClearCellWithoutFlagException(x, y);
         }
     }
 }

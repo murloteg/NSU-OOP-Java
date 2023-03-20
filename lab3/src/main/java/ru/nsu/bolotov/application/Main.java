@@ -1,10 +1,12 @@
 package ru.nsu.bolotov.application;
 
 import ru.nsu.bolotov.controller.ApplicationController;
+import ru.nsu.bolotov.gui.GraphicView;
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationController controller = new ApplicationController(1, 10, 9);
+//        GraphicView.showField();
+        ApplicationController controller = new ApplicationController(1, 7, 6);
         controller.executeGame();
     }
 }

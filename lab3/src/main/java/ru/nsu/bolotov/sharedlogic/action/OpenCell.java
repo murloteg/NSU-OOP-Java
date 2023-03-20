@@ -1,8 +1,6 @@
 package ru.nsu.bolotov.sharedlogic.action;
 
-import ru.nsu.bolotov.exceptions.InvalidFieldPositionException;
-import ru.nsu.bolotov.exceptions.InvalidNumberOfArguments;
-import ru.nsu.bolotov.exceptions.UnexpectedArgumentType;
+import ru.nsu.bolotov.exceptions.*;
 import ru.nsu.bolotov.sharedlogic.field.Field;
 import ru.nsu.bolotov.util.UtilConsts;
 
@@ -37,6 +35,7 @@ public class OpenCell implements Action {
             throw new UnexpectedArgumentType(Integer.class.toString(), args.get(3).getClass().getSimpleName());
         }
         checkPosition(x, y, fieldSize);
+        checkStatusOfFlaggedCell((Field) args.get(0), x, y);
         int position = y * fieldSize + x;
         ((Field) args.get(0)).getArrayOfFieldCells()[position] = UtilConsts.StatusesOfCells.OPEN;
         tryExtendedOpening((Field) args.get(0), (Field) args.get(1), x, y);
@@ -80,10 +79,17 @@ public class OpenCell implements Action {
     }
 
     private boolean isVerticalNeighbors(int firstPosition, int secondPosition, int fieldSize) {
-        return (firstPosition % fieldSize == secondPosition % fieldSize && secondPosition > 0 && secondPosition < fieldSize * fieldSize);
+        return (firstPosition % fieldSize == secondPosition % fieldSize && secondPosition >= 0 && secondPosition < fieldSize * fieldSize);
     }
 
     private boolean isHorizontalNeighbors(int firstPosition, int secondPosition, int fieldSize) {
-        return (firstPosition / fieldSize == secondPosition / fieldSize && secondPosition > 0 && secondPosition < fieldSize * fieldSize);
+        return (firstPosition / fieldSize == secondPosition / fieldSize && secondPosition >= 0 && secondPosition < fieldSize * fieldSize);
+    }
+
+    private void checkStatusOfFlaggedCell(Field userField, int x, int y) {
+        int position = y * userField.getFieldSize() + x;
+        if (userField.getArrayOfFieldCells()[position] == UtilConsts.StatusesOfCells.FLAGGED) {
+            throw new TryingToOpenFlaggedCellException(x, y);
+        }
     }
 }
