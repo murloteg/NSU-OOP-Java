@@ -3,22 +3,21 @@ package ru.nsu.bolotov.sharedlogic.timer;
 import java.util.concurrent.TimeUnit;
 
 public class TimerThread implements Runnable {
-    private final long timeOfStart;
-    private long currentElapsedTimeInSec;
+    private final long timeOfStartMillis;
+    private long currentElapsedTimeSec;
 
     public TimerThread() {
-        timeOfStart = System.nanoTime();
+        timeOfStartMillis = System.currentTimeMillis();
     }
 
     @Override
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
-            long currentTime = System.nanoTime();
-            currentElapsedTimeInSec = TimeUnit.SECONDS.convert(currentTime - timeOfStart, TimeUnit.NANOSECONDS);
+            currentElapsedTimeSec = TimeUnit.SECONDS.convert(System.currentTimeMillis() - timeOfStartMillis, TimeUnit.MILLISECONDS);
         }
     }
 
     public long getCurrentTime() {
-        return currentElapsedTimeInSec;
+        return currentElapsedTimeSec;
     }
 }

@@ -45,16 +45,18 @@ public final class TextView {
     }
 
     public static void printAboutDefeat(long currentTime) {
-        System.out.println("!!!>>> DEFEAT <<<!!!");
-        System.out.println("<===> TOTAL TIME <===>");
-        System.out.println("        " + currentTime + " sec    ");
-        System.out.println();
+        System.out.println("!!!>>>  DEFEAT  <<<!!!");
+        printTotalScore(currentTime);
     }
 
     public static void printAboutVictory(long currentTime) {
-        System.out.println("!!!>>> VICTORY <<<!!!");
-        System.out.println("<===> TOTAL TIME <===>");
-        System.out.println("        " + currentTime + " sec    ");
+        System.out.println("!!!>>>  VICTORY  <<<!!!");
+        printTotalScore(currentTime);
+    }
+
+    private static void printTotalScore(long currentTime) {
+        System.out.println("<===> TOTAL SCORE <===>");
+        System.out.println("      " + currentTime * 10 + " points  "); // TODO: probably, create a new class for it.
         System.out.println();
     }
 

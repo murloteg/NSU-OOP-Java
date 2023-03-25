@@ -1,5 +1,6 @@
 package ru.nsu.bolotov.sharedlogic.factory;
 
+import ru.nsu.bolotov.exceptions.IOBusinessException;
 import ru.nsu.bolotov.exceptions.EmptyPropertiesFile;
 import ru.nsu.bolotov.exceptions.FailedCreationException;
 import ru.nsu.bolotov.sharedlogic.action.*;
@@ -24,6 +25,11 @@ public final class ActionFactory {
         }
         if (PROPERTIES.isEmpty()) {
             throw new EmptyPropertiesFile();
+        }
+        try {
+            PROPERTY_FILE.close();
+        } catch (IOException exception) {
+            throw new IOBusinessException(exception);
         }
     }
 

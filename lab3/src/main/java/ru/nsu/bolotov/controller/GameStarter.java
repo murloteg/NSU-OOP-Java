@@ -19,11 +19,6 @@ public class GameStarter {
     private Field logicField;
     private Field userField;
 
-    public GameStarter() {
-        fieldSize = UtilConsts.FieldConsts.DEFAULT_FIELD_SIZE;
-        numberOfBombs = UtilConsts.FieldConsts.DEFAULT_NUMBER_OF_MINES;
-    }
-
     public GameStarter(int fieldSize, int numberOfBombs) {
         this.fieldSize = fieldSize;
         this.numberOfBombs = numberOfBombs;

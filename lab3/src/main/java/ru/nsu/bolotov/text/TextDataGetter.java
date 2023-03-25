@@ -5,7 +5,7 @@ import ru.nsu.bolotov.util.UtilConsts;
 import java.util.Scanner;
 
 public final class TextDataGetter {
-    public static String getNextActionAsString() {
+    public static String inputNextActionAsString() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
