@@ -1,4 +1,6 @@
-package ru.nsu.bolotov.exceptions;
+package ru.nsu.bolotov.exceptions.game;
+
+import ru.nsu.bolotov.exceptions.game.GameException;
 
 public class AttemptToUseOpenCellException extends GameException {
     private final int x;
@@ -10,6 +12,6 @@ public class AttemptToUseOpenCellException extends GameException {
     }
 
     public String getMessage() {
-        return String.format(":::: CELL (%d ; %d) ALREADY OPEN ::::", x, y);
+        return String.format("CELL (%d ; %d) ALREADY OPEN", x, y);
     }
 }

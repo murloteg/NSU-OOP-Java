@@ -22,9 +22,11 @@ public final class UtilConsts {
         public static final int EIGHT_NEIGHBORS = 8;
         public static final int BOMB = 9;
         public static final int FLAGGED = 10;
-        public static final int VISITED_EMPTY = 11;
-        public static final int HIDDEN = 12;
-        public static final int OPEN = 13;
+        public static final int CLEARED = 11;
+        public static final int VISITED_EMPTY = 12;
+        public static final int HIDDEN = 13;
+        public static final int OPEN = 14;
+
 
         private StatusesOfCells() {
             throw new IllegalStateException(StringConsts.UTILITY_CLASS_INSTANTIATION_MESSAGE);

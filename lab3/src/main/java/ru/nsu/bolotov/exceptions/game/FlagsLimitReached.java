@@ -1,4 +1,6 @@
-package ru.nsu.bolotov.exceptions;
+package ru.nsu.bolotov.exceptions.game;
+
+import ru.nsu.bolotov.exceptions.game.GameException;
 
 public class FlagsLimitReached extends GameException {
     private final int flagsLimit;
@@ -9,6 +11,6 @@ public class FlagsLimitReached extends GameException {
 
     @Override
     public String getMessage() {
-        return String.format(":::: FLAGS LIMIT REACHED: %d ::::", flagsLimit);
+        return String.format("FLAGS LIMIT REACHED: %d", flagsLimit);
     }
 }

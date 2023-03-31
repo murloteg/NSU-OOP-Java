@@ -2,36 +2,49 @@ package ru.nsu.bolotov.gui;
 
 import ru.nsu.bolotov.sharedlogic.field.Field;
 import ru.nsu.bolotov.util.UtilConsts;
+import ru.nsu.bolotov.exceptions.gui.InvalidImagePathException;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GraphicView {
     private final Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
     private final Color standardBackgroundColor = new Color(0xFFD4ABFF, true);
-    private final Font standardButtonFont = new Font("Menlo", Font.ITALIC, 18);
+    private final Font standardFont = new Font("Menlo", Font.ITALIC, 18);
     private final int fieldSize;
     private final JFrame frame;
     private JPanel panel;
+    private JLabel timerLabel;
     private ArrayList<JButton> cellsList;
+    private boolean isGameLaunched;
 
     public GraphicView(int fieldSize) {
         this.fieldSize = fieldSize;
+        isGameLaunched = false;
         frame = new JFrame();
         initializeFrame();
+    }
+
+    public boolean getStatusOfGameLaunch() {
+        return isGameLaunched;
     }
 
     public void prepareGameField() {
         clearPanel();
         frame.remove(panel);
         cellsList = new ArrayList<>();
+        isGameLaunched = true;
         panel = new JPanel() {
             @Override
             protected void paintComponent(Graphics graphics) {
@@ -58,6 +71,27 @@ public class GraphicView {
                     Line2D horizontalLine = new Line2D.Float(horizontalLineStart, horizontalLineEnd);
                     graphics2D.draw(horizontalLine);
                 }
+
+                BufferedImage openCellImage;
+                BufferedImage putTheFlagImage;
+                BufferedImage clearTheCellImage;
+                try {
+                    openCellImage = ImageIO.read(new File(ImagePathFinder.findPath("OPEN")));
+                    putTheFlagImage = ImageIO.read(new File(ImagePathFinder.findPath("FLAG")));
+                    clearTheCellImage = ImageIO.read(new File(ImagePathFinder.findPath("CLEAR")));
+                } catch (IOException e) {
+                    throw new InvalidImagePathException();
+                }
+
+                graphics2D.setFont(standardFont);
+                graphics2D.drawImage(openCellImage, dimension.width / 15, 175, this);
+                graphics2D.drawString("Open", dimension.width / 15 + openCellImage.getWidth() / 3, 330);
+
+                graphics2D.drawImage(putTheFlagImage, dimension.width / 15, 400, this);
+                graphics2D.drawString("Put the flag", dimension.width / 15, 550);
+
+                graphics2D.drawImage(clearTheCellImage, dimension.width / 15, 600, this);
+                graphics2D.drawString("Clear the cell", dimension.width / 15 - clearTheCellImage.getWidth() / 10, 750);
             }
         };
 
@@ -77,6 +111,11 @@ public class GraphicView {
         panel.setBackground(standardBackgroundColor);
         panel.setLayout(null);
         addMenuButton();
+        timerLabel = new JLabel();
+        timerLabel.setText("0");
+        timerLabel.setFont(new Font("Menlo", Font.BOLD, 100));
+        timerLabel.setBounds(dimension.width / 2 + dimension.width / 3 + dimension.width / 35, dimension.height / 8, 120, 120);
+        panel.add(timerLabel);
         frame.add(panel);
     }
 
@@ -87,72 +126,41 @@ public class GraphicView {
             for (int j = 0; j < fieldSize; ++j) {
                 int position = i * fieldSize + j;
                 if (userArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.OPEN) {
+                    cellsList.get(i * fieldSize + j).setText("");
                     if (logicArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.BOMB) {
-                        cellsList.get(i * fieldSize + j).setIcon(new ImageIcon("/Users/mac/IntelliJProjects/Java-Projects/lab3/src/main/resources/bomb.png"));
-                        cellsList.get(i * fieldSize + j).setText("");
-                    } else if (logicArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.VISITED_EMPTY) {
-                        cellsList.get(i * fieldSize + j).setText("0");
+                        cellsList.get(i * fieldSize + j).setIcon(new ImageIcon(ImagePathFinder.findPath("BOMB")));
+                    } else if (logicArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.ONE_NEIGHBOR) {
+                        cellsList.get(i * fieldSize +j).setIcon(new ImageIcon(ImagePathFinder.findPath("ONE")));
+                    } else if (logicArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.TWO_NEIGHBORS) {
+                        cellsList.get(i * fieldSize +j).setIcon(new ImageIcon(ImagePathFinder.findPath("TWO")));
+                    } else if (logicArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.THREE_NEIGHBORS) {
+                        cellsList.get(i * fieldSize +j).setIcon(new ImageIcon(ImagePathFinder.findPath("THREE")));
+                    } else if (logicArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.FOUR_NEIGHBORS) {
+                        cellsList.get(i * fieldSize +j).setIcon(new ImageIcon(ImagePathFinder.findPath("FOUR")));
+                    } else if (logicArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.FIVE_NEIGHBORS) {
+                        cellsList.get(i * fieldSize +j).setIcon(new ImageIcon(ImagePathFinder.findPath("FIVE")));
+                    } else if (logicArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.SIX_NEIGHBORS) {
+                        cellsList.get(i * fieldSize +j).setIcon(new ImageIcon(ImagePathFinder.findPath("SIX")));
+                    } else if (logicArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.SEVEN_NEIGHBORS) {
+                        cellsList.get(i * fieldSize +j).setIcon(new ImageIcon(ImagePathFinder.findPath("SEVEN")));
+                    } else if (logicArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.EIGHT_NEIGHBORS) {
+                        cellsList.get(i * fieldSize +j).setIcon(new ImageIcon(ImagePathFinder.findPath("EIGHT")));
                     } else {
-                        cellsList.get(i * fieldSize + j).setText(Integer.toString(logicArrayOfFieldCells[position]));
+                        cellsList.get(i * fieldSize +j).setIcon(new ImageIcon(ImagePathFinder.findPath("ZERO")));
                     }
                 } else if (userArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.FLAGGED) {
-                    cellsList.get(i * fieldSize + j).setText("FLAGGED");
+                    cellsList.get(i * fieldSize + j).setIcon(new ImageIcon(ImagePathFinder.findPath("CELL_FLAG")));
+                    cellsList.get(i * fieldSize + j).setText("");
+                } else if (userArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.CLEARED) {
+                    cellsList.get(i * fieldSize + j).setIcon(null);
+                    cellsList.get(i * fieldSize + j).setText("???");
                 }
             }
         }
+        timerLabel.setText(Long.toString(currentTime));
     }
 
     public String getNextActionAsString() {
-        ImageIcon openCellIcon = new ImageIcon("/Users/mac/IntelliJProjects/Java-Projects/lab3/src/main/resources/dig128.png");
-        ImageIcon putTheFlagIcon = new ImageIcon("/Users/mac/IntelliJProjects/Java-Projects/lab3/src/main/resources/flag128.png");
-        ImageIcon clearTheCellIcon = new ImageIcon("/Users/mac/IntelliJProjects/Java-Projects/lab3/src/main/resources/clear128.png");
-
-        JRadioButton openCell = new JRadioButton("OPEN");
-        JRadioButton putTheFlag = new JRadioButton("FLAG");
-        JRadioButton clearTheCell = new JRadioButton("CLEAR");
-
-//        openCell.setIcon(openCellIcon);
-        openCell.setActionCommand("OPEN");
-        openCell.setFont(standardButtonFont);
-        openCell.setSelected(true);
-        openCell.setBounds(dimension.width / 15, 100, 256, 256);
-
-//        putTheFlag.setIcon(putTheFlagIcon);
-        putTheFlag.setActionCommand("FLAG");
-        putTheFlag.setSelected(false);
-        putTheFlag.setFont(standardButtonFont);
-        putTheFlag.setBounds(dimension.width / 15, 330, 256, 256);
-
-//        clearTheCell.setIcon(clearTheCellIcon);
-        clearTheCell.setActionCommand("CLEAR");
-        clearTheCell.setSelected(false);
-        clearTheCell.setFont(standardButtonFont);
-        clearTheCell.setBounds(dimension.width / 15, 530, 256, 256);
-
-        ButtonGroup buttonGroup = new ButtonGroup();
-        buttonGroup.add(openCell);
-        buttonGroup.add(putTheFlag);
-        buttonGroup.add(clearTheCell);
-
-        openCell.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent e) {
-                super.mousePressed(e);
-            }
-        });
-        putTheFlag.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                putTheFlag.setSelected(true);
-            }
-        });
-        clearTheCell.addActionListener(event -> clearTheCell.setSelected(true));
-
-        panel.add(openCell);
-        panel.add(putTheFlag);
-        panel.add(clearTheCell);
-
         String selectedPosition = "";
         while (selectedPosition.isEmpty()) {
             for (JButton button : cellsList) {
@@ -164,17 +172,31 @@ public class GraphicView {
             }
         }
 
-        String actionType = "";
-        while (actionType.isEmpty()) {
-            if (openCell.isSelected()) {
-                actionType = openCell.getActionCommand();
-            } else if (putTheFlag.isSelected()) {
-                actionType = putTheFlag.getActionCommand();
-            } else if (clearTheCell.isSelected()) {
-                actionType = clearTheCell.getActionCommand();
-            }
+        ImageIcon dialogIcon = new ImageIcon(ImagePathFinder.findPath("QUESTION"));
+        String[] options = {"CLEAR", "FLAG", "OPEN"};
+        Map<Integer, String> definitionMap = new HashMap<>();
+        int position = 0;
+        for (String option : options) {
+            definitionMap.put(position, option);
+            ++position;
         }
-        return actionType + " " + selectedPosition;
+
+        int selectedAction = JOptionPane.showOptionDialog(
+                panel,
+                "Select next action",
+                "YOUR TURN",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                dialogIcon,
+                options,
+                null);
+
+        return definitionMap.get(selectedAction) + " " + selectedPosition;
+    }
+
+    public void displayExceptionInfo(String message) {
+        ImageIcon errorIcon = new ImageIcon(ImagePathFinder.findPath("ERROR"));
+        JOptionPane.showMessageDialog(panel, message, "Exception!", JOptionPane.ERROR_MESSAGE, errorIcon);
     }
 
     public void showGameRules() {
@@ -211,10 +233,14 @@ public class GraphicView {
 
     private void addMenuButton() {
         JButton menuButton = new JButton("Menu");
-        menuButton.setFont(standardButtonFont);
+        menuButton.setFont(standardFont);
         menuButton.setBounds(dimension.width / 15, dimension.height - dimension.height / 5, 200, 80);
 
-        menuButton.addActionListener(event -> setDefaultPanelWithMenu());
+        menuButton.addActionListener(event -> {
+            setDefaultPanelWithMenu();
+            isGameLaunched = false;
+        });
+        // TODO: add dialog window.
         panel.add(menuButton);
     }
 
@@ -237,19 +263,19 @@ public class GraphicView {
         panel.setLayout(null);
 
         JButton newGameButton = new JButton("New Game");
-        newGameButton.setFont(standardButtonFont);
+        newGameButton.setFont(standardFont);
         newGameButton.setBounds(dimension.width / 8 + dimension.width / 9, dimension.height / 7, 200, 80);
 
         JButton aboutButton = new JButton("About");
-        aboutButton.setFont(standardButtonFont);
+        aboutButton.setFont(standardFont);
         aboutButton.setBounds(dimension.width / 8 + dimension.width / 3, dimension.height / 7, 200, 80);
 
         JButton scoresButton = new JButton("High Scores");
-        scoresButton.setFont(standardButtonFont);
+        scoresButton.setFont(standardFont);
         scoresButton.setBounds(dimension.width - dimension.width / 8 - dimension.width / 10 - dimension.width / 9, dimension.height / 7, 200, 80);
 
         JButton exitButton = new JButton("Exit");
-        exitButton.setFont(standardButtonFont);
+        exitButton.setFont(standardFont);
         exitButton.setBounds(dimension.width / 8 + dimension.width / 3, dimension.height / 2 - dimension.height / 10, 200, 80);
 
         newGameButton.addActionListener(event -> prepareGameField());

@@ -1,4 +1,6 @@
-package ru.nsu.bolotov.exceptions;
+package ru.nsu.bolotov.exceptions.game;
+
+import ru.nsu.bolotov.exceptions.game.GameException;
 
 public class TryingToOpenFlaggedCellException extends GameException {
     private final int x;
@@ -11,6 +13,6 @@ public class TryingToOpenFlaggedCellException extends GameException {
 
     @Override
     public String getMessage() {
-        return String.format(":::: CELL (%d ; %d) FLAGGED. CLEAR IT, BEFORE OPENING ::::", x, y);
+        return String.format("CELL (%d ; %d) FLAGGED. CLEAR IT, BEFORE OPENING", x, y);
     }
 }

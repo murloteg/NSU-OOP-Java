@@ -1,11 +1,13 @@
 package ru.nsu.bolotov.controller;
 
 import ru.nsu.bolotov.gui.GraphicView;
+import ru.nsu.bolotov.gui.GraphicInitializationChecker;
 import ru.nsu.bolotov.sharedlogic.timer.TimerThread;
 import ru.nsu.bolotov.text.TextDataGetter;
 import ru.nsu.bolotov.text.TextView;
 
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 public class ApplicationController {
     private final Optional<GraphicView> graphicView;
@@ -19,10 +21,11 @@ public class ApplicationController {
     }
 
     public void executeGame() {
+        initializationOfUserInterface();
         gameStarter.startGame();
         updateView();
-        Thread thread = new Thread(timerObject);
-        thread.start();
+        Thread timeThread = new Thread(timerObject);
+        timeThread.start();
         while (!gameStarter.isEndOfGame()) {
             try {
                 gameStarter.makeNextMove(getNextAction());
@@ -32,7 +35,7 @@ public class ApplicationController {
             updateView();
         }
         showGameStatus();
-        thread.interrupt();
+        timeThread.interrupt();
     }
 
     private String[] getNextAction() {
@@ -62,8 +65,8 @@ public class ApplicationController {
     private void showInfoAboutExceptions(String message) {
         if (graphicView.isEmpty()) {
             System.out.println(message);
-        } else {  // TODO: add else branch.
-
+        } else {
+            graphicView.get().displayExceptionInfo(message);
         }
     }
 
@@ -76,6 +79,27 @@ public class ApplicationController {
             }
         } else {  // TODO: add else branch.
 
+        }
+    }
+
+    private void initializationOfUserInterface() {
+        if (graphicView.isEmpty()) {
+
+        } else {
+            GraphicInitializationChecker initializationChecker = new GraphicInitializationChecker(graphicView.get());
+            Thread initializationCheckerThread = new Thread(initializationChecker);
+            initializationCheckerThread.start();
+            while (true) {
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e); // TODO: add custom exception.
+                }
+                if (initializationChecker.getInitializationStatus()) {
+                    initializationCheckerThread.interrupt();
+                    return;
+                }
+            }
         }
     }
 }

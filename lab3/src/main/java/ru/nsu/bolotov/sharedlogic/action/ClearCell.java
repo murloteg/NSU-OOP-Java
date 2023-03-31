@@ -1,8 +1,8 @@
 package ru.nsu.bolotov.sharedlogic.action;
 
-import ru.nsu.bolotov.exceptions.InvalidFieldPositionException;
+import ru.nsu.bolotov.exceptions.game.InvalidFieldPositionException;
 import ru.nsu.bolotov.exceptions.InvalidNumberOfArguments;
-import ru.nsu.bolotov.exceptions.TryingToClearCellWithoutFlagException;
+import ru.nsu.bolotov.exceptions.game.TryingToClearCellWithoutFlagException;
 import ru.nsu.bolotov.exceptions.UnexpectedArgumentType;
 import ru.nsu.bolotov.sharedlogic.field.Field;
 import ru.nsu.bolotov.util.UtilConsts;
@@ -39,7 +39,7 @@ public class ClearCell implements Action {
         checkPosition(x, y, fieldSize);
         checkFlagOnThisCell((Field) args.get(0), x, y);
         int position = y * fieldSize + x;
-        ((Field) args.get(0)).getArrayOfFieldCells()[position] = UtilConsts.StatusesOfCells.HIDDEN;
+        ((Field) args.get(0)).getArrayOfFieldCells()[position] = UtilConsts.StatusesOfCells.CLEARED;
     }
 
     @Override

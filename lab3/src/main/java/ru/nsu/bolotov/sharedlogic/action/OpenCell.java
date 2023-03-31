@@ -1,6 +1,8 @@
 package ru.nsu.bolotov.sharedlogic.action;
 
 import ru.nsu.bolotov.exceptions.*;
+import ru.nsu.bolotov.exceptions.game.InvalidFieldPositionException;
+import ru.nsu.bolotov.exceptions.game.TryingToOpenFlaggedCellException;
 import ru.nsu.bolotov.sharedlogic.field.Field;
 import ru.nsu.bolotov.util.UtilConsts;
 

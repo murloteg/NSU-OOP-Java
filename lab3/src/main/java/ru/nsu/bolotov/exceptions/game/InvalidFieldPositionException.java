@@ -1,4 +1,4 @@
-package ru.nsu.bolotov.exceptions;
+package ru.nsu.bolotov.exceptions.game;
 
 public class InvalidFieldPositionException extends IllegalArgumentException {
     private final int x;
