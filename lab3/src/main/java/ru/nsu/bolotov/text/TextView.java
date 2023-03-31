@@ -4,9 +4,9 @@ import ru.nsu.bolotov.util.UtilConsts;
 import ru.nsu.bolotov.sharedlogic.field.Field;
 
 public final class TextView {
-    public static void showField(Field userfField, Field logicField) {
-        int fieldSize = userfField.getFieldSize();
-        int[] userArrayOfFieldCells = userfField.getArrayOfFieldCells();
+    public static void showField(Field userField, Field logicField) {
+        int fieldSize = userField.getFieldSize();
+        int[] userArrayOfFieldCells = userField.getArrayOfFieldCells();
         int[] logicArrayOfFieldCells = logicField.getArrayOfFieldCells();
         printBorder(fieldSize);
         for (int i = 0; i < fieldSize; ++i) {

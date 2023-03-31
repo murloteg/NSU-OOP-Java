@@ -4,18 +4,20 @@ import ru.nsu.bolotov.controller.ApplicationController;
 import ru.nsu.bolotov.gui.GraphicView;
 import ru.nsu.bolotov.util.UtilConsts;
 
-import javax.swing.*;
 import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationStarter starter = new ApplicationStarter(args);
-        starter.prepareArgs();
+        ApplicationStarter appStarter = new ApplicationStarter(args);
+        appStarter.prepareArgs();
+        int fieldSize = appStarter.getFieldSize();
+        int numberOfBombs = appStarter.getNumberOfBombs();
+
         GraphicView graphicView = null;
-        if (starter.getTypeOfView() == UtilConsts.ViewTypes.GRAPHIC_INTERFACE) {
-            graphicView = new GraphicView();
+        if (appStarter.getTypeOfView() == UtilConsts.ViewTypes.GRAPHIC_INTERFACE) {
+            graphicView = new GraphicView(fieldSize);
         }
-        ApplicationController controller = new ApplicationController(Optional.ofNullable(graphicView) , starter.getFieldSize(), starter.getNumberOfBombs());
+        ApplicationController controller = new ApplicationController(Optional.ofNullable(graphicView), fieldSize, numberOfBombs);
         controller.executeGame();
     }
 }

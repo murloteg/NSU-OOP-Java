@@ -19,10 +19,10 @@ public class ApplicationController {
     }
 
     public void executeGame() {
-        Thread thread = new Thread(timerObject);
-        thread.start();
         gameStarter.startGame();
         updateView();
+        Thread thread = new Thread(timerObject);
+        thread.start();
         while (!gameStarter.isEndOfGame()) {
             try {
                 gameStarter.makeNextMove(getNextAction());
@@ -36,24 +36,26 @@ public class ApplicationController {
     }
 
     private String[] getNextAction() {
+        String nextActionAsString;
         if (graphicView.isEmpty()) {
-            String nextActionAsString = TextDataGetter.inputNextActionAsString();
+            nextActionAsString = TextDataGetter.inputNextActionAsString();
             String[] nextAction = nextActionAsString.split(" ");
             nextAction[0] = nextAction[0].toUpperCase();
             return nextAction;
-        } else {  // TODO: add else branch.
-
+        } else {
+            nextActionAsString = graphicView.get().getNextActionAsString();
+            String[] nextAction = nextActionAsString.split(" ");
+            nextAction[0] = nextAction[0].toUpperCase();
+            return nextAction;
         }
-
-        return null; // FIXME: delete it.
     }
 
     private void updateView() {
         if (graphicView.isEmpty()) {
             TextView.showField(gameStarter.getUserField(), gameStarter.getLogicField());
             TextView.showCurrentTime(timerObject.getCurrentTime());
-        } else {  // TODO: add else branch.
-
+        } else {
+            graphicView.get().updateGameField(gameStarter.getUserField(), gameStarter.getLogicField(), timerObject.getCurrentTime());
         }
     }
 

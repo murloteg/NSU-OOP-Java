@@ -33,6 +33,7 @@ public class GameStarter {
     }
 
     public void makeNextMove(String[] nextActionRepresentation) {
+        System.out.println(nextActionRepresentation[0] + nextActionRepresentation[1] + nextActionRepresentation[2]); // FIXME
         Action action;
         try {
             action = ActionFactory.create(nextActionRepresentation[0]);
