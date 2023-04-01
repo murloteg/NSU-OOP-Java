@@ -1,6 +1,8 @@
-package ru.nsu.bolotov.gui;
+package ru.nsu.bolotov.view.gui;
 
-public class GraphicInitializationChecker implements Runnable {
+import ru.nsu.bolotov.view.InitializationChecker;
+
+public class GraphicInitializationChecker implements InitializationChecker {
     private final GraphicView graphicView;
     private boolean statusOfInitialization;
 
@@ -15,6 +17,7 @@ public class GraphicInitializationChecker implements Runnable {
         }
     }
 
+    @Override
     public boolean getInitializationStatus() {
         return statusOfInitialization;
     }

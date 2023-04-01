@@ -80,6 +80,14 @@ public class GameStarter {
         return logicField;
     }
 
+    public int getFieldSize() {
+        return fieldSize;
+    }
+
+    public int getNumberOfBombs() {
+        return numberOfBombs;
+    }
+
     private void getInfoAboutBombsConfiguration() {
         indicesOfBombs = new int[numberOfBombs];
         int[] arrayOfFieldCells = logicField.getArrayOfFieldCells();

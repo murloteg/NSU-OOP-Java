@@ -1,16 +1,21 @@
 package ru.nsu.bolotov.controller;
 
-import ru.nsu.bolotov.gui.GraphicView;
-import ru.nsu.bolotov.gui.GraphicInitializationChecker;
+import ru.nsu.bolotov.exceptions.FailedCreationException;
+import ru.nsu.bolotov.exceptions.FailedUserInterfaceInitializationException;
+import ru.nsu.bolotov.view.InitializationChecker;
+import ru.nsu.bolotov.view.gui.GraphicView;
+import ru.nsu.bolotov.view.gui.GraphicInitializationChecker;
 import ru.nsu.bolotov.sharedlogic.timer.TimerThread;
-import ru.nsu.bolotov.text.TextDataGetter;
-import ru.nsu.bolotov.text.TextView;
+import ru.nsu.bolotov.view.text.TextDataGetter;
+import ru.nsu.bolotov.view.text.TextInitializationChecker;
+import ru.nsu.bolotov.view.text.TextView;
 
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationController {
     private final Optional<GraphicView> graphicView;
+    private final TextView textView;
     private final GameStarter gameStarter;
     private final TimerThread timerObject;
 
@@ -18,6 +23,7 @@ public class ApplicationController {
         this.graphicView = graphicView;
         gameStarter = new GameStarter(fieldSize, numberOfBombs);
         timerObject = new TimerThread();
+        textView = graphicView.isEmpty() ? new TextView() : null;
     }
 
     public void executeGame() {
@@ -26,9 +32,12 @@ public class ApplicationController {
         updateView();
         Thread timeThread = new Thread(timerObject);
         timeThread.start();
+        // TODO: think about re-launch of game.
         while (!gameStarter.isEndOfGame()) {
             try {
                 gameStarter.makeNextMove(getNextAction());
+            } catch (FailedCreationException exception) {
+                showInfoAboutExceptions("Move canceled");
             } catch (RuntimeException exception) {
                 showInfoAboutExceptions(exception.getMessage());
             }
@@ -55,8 +64,8 @@ public class ApplicationController {
 
     private void updateView() {
         if (graphicView.isEmpty()) {
-            TextView.showField(gameStarter.getUserField(), gameStarter.getLogicField());
-            TextView.showCurrentTime(timerObject.getCurrentTime());
+            textView.showField(gameStarter.getUserField(), gameStarter.getLogicField());
+            textView.showCurrentTime(timerObject.getCurrentTime());
         } else {
             graphicView.get().updateGameField(gameStarter.getUserField(), gameStarter.getLogicField(), timerObject.getCurrentTime());
         }
@@ -64,41 +73,59 @@ public class ApplicationController {
 
     private void showInfoAboutExceptions(String message) {
         if (graphicView.isEmpty()) {
-            System.out.println(message);
+            textView.displayExceptionInfo(message);
         } else {
             graphicView.get().displayExceptionInfo(message);
         }
     }
 
     private void showGameStatus() {
+        boolean defeatCondition = gameStarter.isAnyBombDetonated();
         if (graphicView.isEmpty()) {
-            if (gameStarter.isAnyBombDetonated()) {
-                TextView.printAboutDefeat(timerObject.getCurrentTime());
-            } else {
-                TextView.printAboutVictory(timerObject.getCurrentTime());
-            }
-        } else {  // TODO: add else branch.
-
+            textView.displayGameStatus(defeatCondition, gameStarter.getFieldSize(), gameStarter.getNumberOfBombs(), timerObject.getCurrentTime());
+        } else {
+            graphicView.get().displayGameStatus(defeatCondition, gameStarter.getUserField(), gameStarter.getLogicField(), timerObject.getCurrentTime());
         }
     }
 
     private void initializationOfUserInterface() {
+        InitializationChecker initializationChecker;
         if (graphicView.isEmpty()) {
-
+            textView.printAvailableOptions();
+            initializationChecker = new TextInitializationChecker(textView);
         } else {
-            GraphicInitializationChecker initializationChecker = new GraphicInitializationChecker(graphicView.get());
-            Thread initializationCheckerThread = new Thread(initializationChecker);
-            initializationCheckerThread.start();
-            while (true) {
-                try {
-                    TimeUnit.SECONDS.sleep(1);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e); // TODO: add custom exception.
+            initializationChecker = new GraphicInitializationChecker(graphicView.get());
+        }
+
+        Thread initializationCheckerThread = new Thread(initializationChecker);
+        initializationCheckerThread.start();
+        while (true) {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+                if (initializationChecker instanceof TextInitializationChecker) {
+                    String option = TextDataGetter.chooseOption();
+                    switch (option) {
+                        case "NEW GAME": {
+                            textView.setGameLaunched(true);
+                            break;
+                        }
+                        case "ABOUT": {
+                            textView.showGameRules();
+                            break;
+                        }
+                        case "HIGH SCORES": {
+                            textView.showHighScores();
+                            break;
+                        }
+                    }
                 }
-                if (initializationChecker.getInitializationStatus()) {
-                    initializationCheckerThread.interrupt();
-                    return;
-                }
+            } catch (InterruptedException exception) {
+                Thread.currentThread().interrupt();
+                throw new FailedUserInterfaceInitializationException();
+            }
+            if (initializationChecker.getInitializationStatus()) {
+                initializationCheckerThread.interrupt();
+                return;
             }
         }
     }

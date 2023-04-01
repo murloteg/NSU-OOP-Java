@@ -1,4 +1,4 @@
-package ru.nsu.bolotov.gui;
+package ru.nsu.bolotov.sharedlogic.scores;
 
 import ru.nsu.bolotov.exceptions.EmptyPropertiesFile;
 import ru.nsu.bolotov.exceptions.IOBusinessException;
@@ -9,37 +9,37 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public final class ImagePathFinder {
-    private static final InputStream PROPERTY_FILE;
+public final class HighScoresFinder {
+    private static final InputStream PROPERTIES_FILE;
     private static final Properties PROPERTIES;
 
     static {
         try {
-            PROPERTY_FILE = new FileInputStream("/Users/mac/IntelliJProjects/Java-Projects/lab3/src/main/resources/images.properties");
+            PROPERTIES_FILE = new FileInputStream("/Users/mac/IntelliJProjects/Java-Projects/lab3/src/main/resources/highscores.properties");
         } catch (FileNotFoundException exception) {
             throw new IOBusinessException(exception);
         }
         PROPERTIES = new Properties();
         try {
-            PROPERTIES.load(PROPERTY_FILE);
+            PROPERTIES.load(PROPERTIES_FILE);
         } catch (IOException exception) {
-            throw new EmptyPropertiesFile();
+            throw new IOBusinessException(exception);
         }
         if (PROPERTIES.isEmpty()) {
             throw new EmptyPropertiesFile();
         }
         try {
-            PROPERTY_FILE.close();
+            PROPERTIES_FILE.close();
         } catch (IOException exception) {
             throw new IOBusinessException(exception);
         }
     }
 
-    public static String findPath(String imageName) {
-        return PROPERTIES.getProperty(imageName.toUpperCase());
+    public static String findPath(String alias) {
+        return PROPERTIES.getProperty(alias);
     }
 
-    private ImagePathFinder() {
-        throw new IllegalStateException("Instantiation of path finder class");
+    private HighScoresFinder() {
+        throw new IllegalStateException("Instantiation of high scores finder class");
     }
 }

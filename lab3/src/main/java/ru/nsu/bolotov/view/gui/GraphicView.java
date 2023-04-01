@@ -1,6 +1,9 @@
-package ru.nsu.bolotov.gui;
+package ru.nsu.bolotov.view.gui;
 
+import ru.nsu.bolotov.exceptions.IOBusinessException;
 import ru.nsu.bolotov.sharedlogic.field.Field;
+import ru.nsu.bolotov.sharedlogic.scores.HighScoresFinder;
+import ru.nsu.bolotov.sharedlogic.scores.ScoreCalculator;
 import ru.nsu.bolotov.util.UtilConsts;
 import ru.nsu.bolotov.exceptions.gui.InvalidImagePathException;
 
@@ -12,25 +15,33 @@ import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class GraphicView {
     private final Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-    private final Color standardBackgroundColor = new Color(0xFFD4ABFF, true);
+    private final Color standardBackgroundColor = new Color(0xC3FBD8);
+    private final Color additionalBackgroundColor = new Color(0xFFFADD);
     private final Font standardFont = new Font("Menlo", Font.ITALIC, 18);
     private final int fieldSize;
+    private final int numberOfBombs;
     private final JFrame frame;
     private JPanel panel;
     private JLabel timerLabel;
     private ArrayList<JButton> cellsList;
     private boolean isGameLaunched;
+    private String username = "default";
 
-    public GraphicView(int fieldSize) {
+    public GraphicView(int fieldSize, int numberOfBombs) {
         this.fieldSize = fieldSize;
+        this.numberOfBombs = numberOfBombs;
         isGameLaunched = false;
         frame = new JFrame();
         initializeFrame();
@@ -45,6 +56,9 @@ public class GraphicView {
         frame.remove(panel);
         cellsList = new ArrayList<>();
         isGameLaunched = true;
+
+        float rectangleMinX = (float) dimension.width / 2 - (float) dimension.width / 5 - 30;
+        float rectangleMinY = (float) dimension.height / 4 - (float) dimension.height / 7;
         panel = new JPanel() {
             @Override
             protected void paintComponent(Graphics graphics) {
@@ -54,9 +68,7 @@ public class GraphicView {
                 graphics2D.drawString("GAME FIELD", dimension.width / 2 - dimension.width / 19, dimension.height / 15);
 
                 int sideSize = 800;
-                Rectangle2D rectangle = new Rectangle2D.Float((float) dimension.width / 2 - (float) dimension.width / 5 - 30,
-                                                            (float) dimension.height / 4 - (float) dimension.height / 7,
-                                                                sideSize, sideSize);
+                Rectangle2D rectangle = new Rectangle2D.Float(rectangleMinX, rectangleMinY, sideSize, sideSize);
                 graphics2D.setStroke(new BasicStroke(4));
                 graphics2D.draw(rectangle);
                 int distanceBetweenColumns = sideSize / (fieldSize);
@@ -100,9 +112,13 @@ public class GraphicView {
         for (int i = 0; i < fieldSize; ++i) {
             for (int j = 0; j < fieldSize; ++j) {
                 JButton currentCell = new JButton("???");
-                currentCell.setBounds((int) ((float) dimension.width / 2 - (float) dimension.width / 5 - 30 + i * distanceBetweenColumns) + 3, (int) ((float) dimension.height / 4 - (float) dimension.height / 7 + 4) + j * distanceBetweenColumns, distanceBetweenColumns - 5, distanceBetweenColumns - 5);
+                currentCell.setBounds((int) (rectangleMinX + (float) distanceBetweenColumns / 20 + i * distanceBetweenColumns),
+                        (int) (rectangleMinY + (float) distanceBetweenColumns / 20 + j * distanceBetweenColumns),
+                        distanceBetweenColumns - 5, distanceBetweenColumns - 5);
                 currentCell.setToolTipText(j + " " + i);
-                currentCell.addActionListener(event -> currentCell.setSelected(true));
+                currentCell.addActionListener(event -> {
+                    currentCell.setSelected(true);
+                });
                 panel.add(currentCell);
                 cellsList.add(currentCell);
             }
@@ -111,11 +127,19 @@ public class GraphicView {
         panel.setBackground(standardBackgroundColor);
         panel.setLayout(null);
         addMenuButton();
+
+        JLabel timerDescription = new JLabel();
+        timerDescription.setText("Current time:");
+        timerDescription.setFont(new Font("Menlo", Font.BOLD, 40));
+        timerDescription.setBounds(dimension.width - dimension.width / 5 - dimension.width / 35, dimension.height / 10, 325, 40);
+        panel.add(timerDescription);
+
         timerLabel = new JLabel();
         timerLabel.setText("0");
         timerLabel.setFont(new Font("Menlo", Font.BOLD, 100));
-        timerLabel.setBounds(dimension.width / 2 + dimension.width / 3 + dimension.width / 35, dimension.height / 8, 120, 120);
+        timerLabel.setBounds(dimension.width / 2 + dimension.width / 4 + dimension.width / 11, dimension.height / 6, 150, 150);
         panel.add(timerLabel);
+
         frame.add(panel);
     }
 
@@ -163,12 +187,11 @@ public class GraphicView {
     public String getNextActionAsString() {
         String selectedPosition = "";
         while (selectedPosition.isEmpty()) {
-            for (JButton button : cellsList) {
-                if (button.isSelected()) {
-                    selectedPosition = button.getToolTipText();
-                    button.setSelected(false);
-                    break;
-                }
+            Optional<JButton> optionalJButton = findSelectedButtonInArray();
+            if (optionalJButton.isPresent()) {
+                JButton currentButton = optionalJButton.get();
+                selectedPosition = currentButton.getToolTipText();
+                currentButton.setSelected(false);
             }
         }
 
@@ -196,10 +219,95 @@ public class GraphicView {
 
     public void displayExceptionInfo(String message) {
         ImageIcon errorIcon = new ImageIcon(ImagePathFinder.findPath("ERROR"));
-        JOptionPane.showMessageDialog(panel, message, "Exception!", JOptionPane.ERROR_MESSAGE, errorIcon);
+        JOptionPane.showMessageDialog(panel, message, "Warning!", JOptionPane.ERROR_MESSAGE, errorIcon);
     }
 
-    public void showGameRules() {
+    public void displayGameStatus(boolean defeatCondition, Field userField, Field logicField, long currentTime) {
+        int[] userArrayOfFieldCells = userField.getArrayOfFieldCells();
+        int[] logicArrayOfFieldCells = logicField.getArrayOfFieldCells();
+        for (int i = 0; i < fieldSize; ++i) {
+            for (int j = 0; j < fieldSize; ++j) {
+                int position = i * fieldSize + j;
+                if ((userArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.HIDDEN
+                        || userArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.FLAGGED)
+                        && logicArrayOfFieldCells[position] == UtilConsts.StatusesOfCells.BOMB) {
+                    cellsList.get(i * fieldSize + j).setIcon(new ImageIcon(ImagePathFinder.findPath("DEFUSED_BOMB")));
+                    cellsList.get(i * fieldSize + j).setText("");
+                }
+            }
+        }
+
+        timerLabel.setText(Long.toString(currentTime));
+        ImageIcon dialogIcon = new ImageIcon(ImagePathFinder.findPath("QUESTION"));
+        if (defeatCondition) {
+            ImageIcon defeatIcon = new ImageIcon(ImagePathFinder.findPath("DEFEAT"));
+            JOptionPane.showMessageDialog(panel, "DEFEAT", "Game status", JOptionPane.INFORMATION_MESSAGE, defeatIcon);
+            int answer = JOptionPane.showOptionDialog(panel,
+                    "Do you want to return to the menu?",
+                    null,
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    dialogIcon,
+                    null,
+                    null);
+            if (answer == JOptionPane.YES_OPTION) {
+                setDefaultPanelWithMenu();
+                frame.revalidate();
+                frame.repaint();
+            }
+        } else {
+            ImageIcon victoryIcon = new ImageIcon(ImagePathFinder.findPath("VICTORY"));
+            JOptionPane.showMessageDialog(panel, "VICTORY", "Game status", JOptionPane.INFORMATION_MESSAGE, victoryIcon);
+            int answer = JOptionPane.showOptionDialog(panel,
+                    "Do you want to save your result?",
+                    null,
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    dialogIcon,
+                    null,
+                    null);
+            if (answer == JOptionPane.YES_OPTION) {
+                JTextField inputName = new JTextField();
+                inputName.setFont(standardFont);
+                inputName.setBackground(additionalBackgroundColor);
+                inputName.setBounds(dimension.width - dimension.width / 5, 400, 225, 80);
+
+                JButton confirmName = new JButton();
+                confirmName.setText("Confirm Username");
+                confirmName.setFont(standardFont);
+                confirmName.setBounds(dimension.width - dimension.width / 5, 500, 225, 80);
+
+                confirmName.addActionListener(event -> {
+                    if (!inputName.getText().isEmpty()) {
+                        username = inputName.getText();
+                    }
+                    addScoreToTable();
+                    setDefaultPanelWithMenu();
+                    frame.revalidate();
+                    frame.repaint();
+                });
+
+                panel.add(inputName);
+                panel.add(confirmName);
+                panel.revalidate();
+                panel.repaint();
+
+                UsernameWaiter usernameWaiter = new UsernameWaiter(confirmName);
+                Thread usernameWaiterThread = new Thread(usernameWaiter);
+                usernameWaiterThread.start();
+                while (!usernameWaiter.isButtonWasActivated()) {
+                    try {
+                        TimeUnit.MILLISECONDS.sleep(100);
+                    } catch (InterruptedException exception) {
+                        Thread.currentThread().interrupt();
+                        throw new RuntimeException(exception);
+                    }
+                }
+            }
+        }
+    }
+
+    private void showGameRules() {
         clearPanel();
         frame.remove(panel);
         panel = new JPanel() {
@@ -213,9 +321,9 @@ public class GraphicView {
                 graphics2D.setFont(rulesFont);
                 graphics2D.drawString("1) Your goal is to open all cells without bombs.", dimension.width / 12, dimension.height / 10);
                 graphics2D.drawString("2) When the game starts, you can do only these actions:", dimension.width / 12, dimension.height / 8);
-                graphics2D.drawString("\t\t\t\t\t\t\t OPEN THE CELL (x, y);", dimension.width / 12, dimension.height / 8 + 35);
-                graphics2D.drawString("\t\t\t\t\t\t\t PUT THE FLAG (x, y);", dimension.width / 12, dimension.height / 8 + 70);
-                graphics2D.drawString("\t\t\t\t\t\t\t CLEAR THE CELL FROM THE FLAG (x, y);", dimension.width / 12, dimension.height / 8 + 105);
+                graphics2D.drawString("OPEN THE CELL (x, y);", dimension.width / 7, dimension.height / 8 + 35);
+                graphics2D.drawString("PUT THE FLAG (x, y);", dimension.width / 7, dimension.height / 8 + 70);
+                graphics2D.drawString("CLEAR THE CELL FROM THE FLAG (x, y);", dimension.width / 7, dimension.height / 8 + 105);
                 graphics2D.drawString("3) You must finish as fast as you can!", dimension.width / 12, dimension.height / 8 + 145);
             }
         };
@@ -223,6 +331,25 @@ public class GraphicView {
         panel.setLayout(null);
         addMenuButton();
         frame.add(panel);
+    }
+
+    private void showHighScores() {
+        clearPanel();
+        frame.remove(panel);
+        panel = new JPanel();
+        // TODO: work about it.
+    }
+
+    private void addScoreToTable() {
+        try (FileWriter fileWriter = new FileWriter(HighScoresFinder.findPath("PATH"), true)) {
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            ScoreCalculator.calculateScore(fieldSize, numberOfBombs, Long.parseLong(timerLabel.getText()));
+            bufferedWriter.newLine();
+            bufferedWriter.write(username + ", GUI, " + ScoreCalculator.getScore());
+            bufferedWriter.close();
+        } catch (IOException exception) {
+            throw new IOBusinessException(exception);
+        }
     }
 
     private void clearPanel() {
@@ -237,11 +364,28 @@ public class GraphicView {
         menuButton.setBounds(dimension.width / 15, dimension.height - dimension.height / 5, 200, 80);
 
         menuButton.addActionListener(event -> {
-            setDefaultPanelWithMenu();
-            isGameLaunched = false;
+            ImageIcon dialogIcon = new ImageIcon(ImagePathFinder.findPath("QUESTION"));
+            int answer = JOptionPane.showConfirmDialog(panel,
+                    "Are you sure you want to return to the menu?",
+                    "Confirm your action",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    dialogIcon);
+            if (answer == JOptionPane.YES_OPTION) {
+                setDefaultPanelWithMenu();
+                isGameLaunched = false;
+            }
         });
-        // TODO: add dialog window.
         panel.add(menuButton);
+    }
+
+    private Optional<JButton> findSelectedButtonInArray() {
+        for (JButton button : cellsList) {
+            if (button.isSelected()) {
+                return Optional.of(button);
+            }
+        }
+        return Optional.empty();
     }
 
     private void initializeFrame() {
@@ -259,28 +403,38 @@ public class GraphicView {
         clearPanel();
         frame.remove(panel);
         panel = new JPanel();
+
         panel.setBackground(standardBackgroundColor);
         panel.setLayout(null);
 
+        JLabel intro = new JLabel();
+        ImageIcon introIcon = new ImageIcon(ImagePathFinder.findPath("INTRO"));
+        intro.setIcon(introIcon);
+        intro.setBounds(dimension.width / 2, 300, 512, 512);
+        panel.add(intro);
+
         JButton newGameButton = new JButton("New Game");
         newGameButton.setFont(standardFont);
-        newGameButton.setBounds(dimension.width / 8 + dimension.width / 9, dimension.height / 7, 200, 80);
+        newGameButton.setBounds(dimension.width / 9, 200, 200, 80);
 
         JButton aboutButton = new JButton("About");
         aboutButton.setFont(standardFont);
-        aboutButton.setBounds(dimension.width / 8 + dimension.width / 3, dimension.height / 7, 200, 80);
+        aboutButton.setBounds(dimension.width / 9, 350, 200, 80);
 
         JButton scoresButton = new JButton("High Scores");
         scoresButton.setFont(standardFont);
-        scoresButton.setBounds(dimension.width - dimension.width / 8 - dimension.width / 10 - dimension.width / 9, dimension.height / 7, 200, 80);
+        scoresButton.setBounds(dimension.width / 9, 500, 200, 80);
 
         JButton exitButton = new JButton("Exit");
         exitButton.setFont(standardFont);
-        exitButton.setBounds(dimension.width / 8 + dimension.width / 3, dimension.height / 2 - dimension.height / 10, 200, 80);
+        exitButton.setBounds(dimension.width / 9, 650, 200, 80);
 
         newGameButton.addActionListener(event -> prepareGameField());
         aboutButton.addActionListener(event -> showGameRules());
         exitButton.addActionListener(event -> frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING)));
+
+        UIManager.put("OptionPane.messageFont", new Font("Menlo", Font.PLAIN, 25));
+        UIManager.put("OptionPane.buttonFont", new Font("Menlo", Font.PLAIN, 20));
 
         panel.add(newGameButton);
         panel.add(aboutButton);

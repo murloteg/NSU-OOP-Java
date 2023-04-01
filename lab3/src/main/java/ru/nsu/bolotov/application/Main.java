@@ -1,7 +1,7 @@
 package ru.nsu.bolotov.application;
 
 import ru.nsu.bolotov.controller.ApplicationController;
-import ru.nsu.bolotov.gui.GraphicView;
+import ru.nsu.bolotov.view.gui.GraphicView;
 import ru.nsu.bolotov.util.UtilConsts;
 
 import java.util.Optional;
@@ -15,7 +15,7 @@ public class Main {
 
         GraphicView graphicView = null;
         if (appStarter.getTypeOfView() == UtilConsts.ViewTypes.GRAPHIC_INTERFACE) {
-            graphicView = new GraphicView(fieldSize);
+            graphicView = new GraphicView(fieldSize, numberOfBombs);
         }
         ApplicationController controller = new ApplicationController(Optional.ofNullable(graphicView), fieldSize, numberOfBombs);
         controller.executeGame();
