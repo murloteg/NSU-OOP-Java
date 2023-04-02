@@ -66,6 +66,14 @@ public final class UtilConsts {
         }
     }
 
+    public static final class HighScoresConsts {
+        public static final int MAX_LENGTH_OF_HIGH_SCORES_LIST = 10;
+
+        private HighScoresConsts() {
+            throw new IllegalStateException(StringConsts.UTILITY_CLASS_INSTANTIATION_MESSAGE);
+        }
+    }
+
     private UtilConsts() {
         throw new IllegalStateException(StringConsts.UTILITY_CLASS_INSTANTIATION_MESSAGE);
     }

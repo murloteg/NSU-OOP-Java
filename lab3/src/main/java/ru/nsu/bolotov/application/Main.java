@@ -1,6 +1,7 @@
 package ru.nsu.bolotov.application;
 
 import ru.nsu.bolotov.controller.ApplicationController;
+import ru.nsu.bolotov.sharedlogic.scores.HighScoresSorter;
 import ru.nsu.bolotov.view.gui.GraphicView;
 import ru.nsu.bolotov.util.UtilConsts;
 

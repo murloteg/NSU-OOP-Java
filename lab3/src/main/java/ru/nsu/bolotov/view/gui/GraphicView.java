@@ -3,6 +3,7 @@ package ru.nsu.bolotov.view.gui;
 import ru.nsu.bolotov.exceptions.IOBusinessException;
 import ru.nsu.bolotov.sharedlogic.field.Field;
 import ru.nsu.bolotov.sharedlogic.scores.HighScoresFinder;
+import ru.nsu.bolotov.sharedlogic.scores.HighScoresSorter;
 import ru.nsu.bolotov.sharedlogic.scores.ScoreCalculator;
 import ru.nsu.bolotov.util.UtilConsts;
 import ru.nsu.bolotov.exceptions.gui.InvalidImagePathException;
@@ -15,10 +16,7 @@ import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -314,7 +312,7 @@ public class GraphicView {
             @Override
             protected void paintComponent(Graphics graphics) {
                 Graphics2D graphics2D = (Graphics2D) graphics;
-                Font generalFont = new Font("Menlo", Font.BOLD, 36);
+                Font generalFont = new Font("Menlo", Font.BOLD, 45);
                 graphics2D.setFont(generalFont);
                 graphics2D.drawString("GAME RULES", dimension.width / 2 - dimension.width / 19, dimension.height / 15);
                 Font rulesFont = new Font("Menlo", Font.PLAIN, 20);
@@ -330,6 +328,13 @@ public class GraphicView {
         panel.setBackground(standardBackgroundColor);
         panel.setLayout(null);
         addMenuButton();
+
+        ImageIcon sakura = new ImageIcon(ImagePathFinder.findPath("SAKURA"));
+        JLabel sakuraLabel = new JLabel();
+        sakuraLabel.setIcon(sakura);
+        sakuraLabel.setBounds(dimension.width / 2 - 100, dimension.height / 7, 920, 752);
+        panel.add(sakuraLabel);
+
         frame.add(panel);
     }
 
@@ -337,16 +342,58 @@ public class GraphicView {
         clearPanel();
         frame.remove(panel);
         panel = new JPanel();
-        // TODO: work about it.
+        Font generalFont = new Font("Menlo", Font.BOLD, 45);
+        JLabel titleLabel = new JLabel();
+        titleLabel.setFont(generalFont);
+        titleLabel.setText("HIGH SCORES:");
+        titleLabel.setBounds(dimension.width / 2 - dimension.width / 11, dimension.height / 15, 400, 80);
+        panel.add(titleLabel);
+
+        ImageIcon samurai = new ImageIcon(ImagePathFinder.findPath("SAMURAI"));
+        JLabel samuraiLabel = new JLabel();
+        samuraiLabel.setIcon(samurai);
+        samuraiLabel.setBounds(100, 200, 500, 560);
+        panel.add(samuraiLabel);
+
+        ImageIcon samuraiInversed = new ImageIcon(ImagePathFinder.findPath("SAMURAI_INVERSED"));
+        JLabel samuraiInversedLabel = new JLabel();
+        samuraiInversedLabel.setIcon(samuraiInversed);
+        samuraiInversedLabel.setBounds(dimension.width - 600, 200, 500, 560);
+        panel.add(samuraiInversedLabel);
+
+        int startPositionX = dimension.width / 2 - dimension.width / 13;
+        int startPositionY = dimension.height / 5;
+        Path path = Paths.get(HighScoresFinder.findPath("PATH"));
+        try (BufferedReader bufferedReader = Files.newBufferedReader(path)) {
+            for (int i = 0; i < UtilConsts.HighScoresConsts.MAX_LENGTH_OF_HIGH_SCORES_LIST; ++i) {
+                String currentScoreString = bufferedReader.readLine();
+                if (Objects.isNull(currentScoreString)) {
+                    break;
+                }
+                JLabel scoreLabel = new JLabel();
+                scoreLabel.setFont(standardFont);
+                scoreLabel.setText((i + 1) + ") " + currentScoreString);
+                scoreLabel.setBounds(startPositionX, startPositionY + i * 50, 500, 80);
+                panel.add(scoreLabel);
+            }
+        } catch (IOException exception) {
+            throw new IOBusinessException(exception);
+        }
+        panel.setBackground(standardBackgroundColor);
+        panel.setLayout(null);
+        addMenuButton();
+        frame.add(panel);
     }
 
     private void addScoreToTable() {
-        try (FileWriter fileWriter = new FileWriter(HighScoresFinder.findPath("PATH"), true)) {
+        Path path = Paths.get(HighScoresFinder.findPath("PATH"));
+        try (FileWriter fileWriter = new FileWriter(path.toFile(), true)) {
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             ScoreCalculator.calculateScore(fieldSize, numberOfBombs, Long.parseLong(timerLabel.getText()));
-            bufferedWriter.newLine();
             bufferedWriter.write(username + ", GUI, " + ScoreCalculator.getScore());
+            bufferedWriter.newLine();
             bufferedWriter.close();
+            HighScoresSorter.sortHighScores();
         } catch (IOException exception) {
             throw new IOBusinessException(exception);
         }
@@ -410,7 +457,7 @@ public class GraphicView {
         JLabel intro = new JLabel();
         ImageIcon introIcon = new ImageIcon(ImagePathFinder.findPath("INTRO"));
         intro.setIcon(introIcon);
-        intro.setBounds(dimension.width / 2, 300, 512, 512);
+        intro.setBounds(dimension.width / 2 - dimension.width / 7, 190, 768, 768);
         panel.add(intro);
 
         JButton newGameButton = new JButton("New Game");
@@ -431,6 +478,7 @@ public class GraphicView {
 
         newGameButton.addActionListener(event -> prepareGameField());
         aboutButton.addActionListener(event -> showGameRules());
+        scoresButton.addActionListener(event -> showHighScores());
         exitButton.addActionListener(event -> frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING)));
 
         UIManager.put("OptionPane.messageFont", new Font("Menlo", Font.PLAIN, 25));
