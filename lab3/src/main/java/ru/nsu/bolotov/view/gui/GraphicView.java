@@ -45,7 +45,7 @@ public class GraphicView {
         initializeFrame();
     }
 
-    public boolean getStatusOfGameLaunch() {
+    public boolean isGameLaunched() {
         return isGameLaunched;
     }
 
@@ -53,7 +53,6 @@ public class GraphicView {
         clearPanel();
         frame.remove(panel);
         cellsList = new ArrayList<>();
-        isGameLaunched = true;
 
         float rectangleMinX = (float) dimension.width / 2 - (float) dimension.width / 5 - 30;
         float rectangleMinY = (float) dimension.height / 4 - (float) dimension.height / 7;
@@ -129,13 +128,13 @@ public class GraphicView {
         JLabel timerDescription = new JLabel();
         timerDescription.setText("Current time:");
         timerDescription.setFont(new Font("Menlo", Font.BOLD, 40));
-        timerDescription.setBounds(dimension.width - dimension.width / 5 - dimension.width / 35, dimension.height / 10, 325, 40);
+        timerDescription.setBounds(dimension.width - dimension.width / 5 - dimension.width / 30, dimension.height / 10, 400, 40);
         panel.add(timerDescription);
 
         timerLabel = new JLabel();
         timerLabel.setText("0");
         timerLabel.setFont(new Font("Menlo", Font.BOLD, 100));
-        timerLabel.setBounds(dimension.width / 2 + dimension.width / 4 + dimension.width / 11, dimension.height / 6, 150, 150);
+        timerLabel.setBounds(dimension.width / 2 + dimension.width / 4 + dimension.width / 15, dimension.height / 6, 180, 100);
         panel.add(timerLabel);
 
         frame.add(panel);
@@ -308,6 +307,7 @@ public class GraphicView {
     private void showGameRules() {
         clearPanel();
         frame.remove(panel);
+        Font customFont = new Font("Menlo", Font.PLAIN, 20);
         panel = new JPanel() {
             @Override
             protected void paintComponent(Graphics graphics) {
@@ -315,14 +315,13 @@ public class GraphicView {
                 Font generalFont = new Font("Menlo", Font.BOLD, 45);
                 graphics2D.setFont(generalFont);
                 graphics2D.drawString("GAME RULES", dimension.width / 2 - dimension.width / 19, dimension.height / 15);
-                Font rulesFont = new Font("Menlo", Font.PLAIN, 20);
-                graphics2D.setFont(rulesFont);
-                graphics2D.drawString("1) Your goal is to open all cells without bombs.", dimension.width / 12, dimension.height / 10);
-                graphics2D.drawString("2) When the game starts, you can do only these actions:", dimension.width / 12, dimension.height / 8);
-                graphics2D.drawString("OPEN THE CELL (x, y);", dimension.width / 7, dimension.height / 8 + 35);
-                graphics2D.drawString("PUT THE FLAG (x, y);", dimension.width / 7, dimension.height / 8 + 70);
-                graphics2D.drawString("CLEAR THE CELL FROM THE FLAG (x, y);", dimension.width / 7, dimension.height / 8 + 105);
-                graphics2D.drawString("3) You must finish as fast as you can!", dimension.width / 12, dimension.height / 8 + 145);
+                graphics2D.setFont(customFont);
+                graphics2D.drawString("1) Your goal is to open all cells without bombs.", dimension.width / 12, dimension.height / 8);
+                graphics2D.drawString("2) When the game starts, you can do only these actions:", dimension.width / 12, dimension.height / 8 + 40);
+                graphics2D.drawString("OPEN THE CELL (x, y);", dimension.width / 7, dimension.height / 8 + 80);
+                graphics2D.drawString("PUT THE FLAG (x, y);", dimension.width / 7, dimension.height / 8 + 120);
+                graphics2D.drawString("CLEAR THE CELL FROM THE FLAG (x, y);", dimension.width / 7, dimension.height / 8 + 160);
+                graphics2D.drawString("3) You must finish as fast as you can!", dimension.width / 12, dimension.height / 8 + 200);
             }
         };
         panel.setBackground(standardBackgroundColor);
@@ -334,6 +333,12 @@ public class GraphicView {
         sakuraLabel.setIcon(sakura);
         sakuraLabel.setBounds(dimension.width / 2 - 100, dimension.height / 7, 920, 752);
         panel.add(sakuraLabel);
+
+        JLabel authorLabel = new JLabel();
+        authorLabel.setFont(customFont);
+        authorLabel.setText("Created by Kirill Bolotov, 2023.");
+        authorLabel.setBounds(dimension.width / 15, dimension.height - dimension.height / 4, 400, 20);
+        panel.add(authorLabel);
 
         frame.add(panel);
     }
@@ -476,7 +481,10 @@ public class GraphicView {
         exitButton.setFont(standardFont);
         exitButton.setBounds(dimension.width / 9, 650, 200, 80);
 
-        newGameButton.addActionListener(event -> prepareGameField());
+        newGameButton.addActionListener(event -> {
+            prepareGameField();
+            isGameLaunched = true;
+        });
         aboutButton.addActionListener(event -> showGameRules());
         scoresButton.addActionListener(event -> showHighScores());
         exitButton.addActionListener(event -> frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING)));

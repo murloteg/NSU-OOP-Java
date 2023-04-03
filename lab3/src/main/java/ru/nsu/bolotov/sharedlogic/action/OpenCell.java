@@ -50,6 +50,11 @@ public class OpenCell implements Action {
         }
     }
 
+    @Override
+    public String toString() {
+        return "OPEN CELL";
+    }
+
     private void checkPosition(int x, int y, int fieldSize) {
         if (x < 0 || x >= fieldSize || y < 0 || y >= fieldSize) {
             throw new InvalidFieldPositionException(x, y, fieldSize);
@@ -65,11 +70,29 @@ public class OpenCell implements Action {
             int bottomNeighbor = position + fieldSize;
             int leftNeighbor = position - 1;
             int rightNeighbor = position + 1;
+
+            int topLeftDiagonalNeighbor = topNeighbor - 1;
+            int topRightDiagonalNeighbor = topNeighbor + 1;
+            int bottomLeftDiagonalNeighbor = bottomNeighbor - 1;
+            int bottomRightDiagonalNeighbor = bottomNeighbor + 1;
+
             if (isVerticalNeighbors(position, topNeighbor, fieldSize)) {
                 doAction(new ArrayList<>(List.of(userField, logicField, Integer.toString(x), Integer.toString(y - 1))));
+                if (isLeftDiagonalNeighbors(position, topLeftDiagonalNeighbor, fieldSize)) {
+                    doAction(new ArrayList<>(List.of(userField, logicField, Integer.toString(x - 1), Integer.toString(y - 1))));
+                }
+                if (isRightDiagonalNeighbors(position, topRightDiagonalNeighbor, fieldSize)) {
+                    doAction(new ArrayList<>(List.of(userField, logicField, Integer.toString(x + 1), Integer.toString(y - 1))));
+                }
             }
             if (isVerticalNeighbors(position, bottomNeighbor, fieldSize)) {
                 doAction(new ArrayList<>(List.of(userField, logicField, Integer.toString(x), Integer.toString(y + 1))));
+                if (isLeftDiagonalNeighbors(position, bottomLeftDiagonalNeighbor, fieldSize)) {
+                    doAction(new ArrayList<>(List.of(userField, logicField, Integer.toString(x - 1), Integer.toString(y + 1))));
+                }
+                if (isRightDiagonalNeighbors(position, bottomRightDiagonalNeighbor, fieldSize)) {
+                    doAction(new ArrayList<>(List.of(userField, logicField, Integer.toString(x + 1), Integer.toString(y + 1))));
+                }
             }
             if (isHorizontalNeighbors(position, leftNeighbor, fieldSize)) {
                 doAction(new ArrayList<>(List.of(userField, logicField, Integer.toString(x - 1), Integer.toString(y))));
@@ -86,6 +109,14 @@ public class OpenCell implements Action {
 
     private boolean isHorizontalNeighbors(int firstPosition, int secondPosition, int fieldSize) {
         return (firstPosition / fieldSize == secondPosition / fieldSize && secondPosition >= 0 && secondPosition < fieldSize * fieldSize);
+    }
+
+    private boolean isLeftDiagonalNeighbors(int firstPosition, int secondPosition, int fieldSize) {
+        return (firstPosition % fieldSize == (secondPosition % fieldSize + 1) && secondPosition >= 0 && secondPosition < fieldSize * fieldSize);
+    }
+
+    private boolean isRightDiagonalNeighbors(int firstPosition, int secondPosition, int fieldSize) {
+        return (firstPosition % fieldSize == (secondPosition % fieldSize - 1) && secondPosition >= 0 && secondPosition < fieldSize * fieldSize);
     }
 
     private void checkStatusOfFlaggedCell(Field userField, int x, int y) {

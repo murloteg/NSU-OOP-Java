@@ -3,6 +3,7 @@ package ru.nsu.bolotov.controller;
 import ru.nsu.bolotov.exceptions.FailedCreationException;
 import ru.nsu.bolotov.exceptions.FailedUserInterfaceInitializationException;
 import ru.nsu.bolotov.view.InitializationChecker;
+import ru.nsu.bolotov.view.gui.GameClosedChecker;
 import ru.nsu.bolotov.view.gui.GraphicView;
 import ru.nsu.bolotov.view.gui.GraphicInitializationChecker;
 import ru.nsu.bolotov.sharedlogic.timer.TimerThread;
@@ -16,8 +17,8 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationController {
     private final Optional<GraphicView> graphicView;
     private final TextView textView;
-    private final GameStarter gameStarter;
-    private final TimerThread timerObject;
+    private GameStarter gameStarter;
+    private TimerThread timerObject;
 
     public ApplicationController(Optional<GraphicView> graphicView, int fieldSize, int numberOfBombs) {
         this.graphicView = graphicView;
@@ -31,9 +32,12 @@ public class ApplicationController {
         gameStarter.startGame();
         updateView();
         Thread timeThread = new Thread(timerObject);
+        GameClosedChecker gameClosedChecker = new GameClosedChecker(graphicView);
+        Thread closedCheckerThread = new Thread(gameClosedChecker);
+
         timeThread.start();
-        // TODO: think about re-launch of game.
-        while (!gameStarter.isEndOfGame()) {
+        closedCheckerThread.start();
+        while (!gameStarter.isEndOfGame() && !gameClosedChecker.isGameClosed()) {
             try {
                 gameStarter.makeNextMove(getNextAction());
             } catch (FailedCreationException exception) {
@@ -42,6 +46,15 @@ public class ApplicationController {
                 showInfoAboutExceptions(exception.getMessage());
             }
             updateView();
+        }
+
+        // FIXME: thinking about re-launch of game.
+        if (gameClosedChecker.isGameClosed()) {
+            closedCheckerThread.interrupt();
+            timeThread.interrupt();
+            recreateGameComponents();
+            executeGame();
+            return;
         }
         showGameStatus();
         timeThread.interrupt();
@@ -86,6 +99,10 @@ public class ApplicationController {
         } else {
             graphicView.get().displayGameStatus(defeatCondition, gameStarter.getUserField(), gameStarter.getLogicField(), timerObject.getCurrentTime());
         }
+    }
+
+    private void recreateGameComponents() {
+        timerObject = new TimerThread();
     }
 
     private void initializationOfUserInterface() {

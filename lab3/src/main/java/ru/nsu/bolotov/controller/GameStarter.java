@@ -12,12 +12,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class GameStarter {
     private final int fieldSize;
     private final int numberOfBombs;
     private int[] indicesOfBombs;
     private Field logicField;
     private Field userField;
+    private static final Logger GAME_LOGGER = LoggerFactory.getLogger(GameStarter.class);
 
     public GameStarter(int fieldSize, int numberOfBombs) {
         this.fieldSize = fieldSize;
@@ -30,6 +34,7 @@ public class GameStarter {
         userField = new Field(fieldSize, numberOfBombs);
         FillerOfUserField.fillTheField(userField);
         getInfoAboutBombsConfiguration();
+        GAME_LOGGER.trace("Game field was initialized successfully.");
     }
 
     public void makeNextMove(String[] nextActionRepresentation) {
@@ -44,6 +49,7 @@ public class GameStarter {
         Collections.addAll(args, userField, logicField);
         args.addAll(Arrays.asList(nextActionRepresentation).subList(1, nextActionRepresentation.length));
         action.doAction(args);
+        GAME_LOGGER.info("Execute command {}", action);
     }
 
     public boolean isEndOfGame() {

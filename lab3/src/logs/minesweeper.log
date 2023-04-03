@@ -1,0 +1,4 @@
+2023-04-03 23:37:05,007 TRACE r.n.b.c.GameStarter [main] Game field was initialized successfully.
+2023-04-03 23:37:06,092 INFO r.n.b.c.GameStarter [main] Execute command OPEN CELL
+2023-04-03 23:37:07,491 INFO r.n.b.c.GameStarter [main] Execute command PUT THE FLAG
+2023-04-03 23:37:13,689 INFO r.n.b.c.GameStarter [main] Execute command OPEN CELL

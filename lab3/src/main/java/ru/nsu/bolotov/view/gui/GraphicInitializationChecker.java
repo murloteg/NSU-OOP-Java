@@ -13,7 +13,7 @@ public class GraphicInitializationChecker implements InitializationChecker {
     @Override
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
-            statusOfInitialization = graphicView.getStatusOfGameLaunch();
+            statusOfInitialization = graphicView.isGameLaunched();
         }
     }
 

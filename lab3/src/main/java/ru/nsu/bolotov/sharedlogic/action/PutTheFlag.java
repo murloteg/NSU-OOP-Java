@@ -50,6 +50,11 @@ public class PutTheFlag implements Action {
         }
     }
 
+    @Override
+    public String toString() {
+        return "PUT THE FLAG";
+    }
+
     private void checkPosition(int x, int y, int fieldSize) {
         if (x < 0 || x >= fieldSize || y < 0 || y >= fieldSize) {
             throw new InvalidFieldPositionException(x, y, fieldSize);
