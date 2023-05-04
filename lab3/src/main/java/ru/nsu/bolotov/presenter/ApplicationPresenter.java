@@ -39,6 +39,7 @@ public class ApplicationController {
         closedCheckerThread.start();
         while (!gameStarter.isEndOfGame() && !gameClosedChecker.isGameClosed()) {
             try {
+                // TODO: if GUI, then use view-button-listener.
                 gameStarter.makeNextMove(getNextAction());
             } catch (FailedCreationException exception) {
                 showInfoAboutExceptions("Move canceled");
