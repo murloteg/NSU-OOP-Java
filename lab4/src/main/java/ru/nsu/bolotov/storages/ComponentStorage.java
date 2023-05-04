@@ -2,9 +2,10 @@ package ru.nsu.bolotov.storages;
 
 import ru.nsu.bolotov.components.Component;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
-public class ComponentStorage <T extends Component> {
+public class ComponentStorage <T extends Component> implements Iterable<T> {
     private final LinkedList<T> components;
     private final int requiredComponentsNumber;
     private final int limit;
@@ -37,5 +38,10 @@ public class ComponentStorage <T extends Component> {
 
     public boolean isEmpty() {
         return components.isEmpty();
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return components.iterator();
     }
 }

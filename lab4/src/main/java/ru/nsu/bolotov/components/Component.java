@@ -7,7 +7,7 @@ public abstract class Component {
         return id;
     }
 
-    public void setID(String type) {
-        id = String.format("%s ID: %d", type, IDSetter.getNextComponentID());
+    public void setIDType(String type) {
+        id = String.format("%s ID: %d", type, ComponentIDSetter.getNextID());
     }
 }

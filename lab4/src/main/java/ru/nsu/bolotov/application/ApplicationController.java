@@ -9,8 +9,8 @@ import ru.nsu.bolotov.parser.ConfigFileParser;
 import org.slf4j.Logger;
 import ru.nsu.bolotov.storages.CarStorage;
 import ru.nsu.bolotov.storages.ComponentStorage;
-import ru.nsu.bolotov.threadpool.dealers.Dealer;
-import ru.nsu.bolotov.threadpool.workers.Worker;
+import ru.nsu.bolotov.threadpool.actors.dealers.Dealer;
+import ru.nsu.bolotov.threadpool.actors.workers.Worker;
 
 import java.util.List;
 

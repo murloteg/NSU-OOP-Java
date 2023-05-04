@@ -6,6 +6,6 @@ import ru.nsu.bolotov.components.ComponentAnnotation;
 @ComponentAnnotation
 public class Engine extends Component {
     public Engine() {
-        setID("ENGINE");
+        setIDType("ENGINE");
     }
 }

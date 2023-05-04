@@ -2,7 +2,12 @@ package ru.nsu.bolotov.threadpool.tasks;
 
 import ru.nsu.bolotov.components.Component;
 import ru.nsu.bolotov.exceptions.BusinessInterruptedException;
+import ru.nsu.bolotov.exceptions.FailedCreationException;
+import ru.nsu.bolotov.factory.ComponentFactory;
 import ru.nsu.bolotov.storages.ComponentStorage;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.concurrent.TimeUnit;
 
 public class ReplenishmentTask implements Task {
     private final ComponentStorage<Component> components;
@@ -26,7 +31,18 @@ public class ReplenishmentTask implements Task {
                     throw new BusinessInterruptedException();
                 }
             }
-            // ...
+            Component component;
+            try {
+                TimeUnit.MILLISECONDS.sleep(delayTime);
+                component = ComponentFactory.createComponent(componentType);
+            } catch (NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException exception) {
+                throw new FailedCreationException();
+            } catch (InterruptedException exception) {
+                Thread.currentThread().interrupt();
+                throw new BusinessInterruptedException();
+            }
+            components.addComponent(component);
+            components.notifyAll();
         }
     }
 }

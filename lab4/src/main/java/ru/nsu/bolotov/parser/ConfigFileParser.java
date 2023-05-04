@@ -17,6 +17,8 @@ public final class ConfigFileParser {
     private static int maxCarNumber;
     private static int workersNumber;
     private static int dealersNumber;
+
+    private static int maxTasksInQueue;
     private static boolean loggingStatus;
 
     static {
@@ -38,6 +40,7 @@ public final class ConfigFileParser {
         maxCarNumber = Integer.parseInt(properties.getProperty("MAX_CAR_NUMBER"));
         workersNumber = Integer.parseInt(properties.getProperty("WORKERS_NUMBER"));
         dealersNumber = Integer.parseInt(properties.getProperty("DEALERS_NUMBER"));
+        maxTasksInQueue = Integer.parseInt(properties.getProperty("MAX_TASKS_IN_QUEUE"));
         loggingStatus = Boolean.parseBoolean(properties.getProperty("LOGGING_STATUS"));
     }
 
@@ -66,6 +69,10 @@ public final class ConfigFileParser {
 
     public static int getDealersNumber() {
         return dealersNumber;
+    }
+
+    public static int getMaxTasksInQueue() {
+        return maxTasksInQueue;
     }
 
     public static boolean getLoggingStatus() {

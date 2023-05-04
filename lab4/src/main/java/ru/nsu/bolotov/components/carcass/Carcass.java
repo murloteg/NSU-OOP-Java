@@ -6,6 +6,6 @@ import ru.nsu.bolotov.components.ComponentAnnotation;
 @ComponentAnnotation
 public class Carcass extends Component {
     public Carcass() {
-        setID("CARCASS");
+        setIDType("CARCASS");
     }
 }

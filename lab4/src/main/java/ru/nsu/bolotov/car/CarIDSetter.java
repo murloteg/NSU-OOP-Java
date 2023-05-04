@@ -1,15 +1,15 @@
-package ru.nsu.bolotov.components;
+package ru.nsu.bolotov.car;
 
-public final class IDSetter {
+public final class CarIDSetter {
     private static long id = 0;
 
-    public static long getNextComponentID() {
+    public static long getNextID() {
         long previousId = id;
         ++id;
         return previousId;
     }
 
-    private IDSetter() {
+    private CarIDSetter() {
         throw new IllegalStateException("Instantiation of class without state");
     }
 }
