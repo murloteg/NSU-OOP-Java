@@ -43,7 +43,7 @@ public class BuildTask implements Task {
                 }
             }
             cars.addCar(new Car(carcass, engine, wheels));
-            System.out.printf(cars.getCar().toString());
+            System.out.println(cars.getCar().toString()); // TODO: remove later.
         }
     }
 

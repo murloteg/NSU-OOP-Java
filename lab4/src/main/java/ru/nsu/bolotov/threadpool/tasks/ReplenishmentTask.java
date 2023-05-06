@@ -9,6 +9,7 @@ import ru.nsu.bolotov.storages.ComponentStorage;
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.TimeUnit;
 
+/* it's probably useless task! */
 public class ReplenishmentTask implements Task {
     private final ComponentStorage<Component> components;
     private final int delayTime;

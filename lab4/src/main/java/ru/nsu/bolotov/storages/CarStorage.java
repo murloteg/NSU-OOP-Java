@@ -26,6 +26,10 @@ public class CarStorage {
         return cars.size();
     }
 
+    public boolean isEmpty() {
+        return cars.isEmpty();
+    }
+
     public int getLimit() {
         return limit;
     }
