@@ -33,6 +33,5 @@ public class ApplicationController {
         int workersNumber = ConfigFileParser.getWorkersNumber();
         int dealersNumber = ConfigFileParser.getDealersNumber();
         boolean loggingStatus = ConfigFileParser.getLoggingStatus();
-
     }
 }

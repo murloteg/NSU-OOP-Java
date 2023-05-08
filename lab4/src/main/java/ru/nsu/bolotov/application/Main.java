@@ -7,18 +7,18 @@ import ru.nsu.bolotov.storages.ComponentStorage;
 import ru.nsu.bolotov.threadpool.actors.Dealer;
 import ru.nsu.bolotov.threadpool.actors.Supplier;
 import ru.nsu.bolotov.threadpool.actors.Worker;
-import ru.nsu.bolotov.threadpool.tasks.BuildTask;
+import ru.nsu.bolotov.threadpool.controller.StorageController;
 import ru.nsu.bolotov.threadpool.tasks.TaskQueue;
 
 public class Main {
     public static void main(String[] args) {
-        ComponentStorage<Component> engines = new ComponentStorage<>(1, 10);
-        ComponentStorage<Component> wheels = new ComponentStorage<>(4, 20);
-        ComponentStorage<Component> carcasses = new ComponentStorage<>(1, 7);
+        ComponentStorage<Component> engines = new ComponentStorage<>(1, 15);
+        ComponentStorage<Component> wheels = new ComponentStorage<>(4, 30);
+        ComponentStorage<Component> carcasses = new ComponentStorage<>(1, 8);
 
-        Supplier supplier1 = new Supplier(engines, 2500, "ENGINE");
-        Supplier supplier2 = new Supplier(wheels, 750, "WHEEL");
-        Supplier supplier3 = new Supplier(carcasses, 3000, "CARCASS");
+        Supplier supplier1 = new Supplier(engines, 500, "ENGINE");
+        Supplier supplier2 = new Supplier(wheels, 350, "WHEEL");
+        Supplier supplier3 = new Supplier(carcasses, 500, "CARCASS");
 
         Thread threadSup1 = new Thread(supplier1);
         Thread threadSup2 = new Thread(supplier2);
@@ -29,20 +29,20 @@ public class Main {
         threadSup3.start();
 
         CarStorage cars = new CarStorage(5);
-        Dealer dealer = new Dealer(cars, 2000);
+        Dealer dealer = new Dealer(cars, 3000, true);
 
         Thread threadDealer1 = new Thread(dealer);
         Thread threadDealer2 = new Thread(dealer);
         threadDealer1.start();
         threadDealer2.start();
 
-        TaskQueue taskQueue = new TaskQueue(10);
-        taskQueue.addTask(new BuildTask(carcasses, engines, wheels, cars));
-        taskQueue.addTask(new BuildTask(carcasses, engines, wheels, cars));
-        taskQueue.addTask(new BuildTask(carcasses, engines, wheels, cars));
-        taskQueue.addTask(new BuildTask(carcasses, engines, wheels, cars));
-        taskQueue.addTask(new BuildTask(carcasses, engines, wheels, cars));
-        taskQueue.addTask(new BuildTask(carcasses, engines, wheels, cars));
+        TaskQueue taskQueue = new TaskQueue(5);
+
+        StorageController storageController = new StorageController(taskQueue, carcasses, engines, wheels, cars, true);
+        cars.addPropertyChangeListener(storageController);
+
+        Thread controller = new Thread(storageController);
+        controller.start();
 
         Worker worker1 = new Worker(taskQueue);
         Worker worker2 = new Worker(taskQueue);

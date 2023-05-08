@@ -55,6 +55,7 @@ public class BuildTask implements Task {
             while (carcasses.isEmpty()) {
                 try {
                     System.out.println("Worker waiting carcasses..."); // FIXME
+                    carcasses.notifyAll();
                     carcasses.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
@@ -67,6 +68,7 @@ public class BuildTask implements Task {
             while (engines.isEmpty()) {
                 try {
                     System.out.println("Worker waiting engines..."); // FIXME
+                    engines.notifyAll();
                     engines.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
@@ -79,6 +81,7 @@ public class BuildTask implements Task {
             while (accessories.getSize() < UtilConsts.ComponentsConsts.REQUIRED_WHEELS_NUMBER) {
                 try {
                     System.out.println("Worker waiting accessories..."); // FIXME
+                    accessories.notifyAll();
                     accessories.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();

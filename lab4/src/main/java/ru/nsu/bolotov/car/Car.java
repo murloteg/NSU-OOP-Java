@@ -21,7 +21,7 @@ public class Car {
 
     @Override
     public String toString() {
-        StringBuilder info = new StringBuilder(String.format("CAR INFO:%n[Car ID: %d]%n", id));
+        StringBuilder info = new StringBuilder(String.format("[Car ID: %d]%n", id));
         info.append("---").append(carcass.getID()).append("\n");
         info.append("---").append(engine.getID()).append("\n");
         for (Accessories accessory : accessories) {

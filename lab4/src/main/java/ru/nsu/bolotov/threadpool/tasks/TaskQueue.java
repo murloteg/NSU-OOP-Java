@@ -17,7 +17,6 @@ public class TaskQueue {
     private final LinkedList<Task> tasks;
     private final int queueLimit;
     private static final Properties PROPERTIES;
-    private final PropertyChangeSupport support;
 
     static {
         PROPERTIES = new Properties();
@@ -32,33 +31,16 @@ public class TaskQueue {
     public TaskQueue(int queueLimit) {
         tasks = new LinkedList<>();
         this.queueLimit = queueLimit;
-        support = new PropertyChangeSupport(this);
-    }
-
-    public void addPropertyChangeListener(PropertyChangeListener listener) {
-        support.addPropertyChangeListener(listener);
     }
 
     public Optional<Task> getTask(String taskType) {
         for (int i = 0; i < tasks.size(); ++i) {
             String fullTaskName = PROPERTIES.getProperty(taskType);
             if (tasks.get(i).getClass().getCanonicalName().equals(fullTaskName)) {
-                support.firePropertyChange("isSleepingProcess", true, false);
                 return Optional.of(tasks.remove(i));
             }
         }
         return Optional.empty();
-    }
-
-    public int getNumberOfSpecifiedTasks(String taskType) {
-        int numberOfTasks = 0;
-        for (Task task : tasks) {
-            String fullTaskName = PROPERTIES.getProperty(taskType);
-            if (task.getClass().getCanonicalName().equals(fullTaskName)) {
-                ++numberOfTasks;
-            }
-        }
-        return numberOfTasks;
     }
 
     public void addTask(Task task) {

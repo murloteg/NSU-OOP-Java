@@ -1,5 +1,7 @@
 package ru.nsu.bolotov.threadpool.actors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ru.nsu.bolotov.car.Car;
 import ru.nsu.bolotov.exceptions.BusinessInterruptedException;
 import ru.nsu.bolotov.storages.CarStorage;
@@ -9,10 +11,13 @@ import java.util.concurrent.TimeUnit;
 public class Dealer implements Actor, Runnable {
     private final CarStorage cars;
     private final int dealersDelayTimeMsec;
+    private static final Logger LOGGER = LoggerFactory.getLogger(Dealer.class);
+    private final boolean loggingStatus;
 
-    public Dealer(CarStorage cars, int dealersDelayTimeMsec) {
+    public Dealer(CarStorage cars, int dealersDelayTimeMsec, boolean loggingStatus) {
         this.cars = cars;
         this.dealersDelayTimeMsec = dealersDelayTimeMsec;
+        this.loggingStatus = loggingStatus;
     }
 
     @Override
@@ -26,7 +31,9 @@ public class Dealer implements Actor, Runnable {
         synchronized (cars) {
             while (cars.isEmpty()) {
                 try {
-                    System.out.println("Dealer waiting some car..."); // FIXME
+                    if (loggingStatus) {
+                        LOGGER.info("Dealer waiting car...");
+                    }
                     cars.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
@@ -40,7 +47,7 @@ public class Dealer implements Actor, Runnable {
                 throw new BusinessInterruptedException();
             }
             Car soldCar = cars.getCar();
-            System.out.println("Dealer sold car: " + soldCar);
+            LOGGER.info("Dealer sold the car:\n {} ", soldCar);
         }
     }
 }
