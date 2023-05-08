@@ -1,12 +1,9 @@
 package ru.nsu.bolotov.threadpool.controller;
 
-
-import ru.nsu.bolotov.threadpool.tasks.Task;
 import ru.nsu.bolotov.threadpool.tasks.TaskQueue;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.util.LinkedList;
 
 public class StorageController implements PropertyChangeListener, Runnable {
     private final TaskQueue taskQueue;
@@ -37,11 +34,6 @@ public class StorageController implements PropertyChangeListener, Runnable {
 
     private int calculateNewBuildTasksNumber() {
         int numberOfBuildTasks = taskQueue.getNumberOfSpecifiedTasks("BUILD_TASK");
-
-    }
-
-    private int calculateNewReplenishmentTasksNumber() {
-        int numberOfBuildTasks = taskQueue.getNumberOfSpecifiedTasks("REPLENISHMENT_TASK");
-
+        return 0; // FIXME
     }
 }

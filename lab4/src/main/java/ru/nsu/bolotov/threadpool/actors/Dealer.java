@@ -26,14 +26,21 @@ public class Dealer implements Actor, Runnable {
         synchronized (cars) {
             while (cars.isEmpty()) {
                 try {
-                    TimeUnit.MILLISECONDS.sleep(dealersDelayTimeMsec);
+                    System.out.println("Dealer waiting some car..."); // FIXME
+                    cars.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
                     throw new BusinessInterruptedException();
                 }
             }
+            try {
+                TimeUnit.MILLISECONDS.sleep(dealersDelayTimeMsec);
+            } catch (InterruptedException exception) {
+                Thread.currentThread().interrupt();
+                throw new BusinessInterruptedException();
+            }
             Car soldCar = cars.getCar();
-            System.out.println("Sold car ID: " + soldCar);
+            System.out.println("Dealer sold car: " + soldCar);
         }
     }
 }

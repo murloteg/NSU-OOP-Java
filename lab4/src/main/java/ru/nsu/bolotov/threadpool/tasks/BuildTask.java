@@ -36,14 +36,17 @@ public class BuildTask implements Task {
         synchronized (cars) {
             while (cars.getSize() == cars.getLimit()) {
                 try {
+                    System.out.println("Car storage is full..."); // FIXME
                     cars.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
                     throw new BusinessInterruptedException();
                 }
             }
-            cars.addCar(new Car(carcass, engine, wheels));
-            System.out.println(cars.getCar().toString()); // TODO: remove later.
+            Car createdCar = new Car(carcass, engine, wheels);
+            cars.addCar(createdCar);
+            System.out.println("Car was created: " + createdCar); // FIXME
+            cars.notifyAll();
         }
     }
 
@@ -51,6 +54,7 @@ public class BuildTask implements Task {
         synchronized (carcasses) {
             while (carcasses.isEmpty()) {
                 try {
+                    System.out.println("Worker waiting carcasses..."); // FIXME
                     carcasses.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
@@ -62,6 +66,7 @@ public class BuildTask implements Task {
         synchronized (engines) {
             while (engines.isEmpty()) {
                 try {
+                    System.out.println("Worker waiting engines..."); // FIXME
                     engines.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
@@ -71,8 +76,9 @@ public class BuildTask implements Task {
             engine = (Engine) engines.getNextComponent();
         }
         synchronized (accessories) {
-            while (accessories.getSize() != UtilConsts.ComponentsConsts.REQUIRED_WHEELS_NUMBER) {
+            while (accessories.getSize() < UtilConsts.ComponentsConsts.REQUIRED_WHEELS_NUMBER) {
                 try {
+                    System.out.println("Worker waiting accessories..."); // FIXME
                     accessories.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
