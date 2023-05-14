@@ -25,7 +25,6 @@ public class Worker implements Runnable {
         synchronized (taskQueue) {
             while (taskQueue.isEmpty()) {
                 try {
-                    System.out.println("Worker waiting some task...");
                     taskQueue.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();

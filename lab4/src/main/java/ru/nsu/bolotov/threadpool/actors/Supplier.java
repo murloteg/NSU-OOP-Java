@@ -44,7 +44,6 @@ public class Supplier implements Runnable {
 
     private void executeTask() {
         try {
-            System.out.println("Supplier of " + componentScheduler.get(schedulerIndex) + " with delay: " + suppliersDelayTimeMsec);
             TimeUnit.MILLISECONDS.sleep(suppliersDelayTimeMsec);
         } catch (InterruptedException exception) {
             Thread.currentThread().interrupt();
@@ -53,7 +52,6 @@ public class Supplier implements Runnable {
         synchronized (components) {
             while (components.getSize() == components.getLimit()) {
                 try {
-                    System.out.println(String.format("Storage of %s is full...", componentScheduler.get(schedulerIndex) )); // FIXME
                     components.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();

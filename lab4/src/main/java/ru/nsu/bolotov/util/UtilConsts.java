@@ -20,7 +20,7 @@ public final class UtilConsts {
         public static final int MIN_SUPPLIER_DELAY_TIME_MSEC = 0;
         public static final int MAX_SUPPLIER_DELAY_TIME_MSEC = 5000;
         public static final int MIN_DEALER_DELAY_TIME_MSEC = 0;
-        public static final int MAX_DEALER_DELAY_TIME_MSEC = 10000;
+        public static final int MAX_DEALER_DELAY_TIME_MSEC = 7000;
 
         private TimeConsts() {
             throw new IllegalStateException(INSTANTIATION_MESSAGE);

@@ -10,7 +10,7 @@ public final class CarIDSetter {
     }
 
     public static int getNumberOfCreatedCars() {
-        return id + 1;
+        return id;
     }
 
     private CarIDSetter() {

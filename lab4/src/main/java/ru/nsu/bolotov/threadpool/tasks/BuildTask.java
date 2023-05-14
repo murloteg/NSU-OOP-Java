@@ -39,7 +39,6 @@ public class BuildTask implements Task {
         synchronized (cars) {
             while (cars.getSize() == cars.getLimit()) {
                 try {
-                    System.out.println("Car storage is full..."); // FIXME
                     cars.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
@@ -48,7 +47,6 @@ public class BuildTask implements Task {
             }
             Car createdCar = new Car(carcass, engine, accessoriesList);
             cars.addCar(createdCar);
-            System.out.println("Car was created: " + createdCar); // FIXME
             cars.notifyAll();
         }
     }
@@ -57,7 +55,6 @@ public class BuildTask implements Task {
         synchronized (carcasses) {
             while (carcasses.isEmpty()) {
                 try {
-                    System.out.println("Worker waiting carcasses..."); // FIXME
                     carcasses.notifyAll();
                     carcasses.wait();
                 } catch (InterruptedException exception) {
@@ -71,7 +68,6 @@ public class BuildTask implements Task {
         synchronized (engines) {
             while (engines.isEmpty()) {
                 try {
-                    System.out.println("Worker waiting engines..."); // FIXME
                     engines.notifyAll();
                     engines.wait();
                 } catch (InterruptedException exception) {
@@ -86,7 +82,6 @@ public class BuildTask implements Task {
             while (accessories.getNumberOfSpecifiedComponents("WHEEL") < UtilConsts.ComponentsConsts.REQUIRED_WHEELS_NUMBER ||
                     accessories.getNumberOfSpecifiedComponents("DOOR") < UtilConsts.ComponentsConsts.REQUIRED_DOORS_NUMBER) {
                 try {
-                    System.out.println("Worker waiting accessories..."); // FIXME
                     accessories.notifyAll();
                     accessories.wait();
                 } catch (InterruptedException exception) {

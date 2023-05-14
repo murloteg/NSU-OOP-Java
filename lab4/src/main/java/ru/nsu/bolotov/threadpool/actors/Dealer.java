@@ -35,7 +35,6 @@ public class Dealer implements Runnable {
     private void executeTask() {
         try {
             TimeUnit.MILLISECONDS.sleep(dealersDelayTimeMsec);
-            System.out.println("Dealer waiting " + dealersDelayTimeMsec);
         } catch (InterruptedException exception) {
             Thread.currentThread().interrupt();
             throw new BusinessInterruptedException();
@@ -43,9 +42,6 @@ public class Dealer implements Runnable {
         synchronized (cars) {
             while (cars.isEmpty()) {
                 try {
-                    if (loggingStatus) {
-                        LOGGER.info("Dealer waiting car...");
-                    }
                     cars.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
@@ -54,7 +50,10 @@ public class Dealer implements Runnable {
             }
             Car soldCar = cars.getCar();
             cars.notifyAll();
-            LOGGER.info("Dealer sold the car:\n {} ", soldCar);
+            if (loggingStatus) {
+                LOGGER.info("Dealer sold the car:\n{} ", soldCar);
+            }
+
         }
     }
 }

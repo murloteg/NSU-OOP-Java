@@ -3,6 +3,7 @@ package ru.nsu.bolotov.threadpool.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.nsu.bolotov.components.Component;
+import ru.nsu.bolotov.exceptions.BusinessInvalidArgumentException;
 import ru.nsu.bolotov.storages.CarStorage;
 import ru.nsu.bolotov.storages.ComponentStorage;
 import ru.nsu.bolotov.threadpool.tasks.BuildTask;
@@ -81,12 +82,16 @@ public class StorageController implements PropertyChangeListener, Runnable {
     }
 
     private float calculateTaskQueueOccupied() {
-        return (float) taskQueue.getSize() / taskQueue.getQueueLimit();
+        float valueOfQueueOccupancy = (float) taskQueue.getSize() / taskQueue.getQueueLimit();
+        if (valueOfQueueOccupancy > 1) {
+            valueOfQueueOccupancy = 1;
+        }
+        return valueOfQueueOccupancy;
     }
 
     private void validateValueOfOccupied(float valueOfOccupancy) {
         if (valueOfOccupancy < 0 || valueOfOccupancy > 1) {
-            throw new IllegalArgumentException("Value of occupancy must be in the range [0; 1]");
+            throw new BusinessInvalidArgumentException(0, 1, valueOfOccupancy);
         }
     }
 }

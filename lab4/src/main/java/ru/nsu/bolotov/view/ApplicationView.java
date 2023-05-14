@@ -6,7 +6,6 @@ import ru.nsu.bolotov.util.UtilConsts;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -22,8 +21,10 @@ public class ApplicationView implements PartOfView, ChangeListener {
     private final JLabel delayOfDealersLabel;
     private final JSlider dealersSlider;
     private final JLabel storageProgressLabel;
+    private final JProgressBar storageProgressBar;
     private final JLabel queueProgressLabel;
-    private final JLabel createdCarsProgressLabel;
+    private final JProgressBar queueProgressBar;
+    private final JLabel createdCarsLabel;
     private final CarFactoryProgress factoryProgress;
     private final PropertyChangeSupport support;
 
@@ -33,10 +34,10 @@ public class ApplicationView implements PartOfView, ChangeListener {
         frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setTitle("Car Factory");
-        frame.setBounds(0, 0, 1200, 800);
+        frame.setBounds(0, 0, 1200, 768);
 
         JPanel panel = new JPanel();
-        panel.setBackground(Color.CYAN);
+        panel.setBackground(GUISupporter.STANDART_COLOR);
         panel.setLayout(null);
 
         JButton exit = new JButton("Exit");
@@ -47,55 +48,66 @@ public class ApplicationView implements PartOfView, ChangeListener {
         panel.add(exit);
 
         carcassesSlider = createSlider(UtilConsts.TimeConsts.MIN_SUPPLIER_DELAY_TIME_MSEC,
-                UtilConsts.TimeConsts.MAX_SUPPLIER_DELAY_TIME_MSEC, UtilConsts.TimeConsts.STANDARD_SUPPLIER_DELAY_TIME_MSEC, 1000);
-        carcassesSlider.setBounds(25, 50, 150, 300);
+                UtilConsts.TimeConsts.MAX_SUPPLIER_DELAY_TIME_MSEC, UtilConsts.TimeConsts.STANDARD_SUPPLIER_DELAY_TIME_MSEC);
+        carcassesSlider.setBounds(75, 50, 150, 300);
         delayOfCarcassesLabel = new JLabel("Delay of carcasses: " + convertMsecToSec(carcassesSlider.getValue()));
-        delayOfCarcassesLabel.setBounds(25, 350, 200, 30);
+        delayOfCarcassesLabel.setBounds(65, 350, 200, 30);
         panel.add(carcassesSlider);
         panel.add(delayOfCarcassesLabel);
 
         enginesSlider = createSlider(UtilConsts.TimeConsts.MIN_SUPPLIER_DELAY_TIME_MSEC,
-                UtilConsts.TimeConsts.MAX_SUPPLIER_DELAY_TIME_MSEC, UtilConsts.TimeConsts.STANDARD_SUPPLIER_DELAY_TIME_MSEC, 1000);
-        enginesSlider.setBounds(225, 50, 150, 300);
+                UtilConsts.TimeConsts.MAX_SUPPLIER_DELAY_TIME_MSEC, UtilConsts.TimeConsts.STANDARD_SUPPLIER_DELAY_TIME_MSEC);
+        enginesSlider.setBounds(365, 50, 150, 300);
         delayOfEnginesLabel = new JLabel("Delay of engines: " + convertMsecToSec(carcassesSlider.getValue()));
-        delayOfEnginesLabel.setBounds(225, 350, 200, 30);
+        delayOfEnginesLabel.setBounds(355, 350, 200, 30);
         panel.add(enginesSlider);
         panel.add(delayOfEnginesLabel);
 
         accessoriesSlider = createSlider(UtilConsts.TimeConsts.MIN_SUPPLIER_DELAY_TIME_MSEC,
-                UtilConsts.TimeConsts.MAX_SUPPLIER_DELAY_TIME_MSEC, UtilConsts.TimeConsts.STANDARD_SUPPLIER_DELAY_TIME_MSEC, 1000);
-        accessoriesSlider.setBounds(425, 50, 150, 300);
+                UtilConsts.TimeConsts.MAX_SUPPLIER_DELAY_TIME_MSEC, UtilConsts.TimeConsts.STANDARD_SUPPLIER_DELAY_TIME_MSEC);
+        accessoriesSlider.setBounds(665, 50, 150, 300);
         delayOfAccessoriesLabel = new JLabel("Delay of accessories: " + convertMsecToSec(accessoriesSlider.getValue()));
-        delayOfAccessoriesLabel.setBounds(425, 350, 200, 30);
+        delayOfAccessoriesLabel.setBounds(655, 350, 200, 30);
         panel.add(accessoriesSlider);
         panel.add(delayOfAccessoriesLabel);
 
         dealersSlider = createSlider(UtilConsts.TimeConsts.MIN_DEALER_DELAY_TIME_MSEC,
-                UtilConsts.TimeConsts.MAX_DEALER_DELAY_TIME_MSEC, UtilConsts.TimeConsts.STANDARD_DEALER_DELAY_TIME_MSEC, 1000);
-        dealersSlider.setBounds(625, 50, 150, 300);
-        delayOfDealersLabel = new JLabel("Delay of dealers: " + convertMsecToSec(accessoriesSlider.getValue()));
-        delayOfDealersLabel.setBounds(625, 350, 200, 30);
+                UtilConsts.TimeConsts.MAX_DEALER_DELAY_TIME_MSEC, UtilConsts.TimeConsts.STANDARD_DEALER_DELAY_TIME_MSEC);
+        dealersSlider.setBounds(965, 50, 150, 300);
+        delayOfDealersLabel = new JLabel("Delay of dealers: " + convertMsecToSec(dealersSlider.getValue()));
+        delayOfDealersLabel.setBounds(955, 350, 200, 30);
         panel.add(dealersSlider);
         panel.add(delayOfDealersLabel);
 
         storageProgressLabel = new JLabel();
-        storageProgressLabel.setBounds(50, 500, 300, 80);
-        storageProgressLabel.setText("Car storage status: " + factoryProgress.getNumberOfCarsInStorage() + "/" + factoryProgress.getCarStorageLimit());
+        storageProgressLabel.setBounds(75, 465, 300, 80);
+        storageProgressLabel.setText("Car storage: " + factoryProgress.getNumberOfCarsInStorage() + "/" + factoryProgress.getCarStorageLimit());
         storageProgressLabel.setFont(GUISupporter.LABEL_FONT);
         panel.add(storageProgressLabel);
 
+        storageProgressBar = new JProgressBar(0, factoryProgress.getCarStorageLimit());
+        storageProgressBar.setStringPainted(true);
+        storageProgressBar.setBounds(70, 505, 290, 80);
+        storageProgressBar.setValue(factoryProgress.getNumberOfCarsInStorage());
+        panel.add(storageProgressBar);
+
         queueProgressLabel = new JLabel();
-        queueProgressLabel.setBounds(350, 500, 300, 80);
-        queueProgressLabel.setText("Task queue status: " + factoryProgress.getNumberOfTasksInQueue() + "/" + factoryProgress.getTaskQueueLimit());
+        queueProgressLabel.setBounds(475, 465, 300, 80);
+        queueProgressLabel.setText("Task queue: " + factoryProgress.getNumberOfTasksInQueue() + "/" + factoryProgress.getTaskQueueLimit());
         queueProgressLabel.setFont(GUISupporter.LABEL_FONT);
         panel.add(queueProgressLabel);
 
+        queueProgressBar = new JProgressBar(0, factoryProgress.getTaskQueueLimit());
+        queueProgressBar.setStringPainted(true);
+        queueProgressBar.setBounds(470, 505, 290, 80);
+        queueProgressBar.setValue(factoryProgress.getNumberOfTasksInQueue());
+        panel.add(queueProgressBar);
 
-        createdCarsProgressLabel = new JLabel();
-        createdCarsProgressLabel.setBounds(650, 500, 300, 80);
-        createdCarsProgressLabel.setText("Created cars: " + factoryProgress.getNumberOfCreatedCars());
-        createdCarsProgressLabel.setFont(GUISupporter.LABEL_FONT);
-        panel.add(createdCarsProgressLabel);
+        createdCarsLabel = new JLabel();
+        createdCarsLabel.setBounds(875, 465, 300, 80);
+        createdCarsLabel.setText("Created cars: " + factoryProgress.getNumberOfCreatedCars());
+        createdCarsLabel.setFont(GUISupporter.LABEL_FONT);
+        panel.add(createdCarsLabel);
 
         frame.add(panel);
         frame.setVisible(false);
@@ -121,9 +133,11 @@ public class ApplicationView implements PartOfView, ChangeListener {
     }
 
     public void updateProgressLabels() {
-        storageProgressLabel.setText("Car storage status: " + factoryProgress.getNumberOfCarsInStorage() + "/" + factoryProgress.getCarStorageLimit());
-        queueProgressLabel.setText("Task queue status: " + factoryProgress.getNumberOfTasksInQueue() + "/" + factoryProgress.getTaskQueueLimit());
-        createdCarsProgressLabel.setText("Created cars: " + factoryProgress.getNumberOfCreatedCars());
+        storageProgressLabel.setText("Car storage: " + factoryProgress.getNumberOfCarsInStorage() + "/" + factoryProgress.getCarStorageLimit());
+        storageProgressBar.setValue(factoryProgress.getNumberOfCarsInStorage());
+        queueProgressLabel.setText("Task queue: " + factoryProgress.getNumberOfTasksInQueue() + "/" + factoryProgress.getTaskQueueLimit());
+        queueProgressBar.setValue(factoryProgress.getNumberOfTasksInQueue());
+        createdCarsLabel.setText("Created cars: " + factoryProgress.getNumberOfCreatedCars());
     }
 
     @Override
@@ -136,15 +150,14 @@ public class ApplicationView implements PartOfView, ChangeListener {
         frame.setVisible(false);
     }
 
-    private JSlider createSlider(int minValue, int maxValue, int currentValue, int majorTickSpace) {
+    private JSlider createSlider(int minValue, int maxValue, int currentValue) {
         JSlider slider = new JSlider(SwingConstants.VERTICAL, minValue, maxValue, currentValue);
-        slider.setMajorTickSpacing(majorTickSpace);
+        slider.setMajorTickSpacing(1000);
         slider.setPaintTrack(true);
         slider.setPaintLabels(true);
         slider.addChangeListener(this);
         return slider;
     }
-
 
     private String convertMsecToSec(long durationMsec) {
         return String.format("%.2f sec.", (float) durationMsec / 1000);

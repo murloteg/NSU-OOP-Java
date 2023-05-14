@@ -1,6 +1,7 @@
 package ru.nsu.bolotov.application;
 
 import ru.nsu.bolotov.components.Component;
+import ru.nsu.bolotov.exceptions.BusinessInterruptedException;
 import ru.nsu.bolotov.parser.ConfigFileParser;
 
 import ru.nsu.bolotov.progress.CarFactoryProgress;
@@ -13,21 +14,24 @@ import ru.nsu.bolotov.threadpool.controller.StorageController;
 import ru.nsu.bolotov.threadpool.tasks.TaskQueue;
 import ru.nsu.bolotov.util.UtilConsts;
 import ru.nsu.bolotov.view.GUI;
+import ru.nsu.bolotov.view.UserWaiter;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class ApplicationController implements PropertyChangeListener {
-    private List<Dealer> dealers;
-    private List<Supplier> carcassesSuppliers;
-    private List<Supplier>  enginesSuppliers;
-    private List<Supplier> accessoriesSuppliers;
+    private final List<Dealer> dealers = new LinkedList<>();
+    private final List<Supplier> carcassesSuppliers = new LinkedList<>();
+    private final List<Supplier>  enginesSuppliers = new LinkedList<>();
+    private final List<Supplier> accessoriesSuppliers = new LinkedList<>();
     private int carcassesDelayTimeMsec = UtilConsts.TimeConsts.STANDARD_SUPPLIER_DELAY_TIME_MSEC;
     private int enginesDelayTimeMsec = UtilConsts.TimeConsts.STANDARD_SUPPLIER_DELAY_TIME_MSEC;
     private int accessoriesDelayTimeMsec = UtilConsts.TimeConsts.STANDARD_SUPPLIER_DELAY_TIME_MSEC;
     private int dealersDelayTimeMsec = UtilConsts.TimeConsts.STANDARD_DEALER_DELAY_TIME_MSEC;
+    private final UserWaiter userWaiter = new UserWaiter();
 
     public void start() {
         int maxCarcassNumber = ConfigFileParser.getMaxCarcassNumber();
@@ -48,19 +52,15 @@ public class ApplicationController implements PropertyChangeListener {
         view.addPropertyChangeListener(this);
         Thread viewThread = new Thread(view);
         viewThread.start();
+        waitLaunchOfApplication(userWaiter);
 
         ComponentStorage<Component> carcasses = new ComponentStorage<>(UtilConsts.ComponentsConsts.REQUIRED_CARCASSES_NUMBER, maxCarcassNumber);
         ComponentStorage<Component> engines = new ComponentStorage<>(UtilConsts.ComponentsConsts.REQUIRED_ENGINES_NUMBER, maxEnginesNumber);
         int accessoriesRequiredNumber = UtilConsts.ComponentsConsts.REQUIRED_WHEELS_NUMBER + UtilConsts.ComponentsConsts.REQUIRED_DOORS_NUMBER;
         ComponentStorage<Component> accessories = new ComponentStorage<>(accessoriesRequiredNumber, maxAccessoriesNumber);
 
-        carcassesSuppliers = new LinkedList<>();
         carcassesSuppliers.add(new Supplier(carcasses, carcassesDelayTimeMsec, new String[] {"CARCASS"}));
-
-        enginesSuppliers = new LinkedList<>();
         enginesSuppliers.add(new Supplier(engines, enginesDelayTimeMsec, new String[] {"ENGINE"}));
-
-        accessoriesSuppliers = new LinkedList<>();
         distributeAccessoriesSuppliers(accessoriesSuppliersNumber, accessories);
         List<Thread> threadsOfSuppliers = new LinkedList<>();
         for (Supplier supplier : carcassesSuppliers) {
@@ -73,7 +73,6 @@ public class ApplicationController implements PropertyChangeListener {
             threadsOfSuppliers.add(new Thread(supplier));
         }
 
-        dealers = new LinkedList<>();
         for (int i = 0; i < dealersNumber; ++i) {
             dealers.add(new Dealer(carStorage, dealersDelayTimeMsec, loggingStatus));
         }
@@ -101,6 +100,10 @@ public class ApplicationController implements PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent event) {
         switch (event.getPropertyName()) {
+            case "isApplicationLaunched": {
+                userWaiter.setStatusOfLaunch((boolean) event.getNewValue());
+                break;
+            }
             case "carcassesDelayTimeMsec": {
                 this.setCarcassesDelayTime((Integer) event.getNewValue());
                 changeDelayTimeOfSuppliers(carcassesSuppliers, carcassesDelayTimeMsec);
@@ -127,20 +130,39 @@ public class ApplicationController implements PropertyChangeListener {
         }
     }
 
-    public void setCarcassesDelayTime(int delayTimeMsec) {
+    private void setCarcassesDelayTime(int delayTimeMsec) {
         this.carcassesDelayTimeMsec = delayTimeMsec;
     }
 
-    public void setEnginesDelayTime(int delayTimeMsec) {
+    private void setEnginesDelayTime(int delayTimeMsec) {
         this.enginesDelayTimeMsec = delayTimeMsec;
     }
 
-    public void setAccessoriesDelayTime(int delayTimeMsec) {
+    private void setAccessoriesDelayTime(int delayTimeMsec) {
         this.accessoriesDelayTimeMsec = delayTimeMsec;
     }
 
-    public void setDealersDelayTime(int delayTimeMsec) {
+    private void setDealersDelayTime(int delayTimeMsec) {
         this.dealersDelayTimeMsec = delayTimeMsec;
+    }
+
+    private void waitLaunchOfApplication(UserWaiter userWaiter) {
+        Thread waitingThread = new Thread(userWaiter);
+        waitingThread.start();
+        while (!userWaiter.getStatusOfLaunch()) {
+            try {
+                TimeUnit.MILLISECONDS.sleep(100);
+            } catch (InterruptedException exception) {
+                Thread.currentThread().interrupt();
+                throw new BusinessInterruptedException();
+            }
+        }
+    }
+
+    private void distributeAccessoriesSuppliers(int accessoriesSuppliersNumber, ComponentStorage<Component> accessories) {
+        for (int i = 0; i < accessoriesSuppliersNumber; ++i) {
+            accessoriesSuppliers.add(new Supplier(accessories, accessoriesDelayTimeMsec, new String[] {"WHEEL", "DOOR"}));
+        }
     }
 
     private void launchAllThreads(List<Thread> threadsOfSuppliers, List<Thread> threadsOfDealers, List<Thread> threadsOfWorkers) {
@@ -164,12 +186,6 @@ public class ApplicationController implements PropertyChangeListener {
     private void changeDelayTimeOfSuppliers(List<Supplier> suppliers, int delayTimeMsec) {
         for (Supplier supplier : suppliers) {
             supplier.setDelayTime(delayTimeMsec);
-        }
-    }
-
-    private void distributeAccessoriesSuppliers(int accessoriesSuppliersNumber, ComponentStorage<Component> accessories) {
-        for (int i = 0; i < accessoriesSuppliersNumber; ++i) {
-            accessoriesSuppliers.add(new Supplier(accessories, accessoriesDelayTimeMsec, new String[] {"WHEEL", "DOOR"}));
         }
     }
 }

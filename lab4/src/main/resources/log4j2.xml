@@ -5,7 +5,7 @@
             <PatternLayout pattern="%highlight{%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{TRACE=magenta}"/>
         </Console>
 
-        <File name="LogToFile" fileName="src/resources/logs/app.log" append="false">
+        <File name="LogToFile" fileName="app.log" append="false">
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
             </PatternLayout>
@@ -13,14 +13,10 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="ru.nsu.bolotov.threadpool.controller.StorageController" level="trace" additivity="false">
-            <AppenderRef ref="LogToFile"/>
+        <!-- avoid duplicated logs with additivity=false -->
+        <Logger name="ru.nsu.bolotov.threadpool.actors.Dealer" level="trace" additivity="false">
             <AppenderRef ref="LogToConsole"/>
-        </Logger>
-
-        <Logger name="ru.nsu.bolotov.threadpool.actors.Dealer" level="info" additivity="false">
             <AppenderRef ref="LogToFile"/>
-            <AppenderRef ref="LogToConsole"/>
         </Logger>
 
         <Root level="error">

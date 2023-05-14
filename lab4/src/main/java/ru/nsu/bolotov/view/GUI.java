@@ -32,12 +32,13 @@ public class GUI implements Runnable, PropertyChangeListener {
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
             try {
-                TimeUnit.MILLISECONDS.sleep(25);
+                TimeUnit.MILLISECONDS.sleep(10);
                 if (UtilConsts.GUIConsts.START_MENU.equals(activeFrame)) {
                     startMenu.startDisplayFrame();
                 } else if (UtilConsts.GUIConsts.APPLICATION_VIEW.equals(activeFrame)) {
                     applicationView.startDisplayFrame();
                     applicationView.updateProgressLabels();
+                    support.firePropertyChange("isApplicationLaunched", false, true);
                 }
             } catch (InterruptedException exception) {
                 Thread.currentThread().interrupt();
