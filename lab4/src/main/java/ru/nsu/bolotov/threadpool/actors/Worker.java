@@ -6,7 +6,8 @@ import ru.nsu.bolotov.threadpool.tasks.TaskQueue;
 
 import java.util.Optional;
 
-public class Worker implements Actor, Runnable {
+@Actor
+public class Worker implements Runnable {
     private final TaskQueue taskQueue;
 
     public Worker(TaskQueue taskQueue) {

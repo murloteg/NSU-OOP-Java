@@ -9,6 +9,7 @@ import ru.nsu.bolotov.exceptions.PropertiesFileException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -38,7 +39,9 @@ public final class ComponentFactory {
         Annotation[] annotations = componentClass.getAnnotations();
         for (Annotation annotation : annotations) {
             if (annotation.annotationType() == ComponentAnnotation.class) {
-                Object instancedObject = componentClass.getDeclaredConstructor().newInstance();
+                Class[] args = new Class[] {String.class};
+                Constructor constructor = componentClass.getDeclaredConstructor(args);
+                Object instancedObject = constructor.newInstance(componentType);
                 if (instancedObject instanceof Component) {
                     return (Component) instancedObject;
                 }

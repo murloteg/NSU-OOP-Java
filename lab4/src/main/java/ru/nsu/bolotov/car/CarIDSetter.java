@@ -1,12 +1,16 @@
 package ru.nsu.bolotov.car;
 
 public final class CarIDSetter {
-    private static long id = 0;
+    private static int id = 0;
 
-    public static long getNextID() {
-        long previousId = id;
+    public static int getNextID() {
+        int previousId = id;
         ++id;
         return previousId;
+    }
+
+    public static int getNumberOfCreatedCars() {
+        return id + 1;
     }
 
     private CarIDSetter() {

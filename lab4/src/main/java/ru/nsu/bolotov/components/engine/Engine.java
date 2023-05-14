@@ -5,7 +5,8 @@ import ru.nsu.bolotov.components.ComponentAnnotation;
 
 @ComponentAnnotation
 public class Engine extends Component {
-    public Engine() {
-        setIDType("ENGINE");
+    public Engine(String type) {
+        super(type);
+        setIDType();
     }
 }

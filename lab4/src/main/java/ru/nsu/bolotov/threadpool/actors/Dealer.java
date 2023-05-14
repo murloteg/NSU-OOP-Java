@@ -8,9 +8,10 @@ import ru.nsu.bolotov.storages.CarStorage;
 
 import java.util.concurrent.TimeUnit;
 
-public class Dealer implements Actor, Runnable {
+@Actor
+public class Dealer implements Runnable {
     private final CarStorage cars;
-    private final int dealersDelayTimeMsec;
+    private int dealersDelayTimeMsec;
     private static final Logger LOGGER = LoggerFactory.getLogger(Dealer.class);
     private final boolean loggingStatus;
 
@@ -18,6 +19,10 @@ public class Dealer implements Actor, Runnable {
         this.cars = cars;
         this.dealersDelayTimeMsec = dealersDelayTimeMsec;
         this.loggingStatus = loggingStatus;
+    }
+
+    public void setDelayTime(int delayTime) {
+        this.dealersDelayTimeMsec = delayTime;
     }
 
     @Override
@@ -28,6 +33,13 @@ public class Dealer implements Actor, Runnable {
     }
 
     private void executeTask() {
+        try {
+            TimeUnit.MILLISECONDS.sleep(dealersDelayTimeMsec);
+            System.out.println("Dealer waiting " + dealersDelayTimeMsec);
+        } catch (InterruptedException exception) {
+            Thread.currentThread().interrupt();
+            throw new BusinessInterruptedException();
+        }
         synchronized (cars) {
             while (cars.isEmpty()) {
                 try {
@@ -40,13 +52,8 @@ public class Dealer implements Actor, Runnable {
                     throw new BusinessInterruptedException();
                 }
             }
-            try {
-                TimeUnit.MILLISECONDS.sleep(dealersDelayTimeMsec);
-            } catch (InterruptedException exception) {
-                Thread.currentThread().interrupt();
-                throw new BusinessInterruptedException();
-            }
             Car soldCar = cars.getCar();
+            cars.notifyAll();
             LOGGER.info("Dealer sold the car:\n {} ", soldCar);
         }
     }

@@ -5,19 +5,35 @@ import ru.nsu.bolotov.exceptions.BusinessInterruptedException;
 import ru.nsu.bolotov.exceptions.FailedCreationException;
 import ru.nsu.bolotov.factory.ComponentFactory;
 import ru.nsu.bolotov.storages.ComponentStorage;
+import ru.nsu.bolotov.util.UtilConsts;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class Supplier implements Actor, Runnable {
+@Actor
+public class Supplier implements Runnable {
     private final ComponentStorage<Component> components;
-    private final int suppliersDelayTimeMsec;
-    private final String componentType;
+    private int suppliersDelayTimeMsec;
+    private final String[] componentTypes;
+    private final List<String> componentScheduler;
+    private int schedulerIndex;
 
-    public Supplier(ComponentStorage<Component> components, int suppliersDelayTimeMsec, String componentType) {
+    public Supplier(ComponentStorage<Component> components, int suppliersDelayTimeMsec, String[] componentTypes) {
         this.components = components;
         this.suppliersDelayTimeMsec = suppliersDelayTimeMsec;
-        this.componentType = componentType;
+        this.componentTypes = componentTypes;
+        for (String type : this.componentTypes) {
+            type = type.toUpperCase();
+        }
+        componentScheduler = new ArrayList<>();
+        schedulerIndex = 0;
+        prepareComponentScheduler();
+    }
+
+    public void setDelayTime(int delayTime) {
+        this.suppliersDelayTimeMsec = delayTime;
     }
 
     public void run() {
@@ -27,10 +43,17 @@ public class Supplier implements Actor, Runnable {
     }
 
     private void executeTask() {
+        try {
+            System.out.println("Supplier of " + componentScheduler.get(schedulerIndex) + " with delay: " + suppliersDelayTimeMsec);
+            TimeUnit.MILLISECONDS.sleep(suppliersDelayTimeMsec);
+        } catch (InterruptedException exception) {
+            Thread.currentThread().interrupt();
+            throw new BusinessInterruptedException();
+        }
         synchronized (components) {
             while (components.getSize() == components.getLimit()) {
                 try {
-                    System.out.println(String.format("Storage of %s is full...", componentType)); // FIXME
+                    System.out.println(String.format("Storage of %s is full...", componentScheduler.get(schedulerIndex) )); // FIXME
                     components.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
@@ -39,17 +62,33 @@ public class Supplier implements Actor, Runnable {
             }
             Component component;
             try {
-                TimeUnit.MILLISECONDS.sleep(suppliersDelayTimeMsec);
-                component = ComponentFactory.createComponent(componentType);
+                component = ComponentFactory.createComponent(componentScheduler.get(schedulerIndex) );
             } catch (NoSuchMethodException | InvocationTargetException | InstantiationException |
                      IllegalAccessException exception) {
                 throw new FailedCreationException();
-            } catch (InterruptedException exception) {
-                Thread.currentThread().interrupt();
-                throw new BusinessInterruptedException();
             }
+            updateSchedulerIndex();
             components.addComponent(component);
             components.notifyAll();
         }
+    }
+
+    private void prepareComponentScheduler() {
+        if (componentTypes.length == 1) {
+            componentScheduler.add(componentTypes[0]);
+        } else {
+            int minRequiredNumber = Math.min(UtilConsts.ComponentsConsts.REQUIRED_WHEELS_NUMBER, UtilConsts.ComponentsConsts.REQUIRED_DOORS_NUMBER);
+            for (int i = 0; i < UtilConsts.ComponentsConsts.REQUIRED_WHEELS_NUMBER / minRequiredNumber; ++i) {
+                componentScheduler.add(componentTypes[0]);
+            }
+            for (int i = 0; i < UtilConsts.ComponentsConsts.REQUIRED_DOORS_NUMBER / minRequiredNumber; ++i) {
+                componentScheduler.add(componentTypes[1]);
+            }
+        }
+    }
+
+    private void updateSchedulerIndex() {
+        ++schedulerIndex;
+        schedulerIndex %= componentScheduler.size();
     }
 }
