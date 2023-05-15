@@ -2,8 +2,6 @@ package ru.nsu.bolotov.threadpool.tasks;
 
 import ru.nsu.bolotov.exceptions.IOBusinessException;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;

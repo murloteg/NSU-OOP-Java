@@ -43,6 +43,7 @@ public class ApplicationView implements PartOfView, ChangeListener {
         JButton exit = new JButton("Exit");
         exit.setBounds(50, 650, UtilConsts.GUIConsts.DEFAULT_BUTTON_WIDTH, UtilConsts.GUIConsts.DEFAULT_BUTTON_HEIGHT);
         exit.addActionListener(event -> {
+            support.firePropertyChange(UtilConsts.StringConsts.APPLICATION_WAS_CLOSED, false, true);
             frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
         });
         panel.add(exit);
@@ -119,16 +120,16 @@ public class ApplicationView implements PartOfView, ChangeListener {
 
     @Override
     public void stateChanged(ChangeEvent event) {
-        support.firePropertyChange("carcassesDelayTimeMsec", delayOfCarcassesLabel, carcassesSlider.getValue());
+        support.firePropertyChange(UtilConsts.StringConsts.CHANGE_CARCASSES_DELAY, delayOfCarcassesLabel, carcassesSlider.getValue());
         delayOfCarcassesLabel.setText("Delay of carcasses: " + convertMsecToSec(carcassesSlider.getValue()));
 
-        support.firePropertyChange("enginesDelayTimeMsec", delayOfEnginesLabel, enginesSlider.getValue());
+        support.firePropertyChange(UtilConsts.StringConsts.CHANGE_ENGINES_DELAY, delayOfEnginesLabel, enginesSlider.getValue());
         delayOfEnginesLabel.setText("Delay of engines: " + convertMsecToSec(enginesSlider.getValue()));
 
-        support.firePropertyChange("accessoriesDelayTimeMsec", delayOfAccessoriesLabel, accessoriesSlider.getValue());
+        support.firePropertyChange(UtilConsts.StringConsts.CHANGE_ACCESSORIES_DELAY, delayOfAccessoriesLabel, accessoriesSlider.getValue());
         delayOfAccessoriesLabel.setText("Delay of accessories: " + convertMsecToSec(accessoriesSlider.getValue()));
 
-        support.firePropertyChange("dealersDelayTimeMsec", delayOfDealersLabel, dealersSlider.getValue());
+        support.firePropertyChange(UtilConsts.StringConsts.CHANGE_DEALERS_DELAY, delayOfDealersLabel, dealersSlider.getValue());
         delayOfDealersLabel.setText("Delay of dealers: " + convertMsecToSec(dealersSlider.getValue()));
     }
 

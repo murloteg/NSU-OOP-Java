@@ -38,7 +38,7 @@ public class GUI implements Runnable, PropertyChangeListener {
                 } else if (UtilConsts.GUIConsts.APPLICATION_VIEW.equals(activeFrame)) {
                     applicationView.startDisplayFrame();
                     applicationView.updateProgressLabels();
-                    support.firePropertyChange("isApplicationLaunched", false, true);
+                    support.firePropertyChange(UtilConsts.StringConsts.APPLICATION_WAS_LAUNCH, false, true);
                 }
             } catch (InterruptedException exception) {
                 Thread.currentThread().interrupt();
@@ -54,20 +54,24 @@ public class GUI implements Runnable, PropertyChangeListener {
                 this.setActiveFrame((String) event.getNewValue());
                 break;
             }
-            case "carcassesDelayTimeMsec": {
-                support.firePropertyChange("carcassesDelayTimeMsec", event.getOldValue(), event.getNewValue());
+            case UtilConsts.StringConsts.APPLICATION_WAS_CLOSED: {
+                support.firePropertyChange(UtilConsts.StringConsts.APPLICATION_WAS_CLOSED, event.getOldValue(), event.getNewValue());
                 break;
             }
-            case "enginesDelayTimeMsec": {
-                support.firePropertyChange("enginesDelayTimeMsec", event.getOldValue(), event.getNewValue());
+            case UtilConsts.StringConsts.CHANGE_CARCASSES_DELAY: {
+                support.firePropertyChange(UtilConsts.StringConsts.CHANGE_CARCASSES_DELAY, event.getOldValue(), event.getNewValue());
                 break;
             }
-            case "accessoriesDelayTimeMsec": {
-                support.firePropertyChange("accessoriesDelayTimeMsec", event.getOldValue(), event.getNewValue());
+            case UtilConsts.StringConsts.CHANGE_ENGINES_DELAY: {
+                support.firePropertyChange(UtilConsts.StringConsts.CHANGE_ENGINES_DELAY, event.getOldValue(), event.getNewValue());
                 break;
             }
-            case "dealersDelayTimeMsec": {
-                support.firePropertyChange("dealersDelayTimeMsec", event.getOldValue(), event.getNewValue());
+            case UtilConsts.StringConsts.CHANGE_ACCESSORIES_DELAY: {
+                support.firePropertyChange(UtilConsts.StringConsts.CHANGE_ACCESSORIES_DELAY, event.getOldValue(), event.getNewValue());
+                break;
+            }
+            case UtilConsts.StringConsts.CHANGE_DEALERS_DELAY: {
+                support.firePropertyChange(UtilConsts.StringConsts.CHANGE_DEALERS_DELAY, event.getOldValue(), event.getNewValue());
                 break;
             }
             default: {

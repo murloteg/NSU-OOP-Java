@@ -1,7 +1,6 @@
 package ru.nsu.bolotov.threadpool.actors;
 
 import ru.nsu.bolotov.components.Component;
-import ru.nsu.bolotov.exceptions.BusinessInterruptedException;
 import ru.nsu.bolotov.exceptions.FailedCreationException;
 import ru.nsu.bolotov.factory.ComponentFactory;
 import ru.nsu.bolotov.storages.ComponentStorage;
@@ -44,7 +43,7 @@ public class Supplier implements Runnable {
             TimeUnit.MILLISECONDS.sleep(suppliersDelayTimeMsec);
         } catch (InterruptedException exception) {
             Thread.currentThread().interrupt();
-            throw new BusinessInterruptedException();
+            return;
         }
         synchronized (components) {
             while (components.getSize() == components.getLimit()) {
@@ -52,7 +51,7 @@ public class Supplier implements Runnable {
                     components.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
-                    throw new BusinessInterruptedException();
+                    return;
                 }
             }
             Component component;

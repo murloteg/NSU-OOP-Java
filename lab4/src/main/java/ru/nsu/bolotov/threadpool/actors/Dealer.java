@@ -3,7 +3,6 @@ package ru.nsu.bolotov.threadpool.actors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.nsu.bolotov.car.Car;
-import ru.nsu.bolotov.exceptions.BusinessInterruptedException;
 import ru.nsu.bolotov.storages.CarStorage;
 
 import java.util.concurrent.TimeUnit;
@@ -37,7 +36,7 @@ public class Dealer implements Runnable {
             TimeUnit.MILLISECONDS.sleep(dealersDelayTimeMsec);
         } catch (InterruptedException exception) {
             Thread.currentThread().interrupt();
-            throw new BusinessInterruptedException();
+            return;
         }
         synchronized (cars) {
             while (cars.isEmpty()) {
@@ -45,7 +44,7 @@ public class Dealer implements Runnable {
                     cars.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
-                    throw new BusinessInterruptedException();
+                    return;
                 }
             }
             Car soldCar = cars.getCar();
@@ -53,7 +52,6 @@ public class Dealer implements Runnable {
             if (loggingStatus) {
                 LOGGER.info("Dealer sold the car:\n{} ", soldCar);
             }
-
         }
     }
 }

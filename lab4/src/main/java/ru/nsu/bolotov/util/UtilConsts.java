@@ -29,6 +29,13 @@ public final class UtilConsts {
 
     public static final class StringConsts {
         public static final String INSTANTIATION_MESSAGE = "Instantiation of util class";
+        public static final String APPLICATION_WAS_LAUNCH = "APPLICATION_WAS_LAUNCH";
+        public static final String APPLICATION_WAS_CLOSED = "APPLICATION_WAS_CLOSED";
+        public static final String CHANGE_CARCASSES_DELAY = "CHANGE_CARCASSES_DELAY";
+        public static final String CHANGE_ENGINES_DELAY = "CHANGE_ENGINES_DELAY";
+        public static final String CHANGE_ACCESSORIES_DELAY = "CHANGE_ACCESSORIES_DELAY";
+        public static final String CHANGE_DEALERS_DELAY = "CHANGE_DEALERS_DELAY";
+
 
         private StringConsts() {
             throw new IllegalStateException(INSTANTIATION_MESSAGE);

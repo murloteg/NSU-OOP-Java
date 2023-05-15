@@ -33,6 +33,7 @@ public class ApplicationController implements PropertyChangeListener {
     private int accessoriesDelayTimeMsec = UtilConsts.TimeConsts.STANDARD_SUPPLIER_DELAY_TIME_MSEC;
     private int dealersDelayTimeMsec = UtilConsts.TimeConsts.STANDARD_DEALER_DELAY_TIME_MSEC;
     private final UserWaiter userWaiter = new UserWaiter();
+    private final List<Thread> threads = new LinkedList<>();
 
     public void start() {
         int maxCarcassNumber = ConfigFileParser.getMaxCarcassNumber();
@@ -67,64 +68,64 @@ public class ApplicationController implements PropertyChangeListener {
         enginesSuppliers.add(new Supplier(engines, enginesDelayTimeMsec, orderOfEngines));
 
         prepareAccessoriesSuppliers(accessoriesSuppliersNumber, accessories);
-        List<Thread> threadsOfSuppliers = new LinkedList<>();
-        for (Supplier supplier : carcassesSuppliers) {
-            threadsOfSuppliers.add(new Thread(supplier));
-        }
-        for (Supplier supplier : enginesSuppliers) {
-            threadsOfSuppliers.add(new Thread(supplier));
-        }
-        for (Supplier supplier : accessoriesSuppliers) {
-            threadsOfSuppliers.add(new Thread(supplier));
-        }
-
         for (int i = 0; i < dealersNumber; ++i) {
             dealers.add(new Dealer(carStorage, dealersDelayTimeMsec, loggingStatus));
         }
-        List<Thread> threadsOfDealers = new LinkedList<>();
-        for (Dealer dealer : dealers) {
-            threadsOfDealers.add(new Thread(dealer));
-        }
-
         List<Worker> workers = new LinkedList<>();
         for (int i = 0; i < workersNumber; ++i) {
             workers.add(new Worker(taskQueue));
         }
-        List<Thread> threadsOfWorkers = new LinkedList<>();
+
+        for (Supplier supplier : carcassesSuppliers) {
+            threads.add(new Thread(supplier));
+        }
+        for (Supplier supplier : enginesSuppliers) {
+            threads.add(new Thread(supplier));
+        }
+        for (Supplier supplier : accessoriesSuppliers) {
+            threads.add(new Thread(supplier));
+        }
+        for (Dealer dealer : dealers) {
+            threads.add(new Thread(dealer));
+        }
         for (Worker worker : workers) {
-            threadsOfWorkers.add(new Thread(worker));
+            threads.add(new Thread(worker));
         }
 
         StorageController storageController = new StorageController(taskQueue, carcasses, engines, accessories, carStorage, loggingStatus);
         carStorage.addPropertyChangeListener(storageController);
         Thread controllerThread = new Thread(storageController);
-        controllerThread.start();
-        launchAllThreads(threadsOfSuppliers, threadsOfDealers, threadsOfWorkers);
+        threads.add(controllerThread);
+        launchAllThreads();
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent event) {
         switch (event.getPropertyName()) {
-            case "isApplicationLaunched": {
+            case UtilConsts.StringConsts.APPLICATION_WAS_LAUNCH: {
                 userWaiter.setStatusOfLaunch((boolean) event.getNewValue());
                 break;
             }
-            case "carcassesDelayTimeMsec": {
+            case UtilConsts.StringConsts.APPLICATION_WAS_CLOSED: {
+                finishAllThreads();
+                break;
+            }
+            case UtilConsts.StringConsts.CHANGE_CARCASSES_DELAY: {
                 this.setCarcassesDelayTime((Integer) event.getNewValue());
                 changeDelayTimeOfSuppliers(carcassesSuppliers, carcassesDelayTimeMsec);
                 break;
             }
-            case "enginesDelayTimeMsec": {
+            case UtilConsts.StringConsts.CHANGE_ENGINES_DELAY: {
                 this.setEnginesDelayTime((Integer) event.getNewValue());
                 changeDelayTimeOfSuppliers(enginesSuppliers, enginesDelayTimeMsec);
                 break;
             }
-            case "accessoriesDelayTimeMsec": {
+            case UtilConsts.StringConsts.CHANGE_ACCESSORIES_DELAY: {
                 this.setAccessoriesDelayTime((Integer) event.getNewValue());
                 changeDelayTimeOfSuppliers(accessoriesSuppliers, accessoriesDelayTimeMsec);
                 break;
             }
-            case "dealersDelayTimeMsec": {
+            case UtilConsts.StringConsts.CHANGE_DEALERS_DELAY: {
                 this.setDealersDelayTime((Integer) event.getNewValue());
                 changeDelayTimeOfDealers(dealers, dealersDelayTimeMsec);
                 break;
@@ -162,6 +163,7 @@ public class ApplicationController implements PropertyChangeListener {
                 throw new BusinessInterruptedException();
             }
         }
+        waitingThread.interrupt();
     }
 
     private void prepareAccessoriesSuppliers(int accessoriesSuppliersNumber, ComponentStorage<Component> accessories) {
@@ -173,15 +175,15 @@ public class ApplicationController implements PropertyChangeListener {
         }
     }
 
-    private void launchAllThreads(List<Thread> threadsOfSuppliers, List<Thread> threadsOfDealers, List<Thread> threadsOfWorkers) {
-        for (Thread thread : threadsOfSuppliers) {
+    private void launchAllThreads() {
+        for (Thread thread : threads) {
             thread.start();
         }
-        for (Thread thread : threadsOfDealers) {
-            thread.start();
-        }
-        for (Thread thread : threadsOfWorkers) {
-            thread.start();
+    }
+
+    private void finishAllThreads() {
+        for (Thread thread : threads) {
+            thread.interrupt();
         }
     }
 

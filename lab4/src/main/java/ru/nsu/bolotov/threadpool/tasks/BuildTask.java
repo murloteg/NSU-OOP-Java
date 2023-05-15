@@ -7,7 +7,6 @@ import ru.nsu.bolotov.components.accessories.Door;
 import ru.nsu.bolotov.components.accessories.Wheel;
 import ru.nsu.bolotov.components.carcass.Carcass;
 import ru.nsu.bolotov.components.engine.Engine;
-import ru.nsu.bolotov.exceptions.BusinessInterruptedException;
 import ru.nsu.bolotov.storages.CarStorage;
 import ru.nsu.bolotov.storages.ComponentStorage;
 import ru.nsu.bolotov.util.UtilConsts;
@@ -42,7 +41,7 @@ public class BuildTask implements Task {
                     cars.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
-                    throw new BusinessInterruptedException();
+                    return;
                 }
             }
             Car createdCar = new Car(carcass, engine, accessoriesList);
@@ -59,7 +58,7 @@ public class BuildTask implements Task {
                     carcasses.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
-                    throw new BusinessInterruptedException();
+                    return;
                 }
             }
             carcass = (Carcass) carcasses.getNextComponent();
@@ -72,7 +71,7 @@ public class BuildTask implements Task {
                     engines.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
-                    throw new BusinessInterruptedException();
+                    return;
                 }
             }
             engine = (Engine) engines.getNextComponent();
@@ -86,7 +85,7 @@ public class BuildTask implements Task {
                     accessories.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
-                    throw new BusinessInterruptedException();
+                    return;
                 }
             }
             prepareAccessories();

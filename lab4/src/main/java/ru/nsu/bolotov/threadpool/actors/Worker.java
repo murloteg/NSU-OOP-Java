@@ -1,6 +1,5 @@
 package ru.nsu.bolotov.threadpool.actors;
 
-import ru.nsu.bolotov.exceptions.BusinessInterruptedException;
 import ru.nsu.bolotov.threadpool.tasks.Task;
 import ru.nsu.bolotov.threadpool.tasks.TaskQueue;
 
@@ -28,7 +27,7 @@ public class Worker implements Runnable {
                     taskQueue.wait();
                 } catch (InterruptedException exception) {
                     Thread.currentThread().interrupt();
-                    throw new BusinessInterruptedException();
+                    return;
                 }
             }
             Optional<Task> task = getNextSuitableTask();
