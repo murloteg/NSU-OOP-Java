@@ -11,6 +11,7 @@ import ru.nsu.bolotov.threadpool.actors.Dealer;
 import ru.nsu.bolotov.threadpool.actors.Supplier;
 import ru.nsu.bolotov.threadpool.actors.Worker;
 import ru.nsu.bolotov.threadpool.controller.StorageController;
+import ru.nsu.bolotov.threadpool.tasks.SupplierOrder;
 import ru.nsu.bolotov.threadpool.tasks.TaskQueue;
 import ru.nsu.bolotov.util.UtilConsts;
 import ru.nsu.bolotov.view.GUI;
@@ -59,9 +60,13 @@ public class ApplicationController implements PropertyChangeListener {
         int accessoriesRequiredNumber = UtilConsts.ComponentsConsts.REQUIRED_WHEELS_NUMBER + UtilConsts.ComponentsConsts.REQUIRED_DOORS_NUMBER;
         ComponentStorage<Component> accessories = new ComponentStorage<>(accessoriesRequiredNumber, maxAccessoriesNumber);
 
-        carcassesSuppliers.add(new Supplier(carcasses, carcassesDelayTimeMsec, new String[] {"CARCASS"}));
-        enginesSuppliers.add(new Supplier(engines, enginesDelayTimeMsec, new String[] {"ENGINE"}));
-        distributeAccessoriesSuppliers(accessoriesSuppliersNumber, accessories);
+        SupplierOrder orderOfCarcasses = new SupplierOrder(new String[] {"CARCASS"}, new int[] {UtilConsts.ComponentsConsts.REQUIRED_CARCASSES_NUMBER});
+        carcassesSuppliers.add(new Supplier(carcasses, carcassesDelayTimeMsec, orderOfCarcasses));
+
+        SupplierOrder orderOfEngines = new SupplierOrder(new String[] {"ENGINE"}, new int[] {UtilConsts.ComponentsConsts.REQUIRED_ENGINES_NUMBER});
+        enginesSuppliers.add(new Supplier(engines, enginesDelayTimeMsec, orderOfEngines));
+
+        prepareAccessoriesSuppliers(accessoriesSuppliersNumber, accessories);
         List<Thread> threadsOfSuppliers = new LinkedList<>();
         for (Supplier supplier : carcassesSuppliers) {
             threadsOfSuppliers.add(new Thread(supplier));
@@ -159,9 +164,12 @@ public class ApplicationController implements PropertyChangeListener {
         }
     }
 
-    private void distributeAccessoriesSuppliers(int accessoriesSuppliersNumber, ComponentStorage<Component> accessories) {
+    private void prepareAccessoriesSuppliers(int accessoriesSuppliersNumber, ComponentStorage<Component> accessories) {
+        String[] components = new String[] {"WHEEL", "DOOR"};
+        int[] requiredNumbersOfComponents = new int[] {UtilConsts.ComponentsConsts.REQUIRED_WHEELS_NUMBER, UtilConsts.ComponentsConsts.REQUIRED_DOORS_NUMBER};
+        SupplierOrder orderOfAccessories = new SupplierOrder(components, requiredNumbersOfComponents);
         for (int i = 0; i < accessoriesSuppliersNumber; ++i) {
-            accessoriesSuppliers.add(new Supplier(accessories, accessoriesDelayTimeMsec, new String[] {"WHEEL", "DOOR"}));
+            accessoriesSuppliers.add(new Supplier(accessories, accessoriesDelayTimeMsec, orderOfAccessories));
         }
     }
 

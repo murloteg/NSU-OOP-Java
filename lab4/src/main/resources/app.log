@@ -1,1067 +1,1925 @@
-2023-05-14 22:50:39,380 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:03:39,530 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 0]
 >> CARCASS ID: 0
->> ENGINE ID: 1
->> WHEEL ID: 2 (A)
->> DOOR ID: 14 (A)
+>> ENGINE ID: 2
+>> WHEEL ID: 1 (A)
+>> DOOR ID: 16 (A)
 >> WHEEL ID: 3 (A)
->> DOOR ID: 15 (A)
+>> DOOR ID: 19 (A)
 >> WHEEL ID: 4 (A)
 >> WHEEL ID: 5 (A)
  
-2023-05-14 22:50:39,382 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:03:39,532 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 1]
->> CARCASS ID: 9
->> ENGINE ID: 8
+>> CARCASS ID: 7
+>> ENGINE ID: 9
 >> WHEEL ID: 6 (A)
->> DOOR ID: 16 (A)
->> WHEEL ID: 7 (A)
->> DOOR ID: 17 (A)
+>> DOOR ID: 21 (A)
+>> WHEEL ID: 8 (A)
+>> DOOR ID: 23 (A)
 >> WHEEL ID: 10 (A)
 >> WHEEL ID: 11 (A)
  
-2023-05-14 22:50:41,386 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:03:39,944 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 2]
->> CARCASS ID: 29
->> ENGINE ID: 30
+>> CARCASS ID: 15
+>> ENGINE ID: 14
 >> WHEEL ID: 12 (A)
->> DOOR ID: 18 (A)
+>> DOOR ID: 26 (A)
 >> WHEEL ID: 13 (A)
->> DOOR ID: 31 (A)
->> WHEEL ID: 19 (A)
->> WHEEL ID: 20 (A)
+>> DOOR ID: 30 (A)
+>> WHEEL ID: 17 (A)
+>> WHEEL ID: 18 (A)
  
-2023-05-14 22:50:41,958 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:03:41,027 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 3]
->> CARCASS ID: 45
->> ENGINE ID: 36
->> WHEEL ID: 21 (A)
->> DOOR ID: 32 (A)
->> WHEEL ID: 22 (A)
+>> CARCASS ID: 42
+>> ENGINE ID: 41
+>> WHEEL ID: 20 (A)
 >> DOOR ID: 33 (A)
->> WHEEL ID: 23 (A)
+>> WHEEL ID: 22 (A)
+>> DOOR ID: 36 (A)
 >> WHEEL ID: 24 (A)
- 
-2023-05-14 22:50:43,390 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 4]
->> CARCASS ID: 54
->> ENGINE ID: 42
 >> WHEEL ID: 25 (A)
->> DOOR ID: 34 (A)
->> WHEEL ID: 26 (A)
->> DOOR ID: 35 (A)
+ 
+2023-05-15 16:03:42,528 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 4]
+>> CARCASS ID: 57
+>> ENGINE ID: 49
 >> WHEEL ID: 27 (A)
+>> DOOR ID: 39 (A)
 >> WHEEL ID: 28 (A)
+>> DOOR ID: 44 (A)
+>> WHEEL ID: 29 (A)
+>> WHEEL ID: 31 (A)
  
-2023-05-14 22:50:43,959 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:03:42,786 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 5]
->> CARCASS ID: 61
->> ENGINE ID: 43
+>> CARCASS ID: 65
+>> ENGINE ID: 50
+>> WHEEL ID: 32 (A)
+>> DOOR ID: 47 (A)
+>> WHEEL ID: 34 (A)
+>> DOOR ID: 59 (A)
+>> WHEEL ID: 35 (A)
 >> WHEEL ID: 37 (A)
->> DOOR ID: 52 (A)
->> WHEEL ID: 38 (A)
->> DOOR ID: 55 (A)
->> WHEEL ID: 39 (A)
->> WHEEL ID: 40 (A)
  
-2023-05-14 22:50:45,395 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:03:43,043 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 6]
->> CARCASS ID: 68
->> ENGINE ID: 44
->> WHEEL ID: 41 (A)
->> DOOR ID: 56 (A)
->> WHEEL ID: 46 (A)
->> DOOR ID: 57 (A)
->> WHEEL ID: 47 (A)
->> WHEEL ID: 48 (A)
- 
-2023-05-14 22:50:45,961 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 7]
->> CARCASS ID: 75
+>> CARCASS ID: 73
 >> ENGINE ID: 51
->> WHEEL ID: 49 (A)
->> DOOR ID: 58 (A)
->> WHEEL ID: 50 (A)
->> DOOR ID: 73 (A)
->> WHEEL ID: 59 (A)
->> WHEEL ID: 62 (A)
+>> WHEEL ID: 38 (A)
+>> DOOR ID: 60 (A)
+>> WHEEL ID: 40 (A)
+>> DOOR ID: 62 (A)
+>> WHEEL ID: 43 (A)
+>> WHEEL ID: 45 (A)
  
-2023-05-14 22:50:50,022 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:03:43,303 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 7]
+>> CARCASS ID: 81
+>> ENGINE ID: 52
+>> WHEEL ID: 46 (A)
+>> DOOR ID: 67 (A)
+>> WHEEL ID: 48 (A)
+>> DOOR ID: 76 (A)
+>> WHEEL ID: 58 (A)
+>> WHEEL ID: 61 (A)
+ 
+2023-05-15 16:03:43,560 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 8]
->> CARCASS ID: 82
+>> CARCASS ID: 89
 >> ENGINE ID: 53
 >> WHEEL ID: 63 (A)
->> DOOR ID: 76 (A)
->> WHEEL ID: 64 (A)
->> DOOR ID: 77 (A)
->> WHEEL ID: 65 (A)
->> WHEEL ID: 66 (A)
- 
-2023-05-14 22:50:50,949 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 9]
->> CARCASS ID: 89
->> ENGINE ID: 60
->> WHEEL ID: 69 (A)
 >> DOOR ID: 78 (A)
+>> WHEEL ID: 66 (A)
+>> DOOR ID: 82 (A)
+>> WHEEL ID: 68 (A)
+>> WHEEL ID: 69 (A)
+ 
+2023-05-15 16:03:43,820 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 9]
+>> CARCASS ID: 97
+>> ENGINE ID: 54
 >> WHEEL ID: 70 (A)
->> DOOR ID: 79 (A)
+>> DOOR ID: 86 (A)
 >> WHEEL ID: 71 (A)
->> WHEEL ID: 72 (A)
+>> DOOR ID: 87 (A)
+>> WHEEL ID: 75 (A)
+>> WHEEL ID: 77 (A)
  
-2023-05-14 22:50:51,609 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:03:45,770 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 10]
->> CARCASS ID: 96
->> ENGINE ID: 67
+>> CARCASS ID: 105
+>> ENGINE ID: 55
+>> WHEEL ID: 79 (A)
+>> DOOR ID: 93 (A)
 >> WHEEL ID: 80 (A)
->> DOOR ID: 94 (A)
+>> DOOR ID: 96 (A)
 >> WHEEL ID: 83 (A)
->> DOOR ID: 97 (A)
 >> WHEEL ID: 84 (A)
->> WHEEL ID: 85 (A)
  
-2023-05-14 22:50:52,536 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:03:46,022 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 11]
->> CARCASS ID: 103
->> ENGINE ID: 74
->> WHEEL ID: 86 (A)
->> DOOR ID: 98 (A)
->> WHEEL ID: 87 (A)
->> DOOR ID: 99 (A)
->> WHEEL ID: 90 (A)
+>> CARCASS ID: 113
+>> ENGINE ID: 56
+>> WHEEL ID: 85 (A)
+>> DOOR ID: 101 (A)
 >> WHEEL ID: 91 (A)
- 
-2023-05-14 22:50:53,193 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 12]
->> CARCASS ID: 110
->> ENGINE ID: 81
+>> DOOR ID: 104 (A)
 >> WHEEL ID: 92 (A)
->> DOOR ID: 100 (A)
->> WHEEL ID: 93 (A)
->> DOOR ID: 115 (A)
->> WHEEL ID: 101 (A)
->> WHEEL ID: 104 (A)
+>> WHEEL ID: 94 (A)
  
-2023-05-14 22:50:54,123 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:03:47,969 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 12]
+>> CARCASS ID: 121
+>> ENGINE ID: 64
+>> WHEEL ID: 95 (A)
+>> DOOR ID: 107 (A)
+>> WHEEL ID: 99 (A)
+>> DOOR ID: 110 (A)
+>> WHEEL ID: 100 (A)
+>> WHEEL ID: 102 (A)
+ 
+2023-05-15 16:03:48,220 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 13]
->> CARCASS ID: 117
->> ENGINE ID: 88
->> WHEEL ID: 105 (A)
->> DOOR ID: 118 (A)
->> WHEEL ID: 106 (A)
->> DOOR ID: 119 (A)
->> WHEEL ID: 107 (A)
+>> CARCASS ID: 129
+>> ENGINE ID: 72
+>> WHEEL ID: 103 (A)
+>> DOOR ID: 115 (A)
 >> WHEEL ID: 108 (A)
- 
-2023-05-14 22:50:54,271 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 14]
->> CARCASS ID: 124
->> ENGINE ID: 95
+>> DOOR ID: 118 (A)
+>> WHEEL ID: 109 (A)
 >> WHEEL ID: 111 (A)
->> DOOR ID: 120 (A)
->> WHEEL ID: 112 (A)
->> DOOR ID: 121 (A)
->> WHEEL ID: 113 (A)
->> WHEEL ID: 114 (A)
  
-2023-05-14 22:50:55,226 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:03:49,378 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 14]
+>> CARCASS ID: 137
+>> ENGINE ID: 74
+>> WHEEL ID: 112 (A)
+>> DOOR ID: 123 (A)
+>> WHEEL ID: 116 (A)
+>> DOOR ID: 125 (A)
+>> WHEEL ID: 117 (A)
+>> WHEEL ID: 119 (A)
+ 
+2023-05-15 16:03:49,627 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 15]
->> CARCASS ID: 131
->> ENGINE ID: 102
->> WHEEL ID: 122 (A)
->> DOOR ID: 136 (A)
->> WHEEL ID: 125 (A)
->> DOOR ID: 139 (A)
+>> CARCASS ID: 145
+>> ENGINE ID: 88
+>> WHEEL ID: 120 (A)
+>> DOOR ID: 128 (A)
+>> WHEEL ID: 124 (A)
+>> DOOR ID: 134 (A)
 >> WHEEL ID: 126 (A)
 >> WHEEL ID: 127 (A)
  
-2023-05-14 22:50:55,372 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:03:50,786 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 16]
->> CARCASS ID: 138
->> ENGINE ID: 109
->> WHEEL ID: 128 (A)
+>> CARCASS ID: 153
+>> ENGINE ID: 90
+>> WHEEL ID: 131 (A)
 >> DOOR ID: 140 (A)
->> WHEEL ID: 129 (A)
->> DOOR ID: 141 (A)
 >> WHEEL ID: 132 (A)
+>> DOOR ID: 141 (A)
 >> WHEEL ID: 133 (A)
- 
-2023-05-14 22:50:56,328 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 17]
->> CARCASS ID: 145
->> ENGINE ID: 116
->> WHEEL ID: 134 (A)
->> DOOR ID: 142 (A)
 >> WHEEL ID: 135 (A)
->> DOOR ID: 158 (A)
->> WHEEL ID: 143 (A)
->> WHEEL ID: 146 (A)
  
-2023-05-14 22:50:56,476 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:03:51,037 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 17]
+>> CARCASS ID: 161
+>> ENGINE ID: 98
+>> WHEEL ID: 136 (A)
+>> DOOR ID: 149 (A)
+>> WHEEL ID: 139 (A)
+>> DOOR ID: 152 (A)
+>> WHEEL ID: 142 (A)
+>> WHEEL ID: 143 (A)
+ 
+2023-05-15 16:03:51,634 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 18]
->> CARCASS ID: 152
->> ENGINE ID: 123
+>> CARCASS ID: 169
+>> ENGINE ID: 106
+>> WHEEL ID: 144 (A)
+>> DOOR ID: 159 (A)
 >> WHEEL ID: 147 (A)
 >> DOOR ID: 160 (A)
 >> WHEEL ID: 148 (A)
->> DOOR ID: 161 (A)
->> WHEEL ID: 149 (A)
->> WHEEL ID: 151 (A)
+>> WHEEL ID: 150 (A)
  
-2023-05-14 22:50:57,432 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:03:51,883 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 19]
->> CARCASS ID: 159
->> ENGINE ID: 130
->> WHEEL ID: 153 (A)
->> DOOR ID: 162 (A)
->> WHEEL ID: 154 (A)
->> DOOR ID: 163 (A)
+>> CARCASS ID: 177
+>> ENGINE ID: 114
+>> WHEEL ID: 151 (A)
+>> DOOR ID: 165 (A)
 >> WHEEL ID: 155 (A)
+>> DOOR ID: 168 (A)
 >> WHEEL ID: 156 (A)
+>> WHEEL ID: 157 (A)
  
-2023-05-14 22:50:57,578 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:03:52,482 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 20]
->> CARCASS ID: 166
->> ENGINE ID: 137
->> WHEEL ID: 165 (A)
->> DOOR ID: 179 (A)
->> WHEEL ID: 167 (A)
->> DOOR ID: 182 (A)
->> WHEEL ID: 168 (A)
->> WHEEL ID: 169 (A)
+>> CARCASS ID: 185
+>> ENGINE ID: 122
+>> WHEEL ID: 158 (A)
+>> DOOR ID: 173 (A)
+>> WHEEL ID: 163 (A)
+>> DOOR ID: 174 (A)
+>> WHEEL ID: 164 (A)
+>> WHEEL ID: 166 (A)
  
-2023-05-14 22:50:58,536 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:03:52,728 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 21]
->> CARCASS ID: 173
->> ENGINE ID: 144
->> WHEEL ID: 170 (A)
->> DOOR ID: 183 (A)
+>> CARCASS ID: 193
+>> ENGINE ID: 130
+>> WHEEL ID: 167 (A)
+>> DOOR ID: 179 (A)
+>> WHEEL ID: 171 (A)
+>> DOOR ID: 188 (A)
 >> WHEEL ID: 172 (A)
->> DOOR ID: 184 (A)
 >> WHEEL ID: 175 (A)
->> WHEEL ID: 176 (A)
  
-2023-05-14 22:50:58,680 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:03:53,327 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 22]
->> CARCASS ID: 180
->> ENGINE ID: 150
->> WHEEL ID: 177 (A)
->> DOOR ID: 185 (A)
->> WHEEL ID: 178 (A)
->> DOOR ID: 201 (A)
+>> CARCASS ID: 201
+>> ENGINE ID: 138
+>> WHEEL ID: 176 (A)
+>> DOOR ID: 191 (A)
+>> WHEEL ID: 180 (A)
+>> DOOR ID: 195 (A)
+>> WHEEL ID: 181 (A)
+>> WHEEL ID: 182 (A)
+ 
+2023-05-15 16:03:53,575 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 23]
+>> CARCASS ID: 209
+>> ENGINE ID: 146
+>> WHEEL ID: 183 (A)
+>> DOOR ID: 198 (A)
+>> WHEEL ID: 184 (A)
+>> DOOR ID: 204 (A)
 >> WHEEL ID: 187 (A)
 >> WHEEL ID: 189 (A)
  
-2023-05-14 22:50:59,635 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 23]
->> CARCASS ID: 186
->> ENGINE ID: 157
->> WHEEL ID: 190 (A)
->> DOOR ID: 203 (A)
->> WHEEL ID: 191 (A)
->> DOOR ID: 204 (A)
->> WHEEL ID: 192 (A)
->> WHEEL ID: 194 (A)
- 
-2023-05-14 22:50:59,782 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:03:54,172 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 24]
->> CARCASS ID: 193
->> ENGINE ID: 164
->> WHEEL ID: 196 (A)
->> DOOR ID: 205 (A)
->> WHEEL ID: 197 (A)
+>> CARCASS ID: 217
+>> ENGINE ID: 154
+>> WHEEL ID: 190 (A)
 >> DOOR ID: 206 (A)
->> WHEEL ID: 198 (A)
->> WHEEL ID: 199 (A)
+>> WHEEL ID: 192 (A)
+>> DOOR ID: 211 (A)
+>> WHEEL ID: 196 (A)
+>> WHEEL ID: 197 (A)
  
-2023-05-14 22:51:00,739 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:03:54,420 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 25]
->> CARCASS ID: 200
->> ENGINE ID: 171
+>> CARCASS ID: 225
+>> ENGINE ID: 162
+>> WHEEL ID: 199 (A)
+>> DOOR ID: 214 (A)
+>> WHEEL ID: 200 (A)
+>> DOOR ID: 219 (A)
+>> WHEEL ID: 203 (A)
+>> WHEEL ID: 205 (A)
+ 
+2023-05-15 16:03:55,020 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 26]
+>> CARCASS ID: 233
+>> ENGINE ID: 170
+>> WHEEL ID: 207 (A)
+>> DOOR ID: 221 (A)
 >> WHEEL ID: 208 (A)
->> DOOR ID: 222 (A)
->> WHEEL ID: 211 (A)
->> DOOR ID: 225 (A)
+>> DOOR ID: 223 (A)
 >> WHEEL ID: 212 (A)
 >> WHEEL ID: 213 (A)
  
-2023-05-14 22:51:00,886 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 26]
->> CARCASS ID: 207
->> ENGINE ID: 174
->> WHEEL ID: 214 (A)
->> DOOR ID: 226 (A)
+2023-05-15 16:03:55,267 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 27]
+>> CARCASS ID: 241
+>> ENGINE ID: 178
 >> WHEEL ID: 215 (A)
 >> DOOR ID: 227 (A)
->> WHEEL ID: 218 (A)
->> WHEEL ID: 219 (A)
- 
-2023-05-14 22:51:01,586 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 27]
->> CARCASS ID: 210
->> ENGINE ID: 181
+>> WHEEL ID: 216 (A)
+>> DOOR ID: 230 (A)
 >> WHEEL ID: 220 (A)
->> DOOR ID: 228 (A)
->> WHEEL ID: 221 (A)
->> DOOR ID: 243 (A)
->> WHEEL ID: 229 (A)
->> WHEEL ID: 232 (A)
+>> WHEEL ID: 222 (A)
  
-2023-05-14 22:51:01,732 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:03:55,866 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 28]
->> CARCASS ID: 217
->> ENGINE ID: 188
->> WHEEL ID: 233 (A)
->> DOOR ID: 246 (A)
->> WHEEL ID: 234 (A)
->> DOOR ID: 247 (A)
->> WHEEL ID: 235 (A)
->> WHEEL ID: 236 (A)
+>> CARCASS ID: 249
+>> ENGINE ID: 186
+>> WHEEL ID: 224 (A)
+>> DOOR ID: 232 (A)
+>> WHEEL ID: 228 (A)
+>> DOOR ID: 236 (A)
+>> WHEEL ID: 229 (A)
+>> WHEEL ID: 231 (A)
  
-2023-05-14 22:51:02,432 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:03:56,113 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 29]
->> CARCASS ID: 224
->> ENGINE ID: 195
->> WHEEL ID: 239 (A)
->> DOOR ID: 248 (A)
+>> CARCASS ID: 257
+>> ENGINE ID: 194
+>> WHEEL ID: 234 (A)
+>> DOOR ID: 239 (A)
+>> WHEEL ID: 237 (A)
+>> DOOR ID: 243 (A)
+>> WHEEL ID: 238 (A)
 >> WHEEL ID: 240 (A)
->> DOOR ID: 249 (A)
->> WHEEL ID: 241 (A)
->> WHEEL ID: 242 (A)
  
-2023-05-14 22:51:02,577 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:03:56,711 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 30]
->> CARCASS ID: 231
->> ENGINE ID: 202
->> WHEEL ID: 250 (A)
->> DOOR ID: 264 (A)
->> WHEEL ID: 253 (A)
->> DOOR ID: 266 (A)
->> WHEEL ID: 254 (A)
->> WHEEL ID: 255 (A)
- 
-2023-05-14 22:51:03,278 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 31]
->> CARCASS ID: 238
->> ENGINE ID: 209
->> WHEEL ID: 256 (A)
->> DOOR ID: 267 (A)
->> WHEEL ID: 257 (A)
->> DOOR ID: 268 (A)
->> WHEEL ID: 260 (A)
->> WHEEL ID: 261 (A)
- 
-2023-05-14 22:51:03,423 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 32]
->> CARCASS ID: 245
->> ENGINE ID: 216
->> WHEEL ID: 262 (A)
->> DOOR ID: 269 (A)
->> WHEEL ID: 263 (A)
->> DOOR ID: 283 (A)
->> WHEEL ID: 270 (A)
->> WHEEL ID: 273 (A)
- 
-2023-05-14 22:51:04,126 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 33]
->> CARCASS ID: 252
->> ENGINE ID: 223
->> WHEEL ID: 274 (A)
->> DOOR ID: 286 (A)
->> WHEEL ID: 275 (A)
->> DOOR ID: 287 (A)
->> WHEEL ID: 276 (A)
->> WHEEL ID: 277 (A)
- 
-2023-05-14 22:51:04,268 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 34]
->> CARCASS ID: 259
->> ENGINE ID: 230
->> WHEEL ID: 279 (A)
->> DOOR ID: 288 (A)
->> WHEEL ID: 280 (A)
->> DOOR ID: 289 (A)
->> WHEEL ID: 281 (A)
->> WHEEL ID: 282 (A)
- 
-2023-05-14 22:51:04,973 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 35]
 >> CARCASS ID: 265
->> ENGINE ID: 237
+>> ENGINE ID: 202
+>> WHEEL ID: 244 (A)
+>> DOOR ID: 247 (A)
+>> WHEEL ID: 245 (A)
+>> DOOR ID: 252 (A)
+>> WHEEL ID: 246 (A)
+>> WHEEL ID: 248 (A)
+ 
+2023-05-15 16:03:56,960 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 31]
+>> CARCASS ID: 273
+>> ENGINE ID: 210
+>> WHEEL ID: 251 (A)
+>> DOOR ID: 255 (A)
+>> WHEEL ID: 253 (A)
+>> DOOR ID: 260 (A)
+>> WHEEL ID: 254 (A)
+>> WHEEL ID: 256 (A)
+ 
+2023-05-15 16:03:57,554 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 32]
+>> CARCASS ID: 281
+>> ENGINE ID: 218
+>> WHEEL ID: 259 (A)
+>> DOOR ID: 264 (A)
+>> WHEEL ID: 261 (A)
+>> DOOR ID: 269 (A)
+>> WHEEL ID: 262 (A)
+>> WHEEL ID: 263 (A)
+ 
+2023-05-15 16:03:57,806 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 33]
+>> CARCASS ID: 289
+>> ENGINE ID: 226
+>> WHEEL ID: 267 (A)
+>> DOOR ID: 270 (A)
+>> WHEEL ID: 268 (A)
+>> DOOR ID: 279 (A)
+>> WHEEL ID: 271 (A)
+>> WHEEL ID: 272 (A)
+ 
+2023-05-15 16:03:58,400 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 34]
+>> CARCASS ID: 297
+>> ENGINE ID: 235
+>> WHEEL ID: 275 (A)
+>> DOOR ID: 280 (A)
+>> WHEEL ID: 276 (A)
+>> DOOR ID: 285 (A)
+>> WHEEL ID: 277 (A)
+>> WHEEL ID: 278 (A)
+ 
+2023-05-15 16:03:58,653 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 35]
+>> CARCASS ID: 305
+>> ENGINE ID: 242
+>> WHEEL ID: 283 (A)
+>> DOOR ID: 286 (A)
+>> WHEEL ID: 284 (A)
+>> DOOR ID: 299 (A)
+>> WHEEL ID: 287 (A)
+>> WHEEL ID: 288 (A)
+ 
+2023-05-15 16:03:59,244 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 36]
+>> CARCASS ID: 313
+>> ENGINE ID: 250
 >> WHEEL ID: 291 (A)
+>> DOOR ID: 302 (A)
+>> WHEEL ID: 292 (A)
 >> DOOR ID: 304 (A)
 >> WHEEL ID: 293 (A)
->> DOOR ID: 306 (A)
 >> WHEEL ID: 294 (A)
->> WHEEL ID: 295 (A)
  
-2023-05-14 22:51:05,116 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 36]
->> CARCASS ID: 271
->> ENGINE ID: 244
->> WHEEL ID: 296 (A)
->> DOOR ID: 308 (A)
->> WHEEL ID: 298 (A)
+2023-05-15 16:03:59,500 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 37]
+>> CARCASS ID: 321
+>> ENGINE ID: 258
+>> WHEEL ID: 295 (A)
 >> DOOR ID: 309 (A)
+>> WHEEL ID: 296 (A)
+>> DOOR ID: 312 (A)
 >> WHEEL ID: 300 (A)
 >> WHEEL ID: 301 (A)
  
-2023-05-14 22:51:05,818 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 37]
->> CARCASS ID: 278
->> ENGINE ID: 251
->> WHEEL ID: 302 (A)
->> DOOR ID: 310 (A)
->> WHEEL ID: 303 (A)
->> DOOR ID: 325 (A)
->> WHEEL ID: 311 (A)
->> WHEEL ID: 314 (A)
- 
-2023-05-14 22:51:05,959 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:00,087 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 38]
->> CARCASS ID: 285
->> ENGINE ID: 258
->> WHEEL ID: 315 (A)
->> DOOR ID: 327 (A)
->> WHEEL ID: 316 (A)
->> DOOR ID: 328 (A)
->> WHEEL ID: 317 (A)
->> WHEEL ID: 318 (A)
+>> CARCASS ID: 329
+>> ENGINE ID: 266
+>> WHEEL ID: 303 (A)
+>> DOOR ID: 316 (A)
+>> WHEEL ID: 307 (A)
+>> DOOR ID: 317 (A)
+>> WHEEL ID: 308 (A)
+>> WHEEL ID: 310 (A)
  
-2023-05-14 22:51:06,666 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:00,344 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 39]
->> CARCASS ID: 292
->> ENGINE ID: 267
->> WHEEL ID: 320 (A)
->> DOOR ID: 329 (A)
->> WHEEL ID: 321 (A)
->> DOOR ID: 330 (A)
->> WHEEL ID: 322 (A)
->> WHEEL ID: 323 (A)
+>> CARCASS ID: 337
+>> ENGINE ID: 274
+>> WHEEL ID: 311 (A)
+>> DOOR ID: 320 (A)
+>> WHEEL ID: 315 (A)
+>> DOOR ID: 325 (A)
+>> WHEEL ID: 318 (A)
+>> WHEEL ID: 319 (A)
  
-2023-05-14 22:51:06,806 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:00,933 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 40]
->> CARCASS ID: 299
->> ENGINE ID: 272
->> WHEEL ID: 333 (A)
->> DOOR ID: 346 (A)
->> WHEEL ID: 334 (A)
->> DOOR ID: 347 (A)
->> WHEEL ID: 335 (A)
->> WHEEL ID: 336 (A)
- 
-2023-05-14 22:51:07,512 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 41]
->> CARCASS ID: 305
->> ENGINE ID: 284
->> WHEEL ID: 337 (A)
->> DOOR ID: 349 (A)
->> WHEEL ID: 340 (A)
->> DOOR ID: 351 (A)
->> WHEEL ID: 341 (A)
->> WHEEL ID: 342 (A)
- 
-2023-05-14 22:51:07,652 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 42]
->> CARCASS ID: 312
->> ENGINE ID: 290
->> WHEEL ID: 343 (A)
->> DOOR ID: 352 (A)
->> WHEEL ID: 344 (A)
->> DOOR ID: 366 (A)
->> WHEEL ID: 353 (A)
->> WHEEL ID: 356 (A)
- 
-2023-05-14 22:51:08,360 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 43]
->> CARCASS ID: 319
->> ENGINE ID: 297
->> WHEEL ID: 357 (A)
->> DOOR ID: 369 (A)
->> WHEEL ID: 358 (A)
->> DOOR ID: 370 (A)
->> WHEEL ID: 359 (A)
->> WHEEL ID: 360 (A)
- 
-2023-05-14 22:51:08,499 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 44]
->> CARCASS ID: 324
->> ENGINE ID: 307
->> WHEEL ID: 362 (A)
->> DOOR ID: 371 (A)
->> WHEEL ID: 363 (A)
->> DOOR ID: 372 (A)
->> WHEEL ID: 364 (A)
->> WHEEL ID: 365 (A)
- 
-2023-05-14 22:51:09,206 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 45]
->> CARCASS ID: 331
->> ENGINE ID: 313
->> WHEEL ID: 374 (A)
->> DOOR ID: 387 (A)
->> WHEEL ID: 376 (A)
->> DOOR ID: 388 (A)
->> WHEEL ID: 377 (A)
->> WHEEL ID: 378 (A)
- 
-2023-05-14 22:51:09,347 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 46]
->> CARCASS ID: 338
->> ENGINE ID: 326
->> WHEEL ID: 379 (A)
->> DOOR ID: 391 (A)
->> WHEEL ID: 381 (A)
->> DOOR ID: 392 (A)
->> WHEEL ID: 383 (A)
->> WHEEL ID: 384 (A)
- 
-2023-05-14 22:51:10,052 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 47]
 >> CARCASS ID: 345
->> ENGINE ID: 332
->> WHEEL ID: 385 (A)
->> DOOR ID: 393 (A)
->> WHEEL ID: 386 (A)
->> DOOR ID: 405 (A)
->> WHEEL ID: 394 (A)
->> WHEEL ID: 396 (A)
+>> ENGINE ID: 282
+>> WHEEL ID: 323 (A)
+>> DOOR ID: 328 (A)
+>> WHEEL ID: 324 (A)
+>> DOOR ID: 335 (A)
+>> WHEEL ID: 326 (A)
+>> WHEEL ID: 327 (A)
  
-2023-05-14 22:51:10,195 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 48]
->> CARCASS ID: 350
->> ENGINE ID: 339
->> WHEEL ID: 397 (A)
->> DOOR ID: 408 (A)
->> WHEEL ID: 398 (A)
->> DOOR ID: 409 (A)
->> WHEEL ID: 399 (A)
->> WHEEL ID: 400 (A)
+2023-05-15 16:04:01,188 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 41]
+>> CARCASS ID: 353
+>> ENGINE ID: 290
+>> WHEEL ID: 331 (A)
+>> DOOR ID: 341 (A)
+>> WHEEL ID: 332 (A)
+>> DOOR ID: 342 (A)
+>> WHEEL ID: 333 (A)
+>> WHEEL ID: 334 (A)
  
-2023-05-14 22:51:10,899 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 49]
->> CARCASS ID: 355
->> ENGINE ID: 348
->> WHEEL ID: 401 (A)
->> DOOR ID: 410 (A)
->> WHEEL ID: 402 (A)
->> DOOR ID: 411 (A)
->> WHEEL ID: 403 (A)
->> WHEEL ID: 404 (A)
- 
-2023-05-14 22:51:11,042 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 50]
+2023-05-15 16:04:01,777 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 42]
 >> CARCASS ID: 361
->> ENGINE ID: 354
->> WHEEL ID: 413 (A)
->> DOOR ID: 425 (A)
->> WHEEL ID: 414 (A)
->> DOOR ID: 426 (A)
->> WHEEL ID: 415 (A)
->> WHEEL ID: 416 (A)
+>> ENGINE ID: 298
+>> WHEEL ID: 336 (A)
+>> DOOR ID: 348 (A)
+>> WHEEL ID: 339 (A)
+>> DOOR ID: 352 (A)
+>> WHEEL ID: 340 (A)
+>> WHEEL ID: 343 (A)
  
-2023-05-14 22:51:11,745 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:02,034 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 43]
+>> CARCASS ID: 369
+>> ENGINE ID: 306
+>> WHEEL ID: 344 (A)
+>> DOOR ID: 356 (A)
+>> WHEEL ID: 347 (A)
+>> DOOR ID: 358 (A)
+>> WHEEL ID: 349 (A)
+>> WHEEL ID: 350 (A)
+ 
+2023-05-15 16:04:02,621 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 44]
+>> CARCASS ID: 377
+>> ENGINE ID: 314
+>> WHEEL ID: 351 (A)
+>> DOOR ID: 363 (A)
+>> WHEEL ID: 355 (A)
+>> DOOR ID: 368 (A)
+>> WHEEL ID: 357 (A)
+>> WHEEL ID: 359 (A)
+ 
+2023-05-15 16:04:02,877 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 45]
+>> CARCASS ID: 385
+>> ENGINE ID: 322
+>> WHEEL ID: 360 (A)
+>> DOOR ID: 373 (A)
+>> WHEEL ID: 364 (A)
+>> DOOR ID: 380 (A)
+>> WHEEL ID: 365 (A)
+>> WHEEL ID: 366 (A)
+ 
+2023-05-15 16:04:03,468 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 46]
+>> CARCASS ID: 393
+>> ENGINE ID: 330
+>> WHEEL ID: 367 (A)
+>> DOOR ID: 381 (A)
+>> WHEEL ID: 371 (A)
+>> DOOR ID: 383 (A)
+>> WHEEL ID: 372 (A)
+>> WHEEL ID: 374 (A)
+ 
+2023-05-15 16:04:03,723 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 47]
+>> CARCASS ID: 401
+>> ENGINE ID: 338
+>> WHEEL ID: 375 (A)
+>> DOOR ID: 388 (A)
+>> WHEEL ID: 376 (A)
+>> DOOR ID: 391 (A)
+>> WHEEL ID: 379 (A)
+>> WHEEL ID: 382 (A)
+ 
+2023-05-15 16:04:04,311 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 48]
+>> CARCASS ID: 409
+>> ENGINE ID: 346
+>> WHEEL ID: 384 (A)
+>> DOOR ID: 396 (A)
+>> WHEEL ID: 387 (A)
+>> DOOR ID: 400 (A)
+>> WHEEL ID: 389 (A)
+>> WHEEL ID: 390 (A)
+ 
+2023-05-15 16:04:04,568 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 49]
+>> CARCASS ID: 417
+>> ENGINE ID: 354
+>> WHEEL ID: 392 (A)
+>> DOOR ID: 405 (A)
+>> WHEEL ID: 395 (A)
+>> DOOR ID: 407 (A)
+>> WHEEL ID: 397 (A)
+>> WHEEL ID: 398 (A)
+ 
+2023-05-15 16:04:05,158 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 50]
+>> CARCASS ID: 425
+>> ENGINE ID: 362
+>> WHEEL ID: 399 (A)
+>> DOOR ID: 408 (A)
+>> WHEEL ID: 403 (A)
+>> DOOR ID: 413 (A)
+>> WHEEL ID: 404 (A)
+>> WHEEL ID: 406 (A)
+ 
+2023-05-15 16:04:05,417 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 51]
->> CARCASS ID: 368
->> ENGINE ID: 367
->> WHEEL ID: 417 (A)
->> DOOR ID: 427 (A)
+>> CARCASS ID: 433
+>> ENGINE ID: 370
+>> WHEEL ID: 411 (A)
+>> DOOR ID: 416 (A)
+>> WHEEL ID: 412 (A)
+>> DOOR ID: 423 (A)
+>> WHEEL ID: 414 (A)
+>> WHEEL ID: 415 (A)
+ 
+2023-05-15 16:04:06,004 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 52]
+>> CARCASS ID: 441
+>> ENGINE ID: 378
+>> WHEEL ID: 418 (A)
+>> DOOR ID: 428 (A)
 >> WHEEL ID: 420 (A)
 >> DOOR ID: 430 (A)
 >> WHEEL ID: 421 (A)
 >> WHEEL ID: 422 (A)
  
-2023-05-14 22:51:11,889 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 52]
->> CARCASS ID: 375
->> ENGINE ID: 373
->> WHEEL ID: 423 (A)
->> DOOR ID: 431 (A)
->> WHEEL ID: 424 (A)
->> DOOR ID: 444 (A)
->> WHEEL ID: 432 (A)
->> WHEEL ID: 435 (A)
- 
-2023-05-14 22:51:12,589 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:06,262 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 53]
->> CARCASS ID: 382
->> ENGINE ID: 380
->> WHEEL ID: 436 (A)
->> DOOR ID: 447 (A)
->> WHEEL ID: 437 (A)
->> DOOR ID: 448 (A)
->> WHEEL ID: 438 (A)
->> WHEEL ID: 439 (A)
+>> CARCASS ID: 449
+>> ENGINE ID: 386
+>> WHEEL ID: 424 (A)
+>> DOOR ID: 437 (A)
+>> WHEEL ID: 427 (A)
+>> DOOR ID: 440 (A)
+>> WHEEL ID: 429 (A)
+>> WHEEL ID: 431 (A)
  
-2023-05-14 22:51:12,736 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:06,853 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 54]
->> CARCASS ID: 389
->> ENGINE ID: 390
->> WHEEL ID: 440 (A)
->> DOOR ID: 449 (A)
->> WHEEL ID: 441 (A)
->> DOOR ID: 450 (A)
->> WHEEL ID: 442 (A)
->> WHEEL ID: 443 (A)
+>> CARCASS ID: 457
+>> ENGINE ID: 394
+>> WHEEL ID: 432 (A)
+>> DOOR ID: 445 (A)
+>> WHEEL ID: 435 (A)
+>> DOOR ID: 447 (A)
+>> WHEEL ID: 436 (A)
+>> WHEEL ID: 438 (A)
  
-2023-05-14 22:51:13,437 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:07,110 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 55]
->> CARCASS ID: 395
->> ENGINE ID: 395
->> WHEEL ID: 453 (A)
->> DOOR ID: 465 (A)
->> WHEEL ID: 454 (A)
->> DOOR ID: 466 (A)
->> WHEEL ID: 455 (A)
->> WHEEL ID: 456 (A)
+>> CARCASS ID: 465
+>> ENGINE ID: 402
+>> WHEEL ID: 439 (A)
+>> DOOR ID: 451 (A)
+>> WHEEL ID: 443 (A)
+>> DOOR ID: 454 (A)
+>> WHEEL ID: 444 (A)
+>> WHEEL ID: 446 (A)
  
-2023-05-14 22:51:13,582 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:07,700 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 56]
->> CARCASS ID: 407
->> ENGINE ID: 406
->> WHEEL ID: 457 (A)
->> DOOR ID: 467 (A)
->> WHEEL ID: 460 (A)
->> DOOR ID: 470 (A)
+>> CARCASS ID: 473
+>> ENGINE ID: 410
+>> WHEEL ID: 448 (A)
+>> DOOR ID: 460 (A)
+>> WHEEL ID: 452 (A)
+>> DOOR ID: 463 (A)
+>> WHEEL ID: 453 (A)
+>> WHEEL ID: 455 (A)
+ 
+2023-05-15 16:04:07,954 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 57]
+>> CARCASS ID: 481
+>> ENGINE ID: 419
+>> WHEEL ID: 456 (A)
+>> DOOR ID: 468 (A)
+>> WHEEL ID: 459 (A)
+>> DOOR ID: 471 (A)
 >> WHEEL ID: 461 (A)
 >> WHEEL ID: 462 (A)
  
-2023-05-14 22:51:14,282 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 57]
->> CARCASS ID: 412
->> ENGINE ID: 412
->> WHEEL ID: 463 (A)
->> DOOR ID: 471 (A)
->> WHEEL ID: 464 (A)
->> DOOR ID: 484 (A)
->> WHEEL ID: 472 (A)
->> WHEEL ID: 475 (A)
- 
-2023-05-14 22:51:14,429 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:08,543 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 58]
->> CARCASS ID: 419
->> ENGINE ID: 418
->> WHEEL ID: 476 (A)
->> DOOR ID: 487 (A)
->> WHEEL ID: 477 (A)
->> DOOR ID: 488 (A)
->> WHEEL ID: 478 (A)
->> WHEEL ID: 479 (A)
+>> CARCASS ID: 489
+>> ENGINE ID: 426
+>> WHEEL ID: 464 (A)
+>> DOOR ID: 475 (A)
+>> WHEEL ID: 467 (A)
+>> DOOR ID: 479 (A)
+>> WHEEL ID: 469 (A)
+>> WHEEL ID: 470 (A)
  
-2023-05-14 22:51:15,129 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:08,802 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 59]
->> CARCASS ID: 429
->> ENGINE ID: 428
->> WHEEL ID: 480 (A)
->> DOOR ID: 489 (A)
->> WHEEL ID: 481 (A)
->> DOOR ID: 490 (A)
->> WHEEL ID: 482 (A)
->> WHEEL ID: 483 (A)
+>> CARCASS ID: 497
+>> ENGINE ID: 434
+>> WHEEL ID: 472 (A)
+>> DOOR ID: 485 (A)
+>> WHEEL ID: 476 (A)
+>> DOOR ID: 486 (A)
+>> WHEEL ID: 477 (A)
+>> WHEEL ID: 478 (A)
  
-2023-05-14 22:51:15,276 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:09,391 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 60]
->> CARCASS ID: 434
->> ENGINE ID: 433
->> WHEEL ID: 493 (A)
->> DOOR ID: 505 (A)
->> WHEEL ID: 494 (A)
->> DOOR ID: 506 (A)
->> WHEEL ID: 495 (A)
->> WHEEL ID: 496 (A)
+>> CARCASS ID: 505
+>> ENGINE ID: 442
+>> WHEEL ID: 480 (A)
+>> DOOR ID: 492 (A)
+>> WHEEL ID: 483 (A)
+>> DOOR ID: 496 (A)
+>> WHEEL ID: 484 (A)
+>> WHEEL ID: 487 (A)
  
-2023-05-14 22:51:15,973 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:09,650 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 61]
->> CARCASS ID: 445
->> ENGINE ID: 446
->> WHEEL ID: 497 (A)
->> DOOR ID: 507 (A)
+>> CARCASS ID: 513
+>> ENGINE ID: 450
+>> WHEEL ID: 488 (A)
+>> DOOR ID: 499 (A)
+>> WHEEL ID: 491 (A)
+>> DOOR ID: 502 (A)
+>> WHEEL ID: 493 (A)
+>> WHEEL ID: 494 (A)
+ 
+2023-05-15 16:04:10,236 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 62]
+>> CARCASS ID: 521
+>> ENGINE ID: 458
+>> WHEEL ID: 495 (A)
+>> DOOR ID: 504 (A)
 >> WHEEL ID: 500 (A)
 >> DOOR ID: 509 (A)
 >> WHEEL ID: 501 (A)
->> WHEEL ID: 502 (A)
- 
-2023-05-14 22:51:16,123 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 62]
->> CARCASS ID: 451
->> ENGINE ID: 452
 >> WHEEL ID: 503 (A)
->> DOOR ID: 511 (A)
->> WHEEL ID: 504 (A)
->> DOOR ID: 524 (A)
->> WHEEL ID: 512 (A)
->> WHEEL ID: 515 (A)
  
-2023-05-14 22:51:16,819 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:10,494 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 63]
->> CARCASS ID: 459
->> ENGINE ID: 458
+>> CARCASS ID: 529
+>> ENGINE ID: 466
+>> WHEEL ID: 507 (A)
+>> DOOR ID: 512 (A)
+>> WHEEL ID: 508 (A)
+>> DOOR ID: 517 (A)
+>> WHEEL ID: 510 (A)
+>> WHEEL ID: 511 (A)
+ 
+2023-05-15 16:04:11,083 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 64]
+>> CARCASS ID: 537
+>> ENGINE ID: 474
+>> WHEEL ID: 515 (A)
+>> DOOR ID: 520 (A)
 >> WHEEL ID: 516 (A)
->> DOOR ID: 526 (A)
->> WHEEL ID: 517 (A)
->> DOOR ID: 527 (A)
+>> DOOR ID: 525 (A)
 >> WHEEL ID: 518 (A)
 >> WHEEL ID: 519 (A)
  
-2023-05-14 22:51:16,969 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 64]
->> CARCASS ID: 468
->> ENGINE ID: 469
->> WHEEL ID: 520 (A)
->> DOOR ID: 528 (A)
->> WHEEL ID: 521 (A)
->> DOOR ID: 529 (A)
->> WHEEL ID: 522 (A)
->> WHEEL ID: 523 (A)
- 
-2023-05-14 22:51:17,666 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:11,342 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 65]
->> CARCASS ID: 473
->> ENGINE ID: 474
+>> CARCASS ID: 545
+>> ENGINE ID: 482
+>> WHEEL ID: 523 (A)
+>> DOOR ID: 528 (A)
+>> WHEEL ID: 524 (A)
+>> DOOR ID: 535 (A)
+>> WHEEL ID: 526 (A)
+>> WHEEL ID: 527 (A)
+ 
+2023-05-15 16:04:11,927 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 66]
+>> CARCASS ID: 553
+>> ENGINE ID: 490
 >> WHEEL ID: 531 (A)
->> DOOR ID: 543 (A)
+>> DOOR ID: 540 (A)
 >> WHEEL ID: 532 (A)
->> DOOR ID: 544 (A)
+>> DOOR ID: 543 (A)
 >> WHEEL ID: 533 (A)
 >> WHEEL ID: 534 (A)
  
-2023-05-14 22:51:17,816 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 66]
->> CARCASS ID: 485
->> ENGINE ID: 486
->> WHEEL ID: 535 (A)
->> DOOR ID: 547 (A)
->> WHEEL ID: 538 (A)
->> DOOR ID: 548 (A)
->> WHEEL ID: 539 (A)
->> WHEEL ID: 540 (A)
- 
-2023-05-14 22:51:18,512 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:12,185 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 67]
->> CARCASS ID: 491
->> ENGINE ID: 492
->> WHEEL ID: 541 (A)
+>> CARCASS ID: 561
+>> ENGINE ID: 498
+>> WHEEL ID: 536 (A)
 >> DOOR ID: 549 (A)
+>> WHEEL ID: 539 (A)
+>> DOOR ID: 552 (A)
+>> WHEEL ID: 541 (A)
 >> WHEEL ID: 542 (A)
->> DOOR ID: 562 (A)
->> WHEEL ID: 550 (A)
->> WHEEL ID: 553 (A)
  
-2023-05-14 22:51:18,660 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:12,770 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 68]
->> CARCASS ID: 498
->> ENGINE ID: 499
->> WHEEL ID: 554 (A)
->> DOOR ID: 565 (A)
->> WHEEL ID: 555 (A)
->> DOOR ID: 566 (A)
->> WHEEL ID: 556 (A)
->> WHEEL ID: 557 (A)
+>> CARCASS ID: 569
+>> ENGINE ID: 506
+>> WHEEL ID: 544 (A)
+>> DOOR ID: 557 (A)
+>> WHEEL ID: 547 (A)
+>> DOOR ID: 563 (A)
+>> WHEEL ID: 548 (A)
+>> WHEEL ID: 550 (A)
  
-2023-05-14 22:51:19,359 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:13,033 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 69]
->> CARCASS ID: 508
->> ENGINE ID: 510
->> WHEEL ID: 558 (A)
->> DOOR ID: 567 (A)
->> WHEEL ID: 559 (A)
->> DOOR ID: 568 (A)
->> WHEEL ID: 560 (A)
->> WHEEL ID: 561 (A)
- 
-2023-05-14 22:51:19,506 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 70]
->> CARCASS ID: 513
+>> CARCASS ID: 577
 >> ENGINE ID: 514
->> WHEEL ID: 571 (A)
->> DOOR ID: 583 (A)
->> WHEEL ID: 572 (A)
->> DOOR ID: 584 (A)
->> WHEEL ID: 573 (A)
->> WHEEL ID: 574 (A)
+>> WHEEL ID: 551 (A)
+>> DOOR ID: 566 (A)
+>> WHEEL ID: 555 (A)
+>> DOOR ID: 571 (A)
+>> WHEEL ID: 556 (A)
+>> WHEEL ID: 558 (A)
  
-2023-05-14 22:51:20,206 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:13,103 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 70]
+>> CARCASS ID: 585
+>> ENGINE ID: 522
+>> WHEEL ID: 559 (A)
+>> DOOR ID: 574 (A)
+>> WHEEL ID: 560 (A)
+>> DOOR ID: 580 (A)
+>> WHEEL ID: 564 (A)
+>> WHEEL ID: 565 (A)
+ 
+2023-05-15 16:04:13,289 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 71]
->> CARCASS ID: 525
->> ENGINE ID: 525
->> WHEEL ID: 575 (A)
->> DOOR ID: 585 (A)
->> WHEEL ID: 578 (A)
->> DOOR ID: 588 (A)
->> WHEEL ID: 579 (A)
->> WHEEL ID: 580 (A)
- 
-2023-05-14 22:51:20,352 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 72]
->> CARCASS ID: 530
+>> CARCASS ID: 593
 >> ENGINE ID: 530
->> WHEEL ID: 581 (A)
+>> WHEEL ID: 567 (A)
+>> DOOR ID: 582 (A)
+>> WHEEL ID: 568 (A)
+>> DOOR ID: 584 (A)
+>> WHEEL ID: 572 (A)
+>> WHEEL ID: 573 (A)
+ 
+2023-05-15 16:04:13,360 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 72]
+>> CARCASS ID: 601
+>> ENGINE ID: 538
+>> WHEEL ID: 575 (A)
 >> DOOR ID: 589 (A)
->> WHEEL ID: 582 (A)
->> DOOR ID: 601 (A)
->> WHEEL ID: 590 (A)
->> WHEEL ID: 592 (A)
+>> WHEEL ID: 576 (A)
+>> DOOR ID: 592 (A)
+>> WHEEL ID: 579 (A)
+>> WHEEL ID: 581 (A)
  
-2023-05-14 22:51:21,052 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:13,652 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 73]
->> CARCASS ID: 537
->> ENGINE ID: 536
->> WHEEL ID: 593 (A)
->> DOOR ID: 604 (A)
->> WHEEL ID: 594 (A)
->> DOOR ID: 605 (A)
->> WHEEL ID: 595 (A)
->> WHEEL ID: 596 (A)
- 
-2023-05-14 22:51:21,199 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 74]
->> CARCASS ID: 545
+>> CARCASS ID: 609
 >> ENGINE ID: 546
->> WHEEL ID: 597 (A)
->> DOOR ID: 606 (A)
->> WHEEL ID: 598 (A)
->> DOOR ID: 607 (A)
->> WHEEL ID: 599 (A)
->> WHEEL ID: 600 (A)
+>> WHEEL ID: 583 (A)
+>> DOOR ID: 598 (A)
+>> WHEEL ID: 587 (A)
+>> DOOR ID: 599 (A)
+>> WHEEL ID: 588 (A)
+>> WHEEL ID: 590 (A)
  
-2023-05-14 22:51:21,899 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:13,719 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 74]
+>> CARCASS ID: 617
+>> ENGINE ID: 554
+>> WHEEL ID: 591 (A)
+>> DOOR ID: 604 (A)
+>> WHEEL ID: 595 (A)
+>> DOOR ID: 606 (A)
+>> WHEEL ID: 596 (A)
+>> WHEEL ID: 597 (A)
+ 
+2023-05-15 16:04:14,016 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 75]
->> CARCASS ID: 552
->> ENGINE ID: 551
->> WHEEL ID: 609 (A)
->> DOOR ID: 620 (A)
->> WHEEL ID: 610 (A)
+>> CARCASS ID: 625
+>> ENGINE ID: 562
+>> WHEEL ID: 600 (A)
+>> DOOR ID: 614 (A)
+>> WHEEL ID: 603 (A)
+>> DOOR ID: 616 (A)
+>> WHEEL ID: 605 (A)
+>> WHEEL ID: 607 (A)
+ 
+2023-05-15 16:04:14,082 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 76]
+>> CARCASS ID: 633
+>> ENGINE ID: 570
+>> WHEEL ID: 608 (A)
 >> DOOR ID: 621 (A)
 >> WHEEL ID: 611 (A)
+>> DOOR ID: 627 (A)
 >> WHEEL ID: 612 (A)
- 
-2023-05-14 22:51:22,046 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 76]
->> CARCASS ID: 564
->> ENGINE ID: 563
 >> WHEEL ID: 613 (A)
->> DOOR ID: 622 (A)
->> WHEEL ID: 615 (A)
->> DOOR ID: 625 (A)
->> WHEEL ID: 616 (A)
->> WHEEL ID: 617 (A)
  
-2023-05-14 22:51:22,747 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:14,379 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 77]
->> CARCASS ID: 570
->> ENGINE ID: 569
->> WHEEL ID: 618 (A)
->> DOOR ID: 626 (A)
+>> CARCASS ID: 641
+>> ENGINE ID: 578
+>> WHEEL ID: 615 (A)
+>> DOOR ID: 630 (A)
 >> WHEEL ID: 619 (A)
->> DOOR ID: 639 (A)
->> WHEEL ID: 627 (A)
->> WHEEL ID: 630 (A)
+>> DOOR ID: 632 (A)
+>> WHEEL ID: 620 (A)
+>> WHEEL ID: 622 (A)
  
-2023-05-14 22:51:22,895 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:14,443 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 78]
->> CARCASS ID: 577
->> ENGINE ID: 576
->> WHEEL ID: 631 (A)
->> DOOR ID: 642 (A)
->> WHEEL ID: 632 (A)
->> DOOR ID: 643 (A)
->> WHEEL ID: 633 (A)
->> WHEEL ID: 634 (A)
+>> CARCASS ID: 649
+>> ENGINE ID: 586
+>> WHEEL ID: 623 (A)
+>> DOOR ID: 637 (A)
+>> WHEEL ID: 624 (A)
+>> DOOR ID: 639 (A)
+>> WHEEL ID: 628 (A)
+>> WHEEL ID: 629 (A)
  
-2023-05-14 22:51:23,594 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:14,739 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 79]
->> CARCASS ID: 586
->> ENGINE ID: 587
+>> CARCASS ID: 657
+>> ENGINE ID: 594
+>> WHEEL ID: 631 (A)
+>> DOOR ID: 640 (A)
 >> WHEEL ID: 635 (A)
->> DOOR ID: 644 (A)
+>> DOOR ID: 647 (A)
 >> WHEEL ID: 636 (A)
->> DOOR ID: 645 (A)
->> WHEEL ID: 637 (A)
 >> WHEEL ID: 638 (A)
  
-2023-05-14 22:51:23,739 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:14,803 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 80]
->> CARCASS ID: 591
->> ENGINE ID: 591
->> WHEEL ID: 647 (A)
->> DOOR ID: 658 (A)
+>> CARCASS ID: 665
+>> ENGINE ID: 602
+>> WHEEL ID: 643 (A)
+>> DOOR ID: 652 (A)
+>> WHEEL ID: 644 (A)
+>> DOOR ID: 654 (A)
+>> WHEEL ID: 645 (A)
+>> WHEEL ID: 646 (A)
+ 
+2023-05-15 16:04:15,100 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 81]
+>> CARCASS ID: 673
+>> ENGINE ID: 610
 >> WHEEL ID: 648 (A)
 >> DOOR ID: 659 (A)
->> WHEEL ID: 649 (A)
->> WHEEL ID: 650 (A)
- 
-2023-05-14 22:51:24,440 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 81]
->> CARCASS ID: 602
->> ENGINE ID: 603
 >> WHEEL ID: 651 (A)
->> DOOR ID: 661 (A)
->> WHEEL ID: 653 (A)
 >> DOOR ID: 663 (A)
->> WHEEL ID: 654 (A)
+>> WHEEL ID: 653 (A)
 >> WHEEL ID: 655 (A)
  
-2023-05-14 22:51:24,586 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:15,163 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 82]
->> CARCASS ID: 608
->> ENGINE ID: 608
+>> CARCASS ID: 681
+>> ENGINE ID: 618
 >> WHEEL ID: 656 (A)
->> DOOR ID: 664 (A)
->> WHEEL ID: 657 (A)
->> DOOR ID: 677 (A)
->> WHEEL ID: 665 (A)
->> WHEEL ID: 668 (A)
+>> DOOR ID: 668 (A)
+>> WHEEL ID: 660 (A)
+>> DOOR ID: 669 (A)
+>> WHEEL ID: 661 (A)
+>> WHEEL ID: 662 (A)
  
-2023-05-14 22:51:25,286 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:15,460 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 83]
->> CARCASS ID: 614
->> ENGINE ID: 614
->> WHEEL ID: 669 (A)
+>> CARCASS ID: 689
+>> ENGINE ID: 626
+>> WHEEL ID: 664 (A)
+>> DOOR ID: 675 (A)
+>> WHEEL ID: 667 (A)
 >> DOOR ID: 680 (A)
 >> WHEEL ID: 670 (A)
->> DOOR ID: 681 (A)
 >> WHEEL ID: 671 (A)
->> WHEEL ID: 672 (A)
  
-2023-05-14 22:51:25,432 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:15,521 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 84]
->> CARCASS ID: 624
->> ENGINE ID: 623
->> WHEEL ID: 673 (A)
->> DOOR ID: 682 (A)
->> WHEEL ID: 674 (A)
->> DOOR ID: 683 (A)
->> WHEEL ID: 675 (A)
+>> CARCASS ID: 697
+>> ENGINE ID: 634
+>> WHEEL ID: 672 (A)
+>> DOOR ID: 685 (A)
 >> WHEEL ID: 676 (A)
+>> DOOR ID: 686 (A)
+>> WHEEL ID: 677 (A)
+>> WHEEL ID: 678 (A)
  
-2023-05-14 22:51:26,132 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:15,819 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 85]
->> CARCASS ID: 629
->> ENGINE ID: 628
->> WHEEL ID: 685 (A)
->> DOOR ID: 697 (A)
->> WHEEL ID: 686 (A)
->> DOOR ID: 698 (A)
+>> CARCASS ID: 705
+>> ENGINE ID: 642
+>> WHEEL ID: 679 (A)
+>> DOOR ID: 693 (A)
+>> WHEEL ID: 683 (A)
+>> DOOR ID: 696 (A)
+>> WHEEL ID: 684 (A)
 >> WHEEL ID: 687 (A)
->> WHEEL ID: 688 (A)
  
-2023-05-14 22:51:26,276 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:15,883 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 86]
->> CARCASS ID: 640
->> ENGINE ID: 641
->> WHEEL ID: 689 (A)
->> DOOR ID: 699 (A)
->> WHEEL ID: 692 (A)
+>> CARCASS ID: 713
+>> ENGINE ID: 650
+>> WHEEL ID: 688 (A)
 >> DOOR ID: 701 (A)
->> WHEEL ID: 693 (A)
+>> WHEEL ID: 691 (A)
+>> DOOR ID: 704 (A)
+>> WHEEL ID: 692 (A)
 >> WHEEL ID: 694 (A)
  
-2023-05-14 22:51:26,978 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:16,180 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 87]
->> CARCASS ID: 646
->> ENGINE ID: 646
+>> CARCASS ID: 721
+>> ENGINE ID: 658
 >> WHEEL ID: 695 (A)
->> DOOR ID: 703 (A)
->> WHEEL ID: 696 (A)
->> DOOR ID: 715 (A)
->> WHEEL ID: 704 (A)
->> WHEEL ID: 706 (A)
+>> DOOR ID: 708 (A)
+>> WHEEL ID: 699 (A)
+>> DOOR ID: 711 (A)
+>> WHEEL ID: 700 (A)
+>> WHEEL ID: 702 (A)
  
-2023-05-14 22:51:27,123 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:16,243 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 88]
->> CARCASS ID: 652
->> ENGINE ID: 652
->> WHEEL ID: 707 (A)
->> DOOR ID: 718 (A)
->> WHEEL ID: 708 (A)
+>> CARCASS ID: 729
+>> ENGINE ID: 666
+>> WHEEL ID: 703 (A)
 >> DOOR ID: 719 (A)
+>> WHEEL ID: 707 (A)
+>> DOOR ID: 724 (A)
 >> WHEEL ID: 709 (A)
 >> WHEEL ID: 710 (A)
  
-2023-05-14 22:51:27,826 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:16,544 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 89]
->> CARCASS ID: 660
->> ENGINE ID: 662
->> WHEEL ID: 711 (A)
->> DOOR ID: 720 (A)
+>> CARCASS ID: 737
+>> ENGINE ID: 674
 >> WHEEL ID: 712 (A)
->> DOOR ID: 721 (A)
->> WHEEL ID: 713 (A)
->> WHEEL ID: 714 (A)
+>> DOOR ID: 725 (A)
+>> WHEEL ID: 715 (A)
+>> DOOR ID: 728 (A)
+>> WHEEL ID: 716 (A)
+>> WHEEL ID: 717 (A)
  
-2023-05-14 22:51:27,971 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:16,552 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 90]
->> CARCASS ID: 667
->> ENGINE ID: 666
->> WHEEL ID: 724 (A)
+>> CARCASS ID: 745
+>> ENGINE ID: 682
+>> WHEEL ID: 718 (A)
 >> DOOR ID: 735 (A)
->> WHEEL ID: 725 (A)
->> DOOR ID: 736 (A)
+>> WHEEL ID: 720 (A)
+>> DOOR ID: 740 (A)
+>> WHEEL ID: 723 (A)
 >> WHEEL ID: 726 (A)
->> WHEEL ID: 727 (A)
  
-2023-05-14 22:51:28,673 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:16,827 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 91]
->> CARCASS ID: 678
->> ENGINE ID: 679
->> WHEEL ID: 728 (A)
->> DOOR ID: 737 (A)
->> WHEEL ID: 730 (A)
->> DOOR ID: 739 (A)
->> WHEEL ID: 731 (A)
->> WHEEL ID: 732 (A)
- 
-2023-05-14 22:51:28,818 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 92]
->> CARCASS ID: 684
->> ENGINE ID: 684
->> WHEEL ID: 733 (A)
->> DOOR ID: 741 (A)
->> WHEEL ID: 734 (A)
->> DOOR ID: 754 (A)
->> WHEEL ID: 742 (A)
->> WHEEL ID: 745 (A)
- 
-2023-05-14 22:51:29,519 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
-[Car ID: 93]
->> CARCASS ID: 691
+>> CARCASS ID: 753
 >> ENGINE ID: 690
->> WHEEL ID: 746 (A)
+>> WHEEL ID: 727 (A)
+>> DOOR ID: 741 (A)
+>> WHEEL ID: 731 (A)
+>> DOOR ID: 744 (A)
+>> WHEEL ID: 732 (A)
+>> WHEEL ID: 733 (A)
+ 
+2023-05-15 16:04:16,837 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 92]
+>> CARCASS ID: 761
+>> ENGINE ID: 698
+>> WHEEL ID: 734 (A)
+>> DOOR ID: 749 (A)
+>> WHEEL ID: 736 (A)
+>> DOOR ID: 752 (A)
+>> WHEEL ID: 739 (A)
+>> WHEEL ID: 742 (A)
+ 
+2023-05-15 16:04:17,086 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 93]
+>> CARCASS ID: 769
+>> ENGINE ID: 706
+>> WHEEL ID: 743 (A)
 >> DOOR ID: 757 (A)
 >> WHEEL ID: 747 (A)
->> DOOR ID: 758 (A)
->> WHEEL ID: 748 (A)
->> WHEEL ID: 749 (A)
- 
-2023-05-14 22:51:29,666 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
-[Car ID: 94]
->> CARCASS ID: 700
->> ENGINE ID: 702
->> WHEEL ID: 750 (A)
->> DOOR ID: 759 (A)
->> WHEEL ID: 751 (A)
 >> DOOR ID: 760 (A)
->> WHEEL ID: 752 (A)
->> WHEEL ID: 753 (A)
+>> WHEEL ID: 748 (A)
+>> WHEEL ID: 750 (A)
  
-2023-05-14 22:51:30,366 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+2023-05-15 16:04:17,093 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 94]
+>> CARCASS ID: 777
+>> ENGINE ID: 714
+>> WHEEL ID: 751 (A)
+>> DOOR ID: 765 (A)
+>> WHEEL ID: 755 (A)
+>> DOOR ID: 768 (A)
+>> WHEEL ID: 756 (A)
+>> WHEEL ID: 758 (A)
+ 
+2023-05-15 16:04:17,293 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
 [Car ID: 95]
->> CARCASS ID: 705
->> ENGINE ID: 705
+>> CARCASS ID: 785
+>> ENGINE ID: 722
+>> WHEEL ID: 759 (A)
+>> DOOR ID: 773 (A)
 >> WHEEL ID: 763 (A)
 >> DOOR ID: 775 (A)
 >> WHEEL ID: 764 (A)
->> DOOR ID: 776 (A)
->> WHEEL ID: 765 (A)
 >> WHEEL ID: 766 (A)
  
-2023-05-14 22:51:30,512 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+2023-05-15 16:04:17,302 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
 [Car ID: 96]
->> CARCASS ID: 716
->> ENGINE ID: 717
+>> CARCASS ID: 793
+>> ENGINE ID: 730
 >> WHEEL ID: 767 (A)
->> DOOR ID: 778 (A)
->> WHEEL ID: 770 (A)
 >> DOOR ID: 780 (A)
 >> WHEEL ID: 771 (A)
+>> DOOR ID: 787 (A)
 >> WHEEL ID: 772 (A)
+>> WHEEL ID: 774 (A)
+ 
+2023-05-15 16:04:17,502 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 97]
+>> CARCASS ID: 801
+>> ENGINE ID: 738
+>> WHEEL ID: 776 (A)
+>> DOOR ID: 789 (A)
+>> WHEEL ID: 779 (A)
+>> DOOR ID: 791 (A)
+>> WHEEL ID: 781 (A)
+>> WHEEL ID: 782 (A)
+ 
+2023-05-15 16:04:17,510 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 98]
+>> CARCASS ID: 809
+>> ENGINE ID: 746
+>> WHEEL ID: 783 (A)
+>> DOOR ID: 796 (A)
+>> WHEEL ID: 784 (A)
+>> DOOR ID: 798 (A)
+>> WHEEL ID: 788 (A)
+>> WHEEL ID: 790 (A)
+ 
+2023-05-15 16:04:17,710 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 99]
+>> CARCASS ID: 817
+>> ENGINE ID: 754
+>> WHEEL ID: 792 (A)
+>> DOOR ID: 800 (A)
+>> WHEEL ID: 795 (A)
+>> DOOR ID: 805 (A)
+>> WHEEL ID: 797 (A)
+>> WHEEL ID: 799 (A)
+ 
+2023-05-15 16:04:17,718 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 100]
+>> CARCASS ID: 825
+>> ENGINE ID: 762
+>> WHEEL ID: 803 (A)
+>> DOOR ID: 808 (A)
+>> WHEEL ID: 804 (A)
+>> DOOR ID: 813 (A)
+>> WHEEL ID: 806 (A)
+>> WHEEL ID: 807 (A)
+ 
+2023-05-15 16:04:17,894 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 101]
+>> CARCASS ID: 833
+>> ENGINE ID: 770
+>> WHEEL ID: 811 (A)
+>> DOOR ID: 820 (A)
+>> WHEEL ID: 812 (A)
+>> DOOR ID: 824 (A)
+>> WHEEL ID: 814 (A)
+>> WHEEL ID: 815 (A)
+ 
+2023-05-15 16:04:17,902 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 102]
+>> CARCASS ID: 841
+>> ENGINE ID: 778
+>> WHEEL ID: 816 (A)
+>> DOOR ID: 827 (A)
+>> WHEEL ID: 819 (A)
+>> DOOR ID: 831 (A)
+>> WHEEL ID: 821 (A)
+>> WHEEL ID: 822 (A)
+ 
+2023-05-15 16:04:18,050 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 103]
+>> CARCASS ID: 849
+>> ENGINE ID: 786
+>> WHEEL ID: 823 (A)
+>> DOOR ID: 836 (A)
+>> WHEEL ID: 828 (A)
+>> DOOR ID: 838 (A)
+>> WHEEL ID: 829 (A)
+>> WHEEL ID: 830 (A)
+ 
+2023-05-15 16:04:18,060 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 104]
+>> CARCASS ID: 857
+>> ENGINE ID: 794
+>> WHEEL ID: 832 (A)
+>> DOOR ID: 845 (A)
+>> WHEEL ID: 835 (A)
+>> DOOR ID: 847 (A)
+>> WHEEL ID: 837 (A)
+>> WHEEL ID: 839 (A)
+ 
+2023-05-15 16:04:18,183 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 105]
+>> CARCASS ID: 865
+>> ENGINE ID: 802
+>> WHEEL ID: 840 (A)
+>> DOOR ID: 852 (A)
+>> WHEEL ID: 843 (A)
+>> DOOR ID: 855 (A)
+>> WHEEL ID: 844 (A)
+>> WHEEL ID: 846 (A)
+ 
+2023-05-15 16:04:18,193 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 106]
+>> CARCASS ID: 873
+>> ENGINE ID: 810
+>> WHEEL ID: 848 (A)
+>> DOOR ID: 860 (A)
+>> WHEEL ID: 851 (A)
+>> DOOR ID: 863 (A)
+>> WHEEL ID: 853 (A)
+>> WHEEL ID: 854 (A)
+ 
+2023-05-15 16:04:18,316 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 107]
+>> CARCASS ID: 881
+>> ENGINE ID: 818
+>> WHEEL ID: 856 (A)
+>> DOOR ID: 868 (A)
+>> WHEEL ID: 859 (A)
+>> DOOR ID: 871 (A)
+>> WHEEL ID: 861 (A)
+>> WHEEL ID: 862 (A)
+ 
+2023-05-15 16:04:18,322 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 108]
+>> CARCASS ID: 889
+>> ENGINE ID: 826
+>> WHEEL ID: 864 (A)
+>> DOOR ID: 876 (A)
+>> WHEEL ID: 867 (A)
+>> DOOR ID: 879 (A)
+>> WHEEL ID: 869 (A)
+>> WHEEL ID: 870 (A)
+ 
+2023-05-15 16:04:18,450 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 109]
+>> CARCASS ID: 897
+>> ENGINE ID: 834
+>> WHEEL ID: 872 (A)
+>> DOOR ID: 884 (A)
+>> WHEEL ID: 875 (A)
+>> DOOR ID: 885 (A)
+>> WHEEL ID: 877 (A)
+>> WHEEL ID: 878 (A)
+ 
+2023-05-15 16:04:18,453 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 110]
+>> CARCASS ID: 905
+>> ENGINE ID: 842
+>> WHEEL ID: 880 (A)
+>> DOOR ID: 892 (A)
+>> WHEEL ID: 883 (A)
+>> DOOR ID: 896 (A)
+>> WHEEL ID: 886 (A)
+>> WHEEL ID: 887 (A)
+ 
+2023-05-15 16:04:18,583 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 111]
+>> CARCASS ID: 913
+>> ENGINE ID: 850
+>> WHEEL ID: 888 (A)
+>> DOOR ID: 902 (A)
+>> WHEEL ID: 891 (A)
+>> DOOR ID: 904 (A)
+>> WHEEL ID: 893 (A)
+>> WHEEL ID: 894 (A)
+ 
+2023-05-15 16:04:18,586 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 112]
+>> CARCASS ID: 921
+>> ENGINE ID: 858
+>> WHEEL ID: 895 (A)
+>> DOOR ID: 909 (A)
+>> WHEEL ID: 899 (A)
+>> DOOR ID: 912 (A)
+>> WHEEL ID: 900 (A)
+>> WHEEL ID: 901 (A)
+ 
+2023-05-15 16:04:18,716 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 113]
+>> CARCASS ID: 929
+>> ENGINE ID: 866
+>> WHEEL ID: 903 (A)
+>> DOOR ID: 917 (A)
+>> WHEEL ID: 906 (A)
+>> DOOR ID: 920 (A)
+>> WHEEL ID: 908 (A)
+>> WHEEL ID: 910 (A)
+ 
+2023-05-15 16:04:18,719 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 114]
+>> CARCASS ID: 937
+>> ENGINE ID: 874
+>> WHEEL ID: 911 (A)
+>> DOOR ID: 925 (A)
+>> WHEEL ID: 915 (A)
+>> DOOR ID: 926 (A)
+>> WHEEL ID: 916 (A)
+>> WHEEL ID: 918 (A)
+ 
+2023-05-15 16:04:18,850 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 115]
+>> CARCASS ID: 945
+>> ENGINE ID: 882
+>> WHEEL ID: 919 (A)
+>> DOOR ID: 931 (A)
+>> WHEEL ID: 923 (A)
+>> DOOR ID: 935 (A)
+>> WHEEL ID: 924 (A)
+>> WHEEL ID: 927 (A)
+ 
+2023-05-15 16:04:18,852 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 116]
+>> CARCASS ID: 953
+>> ENGINE ID: 890
+>> WHEEL ID: 928 (A)
+>> DOOR ID: 940 (A)
+>> WHEEL ID: 932 (A)
+>> DOOR ID: 942 (A)
+>> WHEEL ID: 933 (A)
+>> WHEEL ID: 934 (A)
+ 
+2023-05-15 16:04:18,983 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 117]
+>> CARCASS ID: 954
+>> ENGINE ID: 898
+>> WHEEL ID: 936 (A)
+>> DOOR ID: 947 (A)
+>> WHEEL ID: 939 (A)
+>> DOOR ID: 951 (A)
+>> WHEEL ID: 941 (A)
+>> WHEEL ID: 943 (A)
+ 
+2023-05-15 16:04:18,983 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 118]
+>> CARCASS ID: 962
+>> ENGINE ID: 907
+>> WHEEL ID: 944 (A)
+>> DOOR ID: 957 (A)
+>> WHEEL ID: 948 (A)
+>> DOOR ID: 959 (A)
+>> WHEEL ID: 949 (A)
+>> WHEEL ID: 950 (A)
+ 
+2023-05-15 16:04:19,116 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 119]
+>> CARCASS ID: 970
+>> ENGINE ID: 914
+>> WHEEL ID: 952 (A)
+>> DOOR ID: 965 (A)
+>> WHEEL ID: 956 (A)
+>> DOOR ID: 968 (A)
+>> WHEEL ID: 958 (A)
+>> WHEEL ID: 960 (A)
+ 
+2023-05-15 16:04:19,117 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 120]
+>> CARCASS ID: 971
+>> ENGINE ID: 922
+>> WHEEL ID: 961 (A)
+>> DOOR ID: 975 (A)
+>> WHEEL ID: 963 (A)
+>> DOOR ID: 982 (A)
+>> WHEEL ID: 966 (A)
+>> WHEEL ID: 967 (A)
+ 
+2023-05-15 16:04:19,250 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 121]
+>> CARCASS ID: 972
+>> ENGINE ID: 930
+>> WHEEL ID: 969 (A)
+>> DOOR ID: 985 (A)
+>> WHEEL ID: 973 (A)
+>> DOOR ID: 988 (A)
+>> WHEEL ID: 976 (A)
+>> WHEEL ID: 977 (A)
+ 
+2023-05-15 16:04:19,250 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 122]
+>> CARCASS ID: 980
+>> ENGINE ID: 938
+>> WHEEL ID: 978 (A)
+>> DOOR ID: 991 (A)
+>> WHEEL ID: 979 (A)
+>> DOOR ID: 992 (A)
+>> WHEEL ID: 983 (A)
+>> WHEEL ID: 984 (A)
+ 
+2023-05-15 16:04:19,383 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 123]
+>> CARCASS ID: 995
+>> ENGINE ID: 946
+>> WHEEL ID: 986 (A)
+>> DOOR ID: 997 (A)
+>> WHEEL ID: 987 (A)
+>> DOOR ID: 1000 (A)
+>> WHEEL ID: 989 (A)
+>> WHEEL ID: 990 (A)
+ 
+2023-05-15 16:04:19,384 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 124]
+>> CARCASS ID: 1009
+>> ENGINE ID: 955
+>> WHEEL ID: 993 (A)
+>> DOOR ID: 1004 (A)
+>> WHEEL ID: 996 (A)
+>> DOOR ID: 1011 (A)
+>> WHEEL ID: 998 (A)
+>> WHEEL ID: 999 (A)
+ 
+2023-05-15 16:04:19,516 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 125]
+>> CARCASS ID: 1023
+>> ENGINE ID: 964
+>> WHEEL ID: 1001 (A)
+>> DOOR ID: 1014 (A)
+>> WHEEL ID: 1002 (A)
+>> DOOR ID: 1015 (A)
+>> WHEEL ID: 1003 (A)
+>> WHEEL ID: 1005 (A)
+ 
+2023-05-15 16:04:19,517 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 126]
+>> CARCASS ID: 1032
+>> ENGINE ID: 974
+>> WHEEL ID: 1006 (A)
+>> DOOR ID: 1016 (A)
+>> WHEEL ID: 1007 (A)
+>> DOOR ID: 1019 (A)
+>> WHEEL ID: 1012 (A)
+>> WHEEL ID: 1013 (A)
+ 
+2023-05-15 16:04:19,650 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 127]
+>> CARCASS ID: 1040
+>> ENGINE ID: 981
+>> WHEEL ID: 1017 (A)
+>> DOOR ID: 1022 (A)
+>> WHEEL ID: 1018 (A)
+>> DOOR ID: 1028 (A)
+>> WHEEL ID: 1020 (A)
+>> WHEEL ID: 1021 (A)
+ 
+2023-05-15 16:04:19,650 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 128]
+>> CARCASS ID: 1049
+>> ENGINE ID: 994
+>> WHEEL ID: 1026 (A)
+>> DOOR ID: 1030 (A)
+>> WHEEL ID: 1027 (A)
+>> DOOR ID: 1034 (A)
+>> WHEEL ID: 1029 (A)
+>> WHEEL ID: 1031 (A)
+ 
+2023-05-15 16:04:19,783 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 129]
+>> CARCASS ID: 1057
+>> ENGINE ID: 1008
+>> WHEEL ID: 1033 (A)
+>> DOOR ID: 1037 (A)
+>> WHEEL ID: 1035 (A)
+>> DOOR ID: 1044 (A)
+>> WHEEL ID: 1036 (A)
+>> WHEEL ID: 1038 (A)
+ 
+2023-05-15 16:04:19,783 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 130]
+>> CARCASS ID: 1065
+>> ENGINE ID: 1010
+>> WHEEL ID: 1042 (A)
+>> DOOR ID: 1047 (A)
+>> WHEEL ID: 1043 (A)
+>> DOOR ID: 1051 (A)
+>> WHEEL ID: 1045 (A)
+>> WHEEL ID: 1046 (A)
+ 
+2023-05-15 16:04:19,916 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 131]
+>> CARCASS ID: 1073
+>> ENGINE ID: 1024
+>> WHEEL ID: 1050 (A)
+>> DOOR ID: 1054 (A)
+>> WHEEL ID: 1052 (A)
+>> DOOR ID: 1059 (A)
+>> WHEEL ID: 1053 (A)
+>> WHEEL ID: 1055 (A)
+ 
+2023-05-15 16:04:19,916 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 132]
+>> CARCASS ID: 1081
+>> ENGINE ID: 1025
+>> WHEEL ID: 1058 (A)
+>> DOOR ID: 1062 (A)
+>> WHEEL ID: 1060 (A)
+>> DOOR ID: 1067 (A)
+>> WHEEL ID: 1061 (A)
+>> WHEEL ID: 1063 (A)
+ 
+2023-05-15 16:04:20,047 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 133]
+>> CARCASS ID: 1089
+>> ENGINE ID: 1039
+>> WHEEL ID: 1066 (A)
+>> DOOR ID: 1070 (A)
+>> WHEEL ID: 1068 (A)
+>> DOOR ID: 1076 (A)
+>> WHEEL ID: 1069 (A)
+>> WHEEL ID: 1071 (A)
+ 
+2023-05-15 16:04:20,050 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 134]
+>> CARCASS ID: 1097
+>> ENGINE ID: 1041
+>> WHEEL ID: 1074 (A)
+>> DOOR ID: 1079 (A)
+>> WHEEL ID: 1077 (A)
+>> DOOR ID: 1084 (A)
+>> WHEEL ID: 1078 (A)
+>> WHEEL ID: 1080 (A)
+ 
+2023-05-15 16:04:20,176 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 135]
+>> CARCASS ID: 1105
+>> ENGINE ID: 1048
+>> WHEEL ID: 1082 (A)
+>> DOOR ID: 1087 (A)
+>> WHEEL ID: 1085 (A)
+>> DOOR ID: 1092 (A)
+>> WHEEL ID: 1086 (A)
+>> WHEEL ID: 1088 (A)
+ 
+2023-05-15 16:04:20,183 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 136]
+>> CARCASS ID: 1113
+>> ENGINE ID: 1056
+>> WHEEL ID: 1091 (A)
+>> DOOR ID: 1099 (A)
+>> WHEEL ID: 1093 (A)
+>> DOOR ID: 1103 (A)
+>> WHEEL ID: 1094 (A)
+>> WHEEL ID: 1095 (A)
+ 
+2023-05-15 16:04:20,308 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 137]
+>> CARCASS ID: 1121
+>> ENGINE ID: 1064
+>> WHEEL ID: 1096 (A)
+>> DOOR ID: 1107 (A)
+>> WHEEL ID: 1100 (A)
+>> DOOR ID: 1111 (A)
+>> WHEEL ID: 1101 (A)
+>> WHEEL ID: 1102 (A)
+ 
+2023-05-15 16:04:20,316 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 138]
+>> CARCASS ID: 1129
+>> ENGINE ID: 1072
+>> WHEEL ID: 1104 (A)
+>> DOOR ID: 1117 (A)
+>> WHEEL ID: 1108 (A)
+>> DOOR ID: 1120 (A)
+>> WHEEL ID: 1109 (A)
+>> WHEEL ID: 1110 (A)
+ 
+2023-05-15 16:04:20,440 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 139]
+>> CARCASS ID: 1137
+>> ENGINE ID: 1075
+>> WHEEL ID: 1112 (A)
+>> DOOR ID: 1124 (A)
+>> WHEEL ID: 1114 (A)
+>> DOOR ID: 1127 (A)
+>> WHEEL ID: 1116 (A)
+>> WHEEL ID: 1118 (A)
+ 
+2023-05-15 16:04:20,450 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 140]
+>> CARCASS ID: 1145
+>> ENGINE ID: 1083
+>> WHEEL ID: 1119 (A)
+>> DOOR ID: 1132 (A)
+>> WHEEL ID: 1123 (A)
+>> DOOR ID: 1135 (A)
+>> WHEEL ID: 1125 (A)
+>> WHEEL ID: 1126 (A)
+ 
+2023-05-15 16:04:20,569 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 141]
+>> CARCASS ID: 1153
+>> ENGINE ID: 1090
+>> WHEEL ID: 1128 (A)
+>> DOOR ID: 1141 (A)
+>> WHEEL ID: 1131 (A)
+>> DOOR ID: 1146 (A)
+>> WHEEL ID: 1133 (A)
+>> WHEEL ID: 1134 (A)
+ 
+2023-05-15 16:04:20,583 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 142]
+>> CARCASS ID: 1161
+>> ENGINE ID: 1098
+>> WHEEL ID: 1136 (A)
+>> DOOR ID: 1149 (A)
+>> WHEEL ID: 1139 (A)
+>> DOOR ID: 1152 (A)
+>> WHEEL ID: 1140 (A)
+>> WHEEL ID: 1142 (A)
+ 
+2023-05-15 16:04:20,702 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 143]
+>> CARCASS ID: 1169
+>> ENGINE ID: 1106
+>> WHEEL ID: 1143 (A)
+>> DOOR ID: 1157 (A)
+>> WHEEL ID: 1144 (A)
+>> DOOR ID: 1159 (A)
+>> WHEEL ID: 1148 (A)
+>> WHEEL ID: 1150 (A)
+ 
+2023-05-15 16:04:20,716 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 144]
+>> CARCASS ID: 1177
+>> ENGINE ID: 1115
+>> WHEEL ID: 1151 (A)
+>> DOOR ID: 1164 (A)
+>> WHEEL ID: 1155 (A)
+>> DOOR ID: 1171 (A)
+>> WHEEL ID: 1156 (A)
+>> WHEEL ID: 1158 (A)
+ 
+2023-05-15 16:04:20,836 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 145]
+>> CARCASS ID: 1185
+>> ENGINE ID: 1122
+>> WHEEL ID: 1160 (A)
+>> DOOR ID: 1175 (A)
+>> WHEEL ID: 1162 (A)
+>> DOOR ID: 1179 (A)
+>> WHEEL ID: 1165 (A)
+>> WHEEL ID: 1166 (A)
+ 
+2023-05-15 16:04:20,848 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 146]
+>> CARCASS ID: 1193
+>> ENGINE ID: 1130
+>> WHEEL ID: 1167 (A)
+>> DOOR ID: 1182 (A)
+>> WHEEL ID: 1168 (A)
+>> DOOR ID: 1183 (A)
+>> WHEEL ID: 1172 (A)
+>> WHEEL ID: 1173 (A)
+ 
+2023-05-15 16:04:20,966 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 147]
+>> CARCASS ID: 1201
+>> ENGINE ID: 1138
+>> WHEEL ID: 1174 (A)
+>> DOOR ID: 1188 (A)
+>> WHEEL ID: 1176 (A)
+>> DOOR ID: 1191 (A)
+>> WHEEL ID: 1180 (A)
+>> WHEEL ID: 1181 (A)
+ 
+2023-05-15 16:04:20,979 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 148]
+>> CARCASS ID: 1209
+>> ENGINE ID: 1147
+>> WHEEL ID: 1184 (A)
+>> DOOR ID: 1196 (A)
+>> WHEEL ID: 1187 (A)
+>> DOOR ID: 1200 (A)
+>> WHEEL ID: 1189 (A)
+>> WHEEL ID: 1190 (A)
+ 
+2023-05-15 16:04:21,100 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 149]
+>> CARCASS ID: 1217
+>> ENGINE ID: 1154
+>> WHEEL ID: 1192 (A)
+>> DOOR ID: 1204 (A)
+>> WHEEL ID: 1195 (A)
+>> DOOR ID: 1206 (A)
+>> WHEEL ID: 1197 (A)
+>> WHEEL ID: 1198 (A)
+ 
+2023-05-15 16:04:21,110 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 150]
+>> CARCASS ID: 1225
+>> ENGINE ID: 1163
+>> WHEEL ID: 1199 (A)
+>> DOOR ID: 1213 (A)
+>> WHEEL ID: 1202 (A)
+>> DOOR ID: 1216 (A)
+>> WHEEL ID: 1205 (A)
+>> WHEEL ID: 1207 (A)
+ 
+2023-05-15 16:04:21,233 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 151]
+>> CARCASS ID: 1233
+>> ENGINE ID: 1170
+>> WHEEL ID: 1208 (A)
+>> DOOR ID: 1221 (A)
+>> WHEEL ID: 1211 (A)
+>> DOOR ID: 1224 (A)
+>> WHEEL ID: 1212 (A)
+>> WHEEL ID: 1214 (A)
+ 
+2023-05-15 16:04:21,240 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 152]
+>> CARCASS ID: 1241
+>> ENGINE ID: 1178
+>> WHEEL ID: 1215 (A)
+>> DOOR ID: 1229 (A)
+>> WHEEL ID: 1219 (A)
+>> DOOR ID: 1235 (A)
+>> WHEEL ID: 1220 (A)
+>> WHEEL ID: 1222 (A)
+ 
+2023-05-15 16:04:21,366 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 153]
+>> CARCASS ID: 1249
+>> ENGINE ID: 1186
+>> WHEEL ID: 1223 (A)
+>> DOOR ID: 1238 (A)
+>> WHEEL ID: 1227 (A)
+>> DOOR ID: 1243 (A)
+>> WHEEL ID: 1228 (A)
+>> WHEEL ID: 1230 (A)
+ 
+2023-05-15 16:04:21,369 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 154]
+>> CARCASS ID: 1257
+>> ENGINE ID: 1194
+>> WHEEL ID: 1231 (A)
+>> DOOR ID: 1246 (A)
+>> WHEEL ID: 1232 (A)
+>> DOOR ID: 1248 (A)
+>> WHEEL ID: 1236 (A)
+>> WHEEL ID: 1237 (A)
+ 
+2023-05-15 16:04:21,510 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 155]
+>> CARCASS ID: 1265
+>> ENGINE ID: 1203
+>> WHEEL ID: 1239 (A)
+>> DOOR ID: 1253 (A)
+>> WHEEL ID: 1240 (A)
+>> DOOR ID: 1255 (A)
+>> WHEEL ID: 1244 (A)
+>> WHEEL ID: 1245 (A)
+ 
+2023-05-15 16:04:21,769 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 156]
+>> CARCASS ID: 1272
+>> ENGINE ID: 1210
+>> WHEEL ID: 1247 (A)
+>> DOOR ID: 1258 (A)
+>> WHEEL ID: 1251 (A)
+>> DOOR ID: 1262 (A)
+>> WHEEL ID: 1252 (A)
+>> WHEEL ID: 1254 (A)
+ 
+2023-05-15 16:04:22,027 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 157]
+>> CARCASS ID: 1280
+>> ENGINE ID: 1218
+>> WHEEL ID: 1256 (A)
+>> DOOR ID: 1266 (A)
+>> WHEEL ID: 1260 (A)
+>> DOOR ID: 1271 (A)
+>> WHEEL ID: 1261 (A)
+>> WHEEL ID: 1263 (A)
+ 
+2023-05-15 16:04:22,286 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 158]
+>> CARCASS ID: 1288
+>> ENGINE ID: 1226
+>> WHEEL ID: 1264 (A)
+>> DOOR ID: 1276 (A)
+>> WHEEL ID: 1267 (A)
+>> DOOR ID: 1279 (A)
+>> WHEEL ID: 1268 (A)
+>> WHEEL ID: 1269 (A)
+ 
+2023-05-15 16:04:22,544 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 159]
+>> CARCASS ID: 1296
+>> ENGINE ID: 1234
+>> WHEEL ID: 1270 (A)
+>> DOOR ID: 1283 (A)
+>> WHEEL ID: 1273 (A)
+>> DOOR ID: 1286 (A)
+>> WHEEL ID: 1275 (A)
+>> WHEEL ID: 1277 (A)
+ 
+2023-05-15 16:04:22,802 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 160]
+>> CARCASS ID: 1303
+>> ENGINE ID: 1242
+>> WHEEL ID: 1278 (A)
+>> DOOR ID: 1291 (A)
+>> WHEEL ID: 1282 (A)
+>> DOOR ID: 1295 (A)
+>> WHEEL ID: 1284 (A)
+>> WHEEL ID: 1285 (A)
+ 
+2023-05-15 16:04:23,060 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 161]
+>> CARCASS ID: 1311
+>> ENGINE ID: 1250
+>> WHEEL ID: 1287 (A)
+>> DOOR ID: 1299 (A)
+>> WHEEL ID: 1290 (A)
+>> DOOR ID: 1301 (A)
+>> WHEEL ID: 1292 (A)
+>> WHEEL ID: 1293 (A)
+ 
+2023-05-15 16:04:23,320 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 162]
+>> CARCASS ID: 1319
+>> ENGINE ID: 1259
+>> WHEEL ID: 1294 (A)
+>> DOOR ID: 1305 (A)
+>> WHEEL ID: 1297 (A)
+>> DOOR ID: 1308 (A)
+>> WHEEL ID: 1298 (A)
+>> WHEEL ID: 1300 (A)
+ 
+2023-05-15 16:04:23,580 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 163]
+>> CARCASS ID: 1327
+>> ENGINE ID: 1266
+>> WHEEL ID: 1302 (A)
+>> DOOR ID: 1313 (A)
+>> WHEEL ID: 1306 (A)
+>> DOOR ID: 1318 (A)
+>> WHEEL ID: 1307 (A)
+>> WHEEL ID: 1309 (A)
+ 
+2023-05-15 16:04:23,836 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 164]
+>> CARCASS ID: 1335
+>> ENGINE ID: 1274
+>> WHEEL ID: 1310 (A)
+>> DOOR ID: 1323 (A)
+>> WHEEL ID: 1314 (A)
+>> DOOR ID: 1325 (A)
+>> WHEEL ID: 1315 (A)
+>> WHEEL ID: 1316 (A)
+ 
+2023-05-15 16:04:24,094 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 165]
+>> CARCASS ID: 1343
+>> ENGINE ID: 1281
+>> WHEEL ID: 1317 (A)
+>> DOOR ID: 1330 (A)
+>> WHEEL ID: 1321 (A)
+>> DOOR ID: 1332 (A)
+>> WHEEL ID: 1322 (A)
+>> WHEEL ID: 1324 (A)
+ 
+2023-05-15 16:04:24,352 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 166]
+>> CARCASS ID: 1351
+>> ENGINE ID: 1289
+>> WHEEL ID: 1326 (A)
+>> DOOR ID: 1339 (A)
+>> WHEEL ID: 1329 (A)
+>> DOOR ID: 1342 (A)
+>> WHEEL ID: 1331 (A)
+>> WHEEL ID: 1333 (A)
+ 
+2023-05-15 16:04:24,610 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 167]
+>> CARCASS ID: 1359
+>> ENGINE ID: 1297
+>> WHEEL ID: 1334 (A)
+>> DOOR ID: 1347 (A)
+>> WHEEL ID: 1337 (A)
+>> DOOR ID: 1353 (A)
+>> WHEEL ID: 1338 (A)
+>> WHEEL ID: 1340 (A)
+ 
+2023-05-15 16:04:24,869 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 168]
+>> CARCASS ID: 1367
+>> ENGINE ID: 1304
+>> WHEEL ID: 1341 (A)
+>> DOOR ID: 1355 (A)
+>> WHEEL ID: 1345 (A)
+>> DOOR ID: 1361 (A)
+>> WHEEL ID: 1346 (A)
+>> WHEEL ID: 1348 (A)
+ 
+2023-05-15 16:04:25,127 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 169]
+>> CARCASS ID: 1375
+>> ENGINE ID: 1312
+>> WHEEL ID: 1349 (A)
+>> DOOR ID: 1366 (A)
+>> WHEEL ID: 1350 (A)
+>> DOOR ID: 1369 (A)
+>> WHEEL ID: 1354 (A)
+>> WHEEL ID: 1356 (A)
+ 
+2023-05-15 16:04:25,386 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 170]
+>> CARCASS ID: 1383
+>> ENGINE ID: 1320
+>> WHEEL ID: 1357 (A)
+>> DOOR ID: 1372 (A)
+>> WHEEL ID: 1358 (A)
+>> DOOR ID: 1373 (A)
+>> WHEEL ID: 1362 (A)
+>> WHEEL ID: 1363 (A)
+ 
+2023-05-15 16:04:25,644 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 171]
+>> CARCASS ID: 1391
+>> ENGINE ID: 1328
+>> WHEEL ID: 1364 (A)
+>> DOOR ID: 1378 (A)
+>> WHEEL ID: 1365 (A)
+>> DOOR ID: 1381 (A)
+>> WHEEL ID: 1370 (A)
+>> WHEEL ID: 1371 (A)
+ 
+2023-05-15 16:04:25,903 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 172]
+>> CARCASS ID: 1399
+>> ENGINE ID: 1336
+>> WHEEL ID: 1374 (A)
+>> DOOR ID: 1382 (A)
+>> WHEEL ID: 1377 (A)
+>> DOOR ID: 1389 (A)
+>> WHEEL ID: 1379 (A)
+>> WHEEL ID: 1380 (A)
+ 
+2023-05-15 16:04:26,160 INFO r.n.b.t.a.Dealer [Thread-10] Dealer sold the car:
+[Car ID: 173]
+>> CARCASS ID: 1407
+>> ENGINE ID: 1344
+>> WHEEL ID: 1385 (A)
+>> DOOR ID: 1394 (A)
+>> WHEEL ID: 1386 (A)
+>> DOOR ID: 1396 (A)
+>> WHEEL ID: 1387 (A)
+>> WHEEL ID: 1388 (A)
+ 
+2023-05-15 16:04:26,419 INFO r.n.b.t.a.Dealer [Thread-9] Dealer sold the car:
+[Car ID: 174]
+>> CARCASS ID: 1415
+>> ENGINE ID: 1352
+>> WHEEL ID: 1390 (A)
+>> DOOR ID: 1398 (A)
+>> WHEEL ID: 1393 (A)
+>> DOOR ID: 1403 (A)
+>> WHEEL ID: 1395 (A)
+>> WHEEL ID: 1397 (A)
  

@@ -5,7 +5,7 @@ import ru.nsu.bolotov.exceptions.BusinessInterruptedException;
 import ru.nsu.bolotov.exceptions.FailedCreationException;
 import ru.nsu.bolotov.factory.ComponentFactory;
 import ru.nsu.bolotov.storages.ComponentStorage;
-import ru.nsu.bolotov.util.UtilConsts;
+import ru.nsu.bolotov.threadpool.tasks.SupplierOrder;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -16,17 +16,14 @@ import java.util.concurrent.TimeUnit;
 public class Supplier implements Runnable {
     private final ComponentStorage<Component> components;
     private int suppliersDelayTimeMsec;
-    private final String[] componentTypes;
+    private final SupplierOrder supplierOrder;
     private final List<String> componentScheduler;
     private int schedulerIndex;
 
-    public Supplier(ComponentStorage<Component> components, int suppliersDelayTimeMsec, String[] componentTypes) {
+    public Supplier(ComponentStorage<Component> components, int suppliersDelayTimeMsec, SupplierOrder supplierOrder) {
         this.components = components;
         this.suppliersDelayTimeMsec = suppliersDelayTimeMsec;
-        this.componentTypes = componentTypes;
-        for (String type : this.componentTypes) {
-            type = type.toUpperCase();
-        }
+        this.supplierOrder = supplierOrder;
         componentScheduler = new ArrayList<>();
         schedulerIndex = 0;
         prepareComponentScheduler();
@@ -72,17 +69,22 @@ public class Supplier implements Runnable {
     }
 
     private void prepareComponentScheduler() {
-        if (componentTypes.length == 1) {
-            componentScheduler.add(componentTypes[0]);
-        } else {
-            int minRequiredNumber = Math.min(UtilConsts.ComponentsConsts.REQUIRED_WHEELS_NUMBER, UtilConsts.ComponentsConsts.REQUIRED_DOORS_NUMBER);
-            for (int i = 0; i < UtilConsts.ComponentsConsts.REQUIRED_WHEELS_NUMBER / minRequiredNumber; ++i) {
-                componentScheduler.add(componentTypes[0]);
-            }
-            for (int i = 0; i < UtilConsts.ComponentsConsts.REQUIRED_DOORS_NUMBER / minRequiredNumber; ++i) {
-                componentScheduler.add(componentTypes[1]);
+        String[] componentTypes = supplierOrder.getComponentTypes();
+        int[] requiredNumbersOfComponents = supplierOrder.getRequiredNumbersOfComponents();
+        int minFrequency = findMinFrequencyOfComponents(requiredNumbersOfComponents);
+        for (int i = 0; i < componentTypes.length; ++i) {
+            for (int j = 0; j < requiredNumbersOfComponents[i] / minFrequency; ++j) {
+                componentScheduler.add(componentTypes[i]);
             }
         }
+    }
+
+    private int findMinFrequencyOfComponents(int[] requiredNumbersOfComponents) {
+        int minFrequency = Integer.MAX_VALUE;
+        for (Integer frequency : requiredNumbersOfComponents) {
+            minFrequency = Math.min(minFrequency, frequency);
+        }
+        return minFrequency;
     }
 
     private void updateSchedulerIndex() {
