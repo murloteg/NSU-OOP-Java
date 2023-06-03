@@ -20,15 +20,15 @@ public class ServerActivityChecker implements Runnable {
 
     @Override
     public void run() {
-        while (!Thread.currentThread().isInterrupted()) {
-            if (server.getNumberOfUsers() == 0) {
-                currentTimeMsec = System.currentTimeMillis();
-            }
-            if (TimeUnit.MILLISECONDS.toSeconds(currentTimeMsec - startTimeMsec) >= UtilConsts.ConnectionConsts.WAITING_TIME_SEC) {
-                support.firePropertyChange(UtilConsts.StringConsts.INACTIVE_SERVER, false, true);
-                Thread.currentThread().interrupt();
-            }
-        }
+//        while (!Thread.currentThread().isInterrupted()) {
+//            if (server.getNumberOfUsers() == 0) {
+//                currentTimeMsec = System.currentTimeMillis();
+//            }
+//            if (TimeUnit.MILLISECONDS.toSeconds(currentTimeMsec - startTimeMsec) >= UtilConsts.ConnectionConsts.WAITING_TIME_SEC) {
+//                support.firePropertyChange(UtilConsts.StringConsts.INACTIVE_SERVER, false, true);
+//                Thread.currentThread().interrupt();
+//            }
+//        }
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {
