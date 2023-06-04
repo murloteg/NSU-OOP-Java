@@ -1,15 +1,20 @@
 package ru.nsu.bolotov.view;
 
-import javax.swing.*;
+import ru.nsu.bolotov.utils.UtilConsts;
 
-public class ClientMenu {
+import javax.swing.*;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
+public class ClientMenu implements Window {
     private final JFrame frame;
     private final JPanel panel;
+    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
     
     public ClientMenu() {
         frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setTitle("Chat menu");
+        frame.setTitle("Menu");
         frame.setBounds(0, 0, 1200, 750);
 
         panel = new JPanel();
@@ -27,7 +32,29 @@ public class ClientMenu {
         textFieldLabel.setText("Login as:");
         panel.add(textFieldLabel);
 
+        JButton startButton = new JButton("Log in");
+        startButton.setFont(GUIHelper.BUTTON_STANDARD_FONT);
+        startButton.setBounds(575, 270, 120, 50);
+        startButton.addActionListener(event -> {
+            support.firePropertyChange(UtilConsts.StringConsts.LOG_IN_BUTTON_HAS_BEEN_PRESSED, null, textField.getText());
+        });
+        panel.add(startButton);
+
         frame.add(panel);
+        startFrameDisplay();
+    }
+
+    public void addPropertyListener(PropertyChangeListener listener) {
+        support.addPropertyChangeListener(listener);
+    }
+
+    @Override
+    public void startFrameDisplay() {
         frame.setVisible(true);
+    }
+
+    @Override
+    public void stopFrameDisplay() {
+        frame.setVisible(false);
     }
 }
