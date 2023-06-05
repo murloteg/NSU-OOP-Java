@@ -36,6 +36,7 @@ public class Client implements Runnable, PropertyChangeListener {
             while (clientSocket.isConnected()) {
                 try {
                     event = (Event) inputStream.readObject();
+                    handleEvent(event);
                     System.out.println("Received event: " + event.getDescription()); // TODO
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -60,10 +61,49 @@ public class Client implements Runnable, PropertyChangeListener {
                 break;
             }
             case UtilConsts.EventTypesConsts.MESSAGE: {
-                // TODO
+                String message = (String) event.getNewValue();
+                Event messageEvent = new Event(EventTypes.MESSAGE, username, message);
+                try {
+                    outputStream.writeObject(messageEvent);
+                } catch (IOException e) { // FIXME
+                    throw new RuntimeException(e);
+                }
                 break;
             }
             case UtilConsts.EventTypesConsts.DISCONNECT: {
+                // TODO
+                break;
+            }
+            default: {
+                // TODO
+            }
+        }
+    }
+
+    private void handleEvent(Event event) throws IOException {
+        String eventUsername = event.getUsername();
+        switch (event.getEventType()) {
+            case SERVER_OK_RESPONSE: {
+                view.displayChat();
+                break;
+            }
+            case SERVER_BAD_RESPONSE: {
+                view.displayError(event.getDescription());
+                break;
+            }
+            case NEW_CONNECT: {
+                // TODO
+                break;
+            }
+            case USERS_LIST: {
+                // TODO
+                break;
+            }
+            case MESSAGE: {
+                // TODO
+                break;
+            }
+            case DISCONNECT: {
                 // TODO
                 break;
             }
