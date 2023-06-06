@@ -3,16 +3,26 @@ package ru.nsu.bolotov.view;
 import ru.nsu.bolotov.utils.UtilConsts;
 
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 public class ChatWindow implements Window {
     private final JFrame frame;
     private final JPanel panel;
+    private final JTextArea chatArea;
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
 
     public ChatWindow() {
         frame = new JFrame();
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent event) {
+                support.firePropertyChange(UtilConsts.EventTypesConsts.DISCONNECT, null, null);
+                super.windowClosing(event);
+            }
+        });
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setTitle("Chat window");
         frame.setBounds(0, 0, 1200, 750);
@@ -27,11 +37,13 @@ public class ChatWindow implements Window {
         usersLabel.setBounds(100, 80, 220, 80);
         panel.add(usersLabel);
 
-        JTextArea textArea = new JTextArea(10, 30);
-        textArea.setLineWrap(true);
-        textArea.setEnabled(false);
-        textArea.setFont(GUIHelper.MESSAGE_STANDARD_FONT);
-        JScrollPane scrollPane = new JScrollPane(textArea);
+        // TODO: add users area
+
+        chatArea = new JTextArea(10, 30);
+        chatArea.setLineWrap(true);
+        chatArea.setEnabled(false);
+        chatArea.setFont(GUIHelper.MESSAGE_STANDARD_FONT);
+        JScrollPane scrollPane = new JScrollPane(chatArea);
         scrollPane.setBounds(600, 50, 500, 450);
         panel.add(scrollPane);
 
@@ -52,11 +64,9 @@ public class ChatWindow implements Window {
         sendButton.addActionListener(event -> {
             String message = textField.getText();
             textField.setText(UtilConsts.StringConsts.EMPTY_STRING);
-//            updateChat(textArea, message);
             support.firePropertyChange(UtilConsts.EventTypesConsts.MESSAGE, null, message);
         });
         panel.add(sendButton);
-
 
         frame.add(panel);
     }
@@ -75,12 +85,12 @@ public class ChatWindow implements Window {
         frame.setVisible(false);
     }
 
-    private void updateChat(JTextArea textArea, String incomingMessage) {
-        String previousMessages = textArea.getText();
+    public void updateChat(String incomingMessage) {
+        String previousMessages = chatArea.getText();
         if (UtilConsts.StringConsts.EMPTY_STRING.equals(previousMessages)) {
-            textArea.setText(incomingMessage);
+            chatArea.setText(incomingMessage);
         } else {
-            textArea.setText(previousMessages + '\n' + incomingMessage);
+            chatArea.setText(previousMessages + '\n' + incomingMessage);
         }
     }
 }

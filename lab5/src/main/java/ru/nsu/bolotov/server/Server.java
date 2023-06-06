@@ -41,6 +41,7 @@ public class Server {
                 LOGGER.info("Server accepted new connection");
             }
         }
+        closeAllResources();
     }
 
     private void closeAllResources() {
@@ -60,10 +61,6 @@ public class Server {
         } catch (IOException exception) {
             throw new IOBusinessException(exception.getMessage());
         }
-        ServerActivityChecker activityChecker = new ServerActivityChecker(server);
-//        activityChecker.addPropertyChangeListener(server);
-        Thread activityCheckerThread = new Thread(activityChecker);
-        activityCheckerThread.start();
         server.launchServer();
     }
 }

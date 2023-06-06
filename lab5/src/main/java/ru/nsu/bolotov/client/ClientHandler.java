@@ -11,6 +11,7 @@ import java.io.ObjectInputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class ClientHandler implements Runnable {
     private static final List<ClientHandler> HANDLERS = new ArrayList<>();
@@ -29,7 +30,7 @@ public class ClientHandler implements Runnable {
 
     @Override
     public void run() {
-        while (clientSocket.isConnected()) {
+        while (!Thread.currentThread().isInterrupted() && clientSocket.isConnected()) {
             try {
                 Event event = (Event) inputStream.readObject();
                 handleEvent(event);
@@ -52,20 +53,20 @@ public class ClientHandler implements Runnable {
         }
     }
 
-    public int getNumberOfClients() {
-        return HANDLERS.size();
-    }
-
     private void closeAllResources() {
         try {
-            for (ClientHandler clientHandler : HANDLERS) {
-                clientHandler.clientSocket.close();
-                clientHandler.outputStream.close();
-                clientHandler.inputStream.close();
-            }
+            Thread.currentThread().interrupt();
+            inputStream.close();
+            outputStream.close();
+            clientSocket.close();
         } catch (IOException exception) {
             throw new IOBusinessException(exception.getMessage());
         }
+    }
+
+    private boolean isCorrectUsername(String eventUsername) {
+        Pattern pattern = Pattern.compile("^(\\w)*(\\w)$");
+        return Pattern.matches(pattern.pattern(), eventUsername);
     }
 
     private boolean isAvailableUsername(String eventUsername) {
@@ -73,6 +74,9 @@ public class ClientHandler implements Runnable {
             if (eventUsername.equals(clientHandler.username)) {
                 return false;
             }
+        }
+        if (!isCorrectUsername(eventUsername)) {
+            return false;
         }
         this.username = eventUsername;
         return true;
@@ -84,6 +88,10 @@ public class ClientHandler implements Runnable {
             builder.append(clientHandler.username).append('\n');
         }
         return builder.toString();
+    }
+
+    private void removeClientHandler(ClientHandler clientHandler) {
+        HANDLERS.remove(clientHandler);
     }
 
     private void handleEvent(Event event) throws IOException {
@@ -98,7 +106,7 @@ public class ClientHandler implements Runnable {
                     Event usersListEvent = new Event(EventTypes.USERS_LIST, username, makeUsersList());
                     broadcastEvent(usersListEvent);
                 } else {
-                    Event failedAuthorizationEvent = new Event(EventTypes.SERVER_BAD_RESPONSE, eventUsername, String.format("Username \"%s\" already in use!", eventUsername));
+                    Event failedAuthorizationEvent = new Event(EventTypes.SERVER_BAD_RESPONSE, eventUsername, String.format("Username \"%s\" already in use or contains invalid symbols", eventUsername));
                     outputStream.writeObject(failedAuthorizationEvent);
                 }
                 break;
@@ -108,7 +116,10 @@ public class ClientHandler implements Runnable {
                 break;
             }
             case DISCONNECT: {
-                // ...
+                removeClientHandler(this);
+                closeAllResources();
+                Event disconnectEvent = new Event(EventTypes.DISCONNECT, username, String.format("User with username \"%s\" has left the chat!", username));
+                broadcastEvent(disconnectEvent);
                 Event usersListEvent = new Event(EventTypes.USERS_LIST, username, makeUsersList());
                 broadcastEvent(usersListEvent);
                 break;

@@ -8,14 +8,15 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 public class ApplicationView implements PropertyChangeListener {
-    private final ClientMenu menu;
+    private final ClientMenu chatMenu;
     private final ChatWindow chatWindow;
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
 
     public ApplicationView() {
-        menu = new ClientMenu();
-        menu.addPropertyListener(this);
+        chatMenu = new ClientMenu();
+        chatMenu.addPropertyListener(this);
         chatWindow = new ChatWindow();
+        chatWindow.addPropertyChangeListener(this);
     }
 
     @Override
@@ -25,7 +26,14 @@ public class ApplicationView implements PropertyChangeListener {
                 support.firePropertyChange(UtilConsts.EventTypesConsts.LOG_IN, null, event.getNewValue());
                 break;
             }
-            // TODO
+            case UtilConsts.EventTypesConsts.MESSAGE: {
+                support.firePropertyChange(UtilConsts.EventTypesConsts.MESSAGE, null, event.getNewValue());
+                break;
+            }
+            case UtilConsts.EventTypesConsts.DISCONNECT: {
+                support.firePropertyChange(UtilConsts.EventTypesConsts.DISCONNECT, null, null);
+                break;
+            }
         }
     }
 
@@ -34,8 +42,12 @@ public class ApplicationView implements PropertyChangeListener {
     }
 
     public void displayChat() {
-        menu.stopFrameDisplay();
+        chatMenu.stopFrameDisplay();
         chatWindow.startFrameDisplay();
+    }
+
+    public void displayEventMessage(String eventMessage) {
+        chatWindow.updateChat(eventMessage);
     }
 
     public void displayError(String error) {

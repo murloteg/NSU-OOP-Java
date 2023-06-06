@@ -31,18 +31,46 @@ public class Client implements Runnable, PropertyChangeListener {
 
     @Override
     public void run() {
-        while (!Thread.currentThread().isInterrupted()) {
-            Event event;
-            while (clientSocket.isConnected()) {
-                try {
-                    event = (Event) inputStream.readObject();
-                    handleEvent(event);
-                    System.out.println("Received event: " + event.getDescription()); // TODO
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                } catch (ClassNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
+        while (!Thread.currentThread().isInterrupted() && clientSocket.isConnected()) {
+            try {
+                Event event = (Event) inputStream.readObject();
+                handleEvent(event);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    private void handleEvent(Event event) throws IOException {
+        String eventUsername = event.getUsername();
+        String eventDescription = event.getDescription();
+        switch (event.getEventType()) {
+            case SERVER_OK_RESPONSE: {
+                username = eventUsername;
+                view.displayChat();
+                break;
+            }
+            case SERVER_BAD_RESPONSE: {
+                view.displayError(eventDescription);
+                break;
+            }
+            case NEW_CONNECT:
+            case DISCONNECT: {
+                view.displayEventMessage(eventDescription);
+                break;
+            }
+            case USERS_LIST: {
+                // TODO
+                break;
+            }
+            case MESSAGE: {
+                view.displayEventMessage(eventUsername + ": " + eventDescription);
+                break;
+            }
+            default: {
+                // TODO
             }
         }
     }
@@ -71,7 +99,13 @@ public class Client implements Runnable, PropertyChangeListener {
                 break;
             }
             case UtilConsts.EventTypesConsts.DISCONNECT: {
-                // TODO
+                Event disconnectEvent = new Event(EventTypes.DISCONNECT, username, null);
+                try {
+                    outputStream.writeObject(disconnectEvent);
+                    closeAllResources();
+                } catch (IOException e) { // FIXME
+                    throw new RuntimeException(e);
+                }
                 break;
             }
             default: {
@@ -80,36 +114,14 @@ public class Client implements Runnable, PropertyChangeListener {
         }
     }
 
-    private void handleEvent(Event event) throws IOException {
-        String eventUsername = event.getUsername();
-        switch (event.getEventType()) {
-            case SERVER_OK_RESPONSE: {
-                view.displayChat();
-                break;
-            }
-            case SERVER_BAD_RESPONSE: {
-                view.displayError(event.getDescription());
-                break;
-            }
-            case NEW_CONNECT: {
-                // TODO
-                break;
-            }
-            case USERS_LIST: {
-                // TODO
-                break;
-            }
-            case MESSAGE: {
-                // TODO
-                break;
-            }
-            case DISCONNECT: {
-                // TODO
-                break;
-            }
-            default: {
-                // TODO
-            }
+    private void closeAllResources() {
+        try {
+            Thread.currentThread().interrupt();
+            inputStream.close();
+            outputStream.close();
+            clientSocket.close();
+        } catch (IOException exception) {
+            throw new IOBusinessException(exception.getMessage());
         }
     }
 
