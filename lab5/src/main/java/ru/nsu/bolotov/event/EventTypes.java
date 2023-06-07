@@ -17,7 +17,8 @@ public enum EventTypes {
         this.type = type;
     }
 
-    public String getType() { // TODO
+    @Override
+    public String toString() {
         return type;
     }
 }

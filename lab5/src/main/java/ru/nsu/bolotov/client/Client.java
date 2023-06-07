@@ -35,21 +35,22 @@ public class Client implements Runnable, PropertyChangeListener {
             try {
                 Event event = (Event) inputStream.readObject();
                 handleEvent(event);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            } catch (IOException exception) {
+                throw new IOBusinessException(exception.getMessage());
             } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
+                throw new RuntimeException(e); // FIXME
             }
         }
     }
 
-    private void handleEvent(Event event) throws IOException {
+    private void handleEvent(Event event) {
         String eventUsername = event.getUsername();
         String eventDescription = event.getDescription();
         switch (event.getEventType()) {
             case SERVER_OK_RESPONSE: {
                 username = eventUsername;
                 view.displayChat();
+                view.displayCurrentUser(username);
                 break;
             }
             case SERVER_BAD_RESPONSE: {
@@ -62,11 +63,15 @@ public class Client implements Runnable, PropertyChangeListener {
                 break;
             }
             case USERS_LIST: {
-                // TODO
+                view.displayUsersList(eventDescription);
                 break;
             }
             case MESSAGE: {
-                view.displayEventMessage(eventUsername + ": " + eventDescription);
+                if (UtilConsts.ConnectionConsts.SPECIAL_INFO_USERNAME.equals(eventUsername)) {
+                    view.displayEventMessage(eventDescription);
+                } else {
+                    view.displayEventMessage(eventUsername + ": " + eventDescription);
+                }
                 break;
             }
             default: {
@@ -83,8 +88,8 @@ public class Client implements Runnable, PropertyChangeListener {
                 Event loginEvent = new Event(EventTypes.LOG_IN, username, null);
                 try {
                     outputStream.writeObject(loginEvent);
-                } catch (IOException e) { // FIXME
-                    throw new RuntimeException(e);
+                } catch (IOException exception) {
+                    throw new IOBusinessException(exception.getMessage());
                 }
                 break;
             }
@@ -93,8 +98,8 @@ public class Client implements Runnable, PropertyChangeListener {
                 Event messageEvent = new Event(EventTypes.MESSAGE, username, message);
                 try {
                     outputStream.writeObject(messageEvent);
-                } catch (IOException e) { // FIXME
-                    throw new RuntimeException(e);
+                } catch (IOException exception) {
+                    throw new IOBusinessException(exception.getMessage());
                 }
                 break;
             }
@@ -103,8 +108,8 @@ public class Client implements Runnable, PropertyChangeListener {
                 try {
                     outputStream.writeObject(disconnectEvent);
                     closeAllResources();
-                } catch (IOException e) { // FIXME
-                    throw new RuntimeException(e);
+                } catch (IOException exception) {
+                    throw new IOBusinessException(exception.getMessage());
                 }
                 break;
             }

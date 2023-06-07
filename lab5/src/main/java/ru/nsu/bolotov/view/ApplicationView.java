@@ -34,6 +34,9 @@ public class ApplicationView implements PropertyChangeListener {
                 support.firePropertyChange(UtilConsts.EventTypesConsts.DISCONNECT, null, null);
                 break;
             }
+            default: {
+                // TODO
+            }
         }
     }
 
@@ -48,6 +51,14 @@ public class ApplicationView implements PropertyChangeListener {
 
     public void displayEventMessage(String eventMessage) {
         chatWindow.updateChat(eventMessage);
+    }
+
+    public void displayUsersList(String usersList) {
+        chatWindow.updateUsersLists(usersList);
+    }
+
+    public void displayCurrentUser(String username) {
+        chatWindow.updateCurrentUser(username);
     }
 
     public void displayError(String error) {

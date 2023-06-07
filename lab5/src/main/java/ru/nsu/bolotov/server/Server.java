@@ -28,7 +28,7 @@ public class Server {
             Socket clientSocket;
             try {
                 clientSocket = serverSocket.accept();
-                ClientHandler clientHandler = new ClientHandler(clientSocket);
+                ClientHandler clientHandler = new ClientHandler(clientSocket, loggingStatus);
                 Thread handlerThread = new Thread(clientHandler);
                 handlerThread.start();
             } catch (IOException exception) {

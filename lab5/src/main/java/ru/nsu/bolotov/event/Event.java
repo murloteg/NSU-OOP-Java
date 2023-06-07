@@ -14,7 +14,7 @@ public class Event implements Serializable {
     }
 
     public EventTypes getEventType() {
-        return eventType; // TODO
+        return eventType;
     }
 
     public String getUsername() {

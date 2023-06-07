@@ -12,6 +12,7 @@ public class ChatWindow implements Window {
     private final JFrame frame;
     private final JPanel panel;
     private final JTextArea chatArea;
+    private final JTextArea usersListArea;
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
 
     public ChatWindow() {
@@ -32,20 +33,25 @@ public class ChatWindow implements Window {
         panel.setBackground(GUIHelper.GENERAL_COLOR);
 
         JLabel usersLabel = new JLabel();
-        usersLabel.setFont(GUIHelper.GENERAL_FONT);
-        usersLabel.setText("Users:");
-        usersLabel.setBounds(100, 80, 220, 80);
+        usersLabel.setFont(GUIHelper.USERS_LIST_STANDARD_FONT);
+        usersLabel.setText("Active users:");
+        usersLabel.setBounds(190, 0, 220, 60);
         panel.add(usersLabel);
 
-        // TODO: add users area
+        usersListArea = new JTextArea(10, 15);
+        usersListArea.setEnabled(false);
+        usersListArea.setFont(GUIHelper.USERS_LIST_STANDARD_FONT);
+        JScrollPane usersListAreaScrollPane = new JScrollPane(usersListArea);
+        usersListAreaScrollPane.setBounds(100, 50, 370, 350);
+        panel.add(usersListAreaScrollPane);
 
         chatArea = new JTextArea(10, 30);
         chatArea.setLineWrap(true);
         chatArea.setEnabled(false);
         chatArea.setFont(GUIHelper.MESSAGE_STANDARD_FONT);
-        JScrollPane scrollPane = new JScrollPane(chatArea);
-        scrollPane.setBounds(600, 50, 500, 450);
-        panel.add(scrollPane);
+        JScrollPane textAreaScrollPane = new JScrollPane(chatArea);
+        textAreaScrollPane.setBounds(600, 50, 500, 450);
+        panel.add(textAreaScrollPane);
 
         JLabel textFieldLabel = new JLabel();
         textFieldLabel.setFont(GUIHelper.GENERAL_FONT);
@@ -92,5 +98,14 @@ public class ChatWindow implements Window {
         } else {
             chatArea.setText(previousMessages + '\n' + incomingMessage);
         }
+    }
+
+    public void updateUsersLists(String usersList) {
+        usersListArea.setText(usersList);
+    }
+
+    public void updateCurrentUser(String username) {
+        String usernameInfo = username + "'s client";
+        frame.setTitle(usernameInfo);
     }
 }
