@@ -29,6 +29,7 @@ public final class UtilConsts {
         public static final String EMPTY_STRING = "";
         public static final String LOG_IN_BUTTON_HAS_BEEN_PRESSED = "LOG_IN_BUTTON_HAS_BEEN_PRESSED";
         public static final String INSTANTIATION_MESSAGE = "Instantiation of util class";
+        public static final String UNEXPECTED_EVENT_TYPE = "Unexpected event type";
 
         private StringConsts() {
             throw new IllegalStateException(INSTANTIATION_MESSAGE);

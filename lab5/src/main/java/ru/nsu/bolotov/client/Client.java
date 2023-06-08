@@ -2,6 +2,7 @@ package ru.nsu.bolotov.client;
 
 import ru.nsu.bolotov.event.Event;
 import ru.nsu.bolotov.event.EventTypes;
+import ru.nsu.bolotov.exceptions.FailedDeserializationException;
 import ru.nsu.bolotov.exceptions.IOBusinessException;
 import ru.nsu.bolotov.parser.ConfigurationParser;
 import ru.nsu.bolotov.utils.UtilConsts;
@@ -25,7 +26,7 @@ public class Client implements Runnable, PropertyChangeListener {
         clientSocket = new Socket(UtilConsts.ConnectionConsts.IP_ADDR, port);
         inputStream = new ObjectInputStream(clientSocket.getInputStream());
         outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
-        view = new ApplicationView(); // TODO
+        view = new ApplicationView();
         view.addPropertyChangeListener(this);
     }
 
@@ -37,8 +38,8 @@ public class Client implements Runnable, PropertyChangeListener {
                 handleEvent(event);
             } catch (IOException exception) {
                 throw new IOBusinessException(exception.getMessage());
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e); // FIXME
+            } catch (ClassNotFoundException exception) {
+                throw new FailedDeserializationException(exception.getMessage());
             }
         }
     }
@@ -75,7 +76,7 @@ public class Client implements Runnable, PropertyChangeListener {
                 break;
             }
             default: {
-                // TODO
+                throw new IllegalArgumentException(UtilConsts.StringConsts.UNEXPECTED_EVENT_TYPE);
             }
         }
     }
@@ -114,7 +115,7 @@ public class Client implements Runnable, PropertyChangeListener {
                 break;
             }
             default: {
-                // TODO
+                throw new IllegalArgumentException(UtilConsts.StringConsts.UNEXPECTED_EVENT_TYPE);
             }
         }
     }

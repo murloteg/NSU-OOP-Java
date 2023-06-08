@@ -35,7 +35,7 @@ public class ApplicationView implements PropertyChangeListener {
                 break;
             }
             default: {
-                // TODO
+                throw new IllegalArgumentException(UtilConsts.StringConsts.UNEXPECTED_EVENT_TYPE);
             }
         }
     }

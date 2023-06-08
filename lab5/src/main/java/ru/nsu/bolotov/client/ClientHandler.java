@@ -54,6 +54,10 @@ public class ClientHandler implements Runnable {
         return !UtilConsts.StringConsts.EMPTY_STRING.equals(clientHandler.username);
     }
 
+    private boolean isMessageAlreadyInCache(String eventDescription) {
+        return MESSAGE_CACHE.contains(eventDescription);
+    }
+
     private void sendEvent(ClientHandler clientHandler, Event event) throws IOException {
         clientHandler.outputStream.writeObject(event);
     }
@@ -83,30 +87,6 @@ public class ClientHandler implements Runnable {
         }
     }
 
-    private boolean isMessageAlreadyInCache(String eventDescription) {
-        return MESSAGE_CACHE.contains(eventDescription);
-    }
-
-    private String assemblyMessagesFromCache() {
-        StringBuilder builder = new StringBuilder();
-        for (String eventDescription : MESSAGE_CACHE) {
-            builder.append(eventDescription).append('\n');
-        }
-        builder.append(String.format("[INFO] %d latest messages were displayed [INFO]", MESSAGE_CACHE.size()));
-        return builder.toString();
-    }
-
-    private void closeAllResources() {
-        try {
-            Thread.currentThread().interrupt();
-            inputStream.close();
-            outputStream.close();
-            clientSocket.close();
-        } catch (IOException exception) {
-            throw new IOBusinessException(exception.getMessage());
-        }
-    }
-
     private boolean isCorrectUsername(String eventUsername) {
         Pattern pattern = Pattern.compile("^(\\w)*(\\w)$");
         return Pattern.matches(pattern.pattern(), eventUsername);
@@ -125,6 +105,10 @@ public class ClientHandler implements Runnable {
         return true;
     }
 
+    private void removeClientHandler(ClientHandler clientHandler) {
+        HANDLERS.remove(clientHandler);
+    }
+
     private String makeUsersList() {
         StringBuilder builder = new StringBuilder();
         for (ClientHandler clientHandler : HANDLERS) {
@@ -135,8 +119,13 @@ public class ClientHandler implements Runnable {
         return builder.toString();
     }
 
-    private void removeClientHandler(ClientHandler clientHandler) {
-        HANDLERS.remove(clientHandler);
+    private String assemblyMessagesFromCache() {
+        StringBuilder builder = new StringBuilder();
+        for (String eventDescription : MESSAGE_CACHE) {
+            builder.append(eventDescription).append('\n');
+        }
+        builder.append(String.format("[INFO] %d latest messages were displayed [INFO]", MESSAGE_CACHE.size()));
+        return builder.toString();
     }
 
     private void handleAuthorization(String eventUsername) throws IOException {
@@ -152,6 +141,17 @@ public class ClientHandler implements Runnable {
         } else {
             Event failedAuthorizationEvent = new Event(EventTypes.SERVER_BAD_RESPONSE, eventUsername, String.format("Username \"%s\" already in use or contains invalid symbols", eventUsername));
             sendEvent(this, failedAuthorizationEvent);
+        }
+    }
+
+    private void closeAllResources() {
+        try {
+            Thread.currentThread().interrupt();
+            inputStream.close();
+            outputStream.close();
+            clientSocket.close();
+        } catch (IOException exception) {
+            throw new IOBusinessException(exception.getMessage());
         }
     }
 
@@ -181,7 +181,7 @@ public class ClientHandler implements Runnable {
                 break;
             }
             default: {
-                throw new IllegalArgumentException("Unexpected event type");
+                throw new IllegalArgumentException(UtilConsts.StringConsts.UNEXPECTED_EVENT_TYPE);
             }
         }
     }

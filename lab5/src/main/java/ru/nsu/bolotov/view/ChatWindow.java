@@ -33,33 +33,40 @@ public class ChatWindow implements Window {
         panel.setBackground(GUIHelper.GENERAL_COLOR);
 
         JLabel usersLabel = new JLabel();
-        usersLabel.setFont(GUIHelper.USERS_LIST_STANDARD_FONT);
+        usersLabel.setForeground(GUIHelper.CHAT_TEXT_COLOR_FOREGROUND);
+        usersLabel.setFont(GUIHelper.LABELS_STANDARD_FONT);
         usersLabel.setText("Active users:");
         usersLabel.setBounds(190, 0, 220, 60);
         panel.add(usersLabel);
 
         usersListArea = new JTextArea(10, 15);
-        usersListArea.setEnabled(false);
-        usersListArea.setFont(GUIHelper.USERS_LIST_STANDARD_FONT);
+        usersListArea.setEditable(false);
+        usersListArea.setBackground(GUIHelper.CHAT_TEXT_COLOR_BACKGROUND);
+        usersListArea.setForeground(GUIHelper.CHAT_TEXT_COLOR_FOREGROUND);
+        usersListArea.setFont(GUIHelper.LABELS_STANDARD_FONT);
         JScrollPane usersListAreaScrollPane = new JScrollPane(usersListArea);
         usersListAreaScrollPane.setBounds(100, 50, 370, 350);
         panel.add(usersListAreaScrollPane);
 
         chatArea = new JTextArea(10, 30);
         chatArea.setLineWrap(true);
-        chatArea.setEnabled(false);
+        chatArea.setEditable(false);
+        chatArea.setBackground(GUIHelper.CHAT_TEXT_COLOR_BACKGROUND);
+        chatArea.setForeground(GUIHelper.CHAT_TEXT_COLOR_FOREGROUND);
         chatArea.setFont(GUIHelper.MESSAGE_STANDARD_FONT);
         JScrollPane textAreaScrollPane = new JScrollPane(chatArea);
         textAreaScrollPane.setBounds(600, 50, 500, 450);
         panel.add(textAreaScrollPane);
 
         JLabel textFieldLabel = new JLabel();
-        textFieldLabel.setFont(GUIHelper.GENERAL_FONT);
+        textFieldLabel.setForeground(GUIHelper.CHAT_TEXT_COLOR_FOREGROUND);
+        textFieldLabel.setFont(GUIHelper.LABELS_STANDARD_FONT);
         textFieldLabel.setText("Enter your message:");
-        textFieldLabel.setBounds(750, 490, 220, 80);
+        textFieldLabel.setBounds(740, 490, 270, 80);
         panel.add(textFieldLabel);
 
         JTextField textField = new JTextField(30);
+        textField.setBackground(GUIHelper.CHAT_TEXT_COLOR_BACKGROUND);
         textField.setFont(GUIHelper.MESSAGE_STANDARD_FONT);
         textField.setBounds(600, 550, 500, 80);
         panel.add(textField);
